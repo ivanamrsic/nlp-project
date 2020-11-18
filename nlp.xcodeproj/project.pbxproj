@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,11 @@
 		A8D50F8225659272009B2E50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D50F8025659272009B2E50 /* Main.storyboard */; };
 		A8D50F8425659275009B2E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8D50F8325659275009B2E50 /* Assets.xcassets */; };
 		A8D50F8725659275009B2E50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D50F8525659275009B2E50 /* LaunchScreen.storyboard */; };
+		A8D50F9C256593FC009B2E50 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F96256593FC009B2E50 /* UIStoryboardExtension.swift */; };
+		A8D50F9D256593FC009B2E50 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F97256593FC009B2E50 /* BaseWireframe.swift */; };
+		A8D50F9E256593FC009B2E50 /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F98256593FC009B2E50 /* InteractorInterface.swift */; };
+		A8D50FA0256593FC009B2E50 /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F9A256593FC009B2E50 /* PresenterInterface.swift */; };
+		A8D50FA1256593FC009B2E50 /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F9B256593FC009B2E50 /* ViewInterface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		A8D50F8325659275009B2E50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8D50F8625659275009B2E50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8D50F8825659275009B2E50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8D50F96256593FC009B2E50 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		A8D50F97256593FC009B2E50 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
+		A8D50F98256593FC009B2E50 /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
+		A8D50F9A256593FC009B2E50 /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
+		A8D50F9B256593FC009B2E50 /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +58,6 @@
 				A7D4C26C7E1B7C1AB43B8CA6 /* Pods-nlp.debug.xcconfig */,
 				6FB5546806FF6709B60E97BB /* Pods-nlp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +90,7 @@
 		A8D50F7925659272009B2E50 /* nlp */ = {
 			isa = PBXGroup;
 			children = (
+				A8D50F95256593E4009B2E50 /* Base VIPER */,
 				A8D50F7A25659272009B2E50 /* AppDelegate.swift */,
 				A8D50F7C25659272009B2E50 /* SceneDelegate.swift */,
 				A8D50F7E25659272009B2E50 /* ViewController.swift */,
@@ -90,6 +100,18 @@
 				A8D50F8825659275009B2E50 /* Info.plist */,
 			);
 			path = nlp;
+			sourceTree = "<group>";
+		};
+		A8D50F95256593E4009B2E50 /* Base VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				A8D50F97256593FC009B2E50 /* BaseWireframe.swift */,
+				A8D50F98256593FC009B2E50 /* InteractorInterface.swift */,
+				A8D50F9A256593FC009B2E50 /* PresenterInterface.swift */,
+				A8D50F96256593FC009B2E50 /* UIStoryboardExtension.swift */,
+				A8D50F9B256593FC009B2E50 /* ViewInterface.swift */,
+			);
+			path = "Base VIPER";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,8 +228,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D50F9E256593FC009B2E50 /* InteractorInterface.swift in Sources */,
 				A8D50F7F25659272009B2E50 /* ViewController.swift in Sources */,
+				A8D50F9D256593FC009B2E50 /* BaseWireframe.swift in Sources */,
 				A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */,
+				A8D50FA1256593FC009B2E50 /* ViewInterface.swift in Sources */,
+				A8D50FA0256593FC009B2E50 /* PresenterInterface.swift in Sources */,
+				A8D50F9C256593FC009B2E50 /* UIStoryboardExtension.swift in Sources */,
 				A8D50F7D25659272009B2E50 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
