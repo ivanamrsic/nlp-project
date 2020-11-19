@@ -98,7 +98,7 @@
 		A8D50F7925659272009B2E50 /* nlp */ = {
 			isa = PBXGroup;
 			children = (
-				A8D50FB225659476009B2E50 /* Home */,
+				A8D50FC225668E70009B2E50 /* Modules */,
 				A8D50F95256593E4009B2E50 /* Base VIPER */,
 				A8D50F7A25659272009B2E50 /* AppDelegate.swift */,
 				A8D50F7C25659272009B2E50 /* SceneDelegate.swift */,
@@ -132,6 +132,14 @@
 				A8D50FB825659484009B2E50 /* HomeWireframe.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A8D50FC225668E70009B2E50 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A8D50FB225659476009B2E50 /* Home */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
