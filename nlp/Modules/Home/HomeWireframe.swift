@@ -16,7 +16,7 @@ final class HomeWireframe: BaseWireframe {
 
     // MARK: - Private properties -
 
-    private let storyboard = UIStoryboard(name: "Home", bundle: nil)
+    private let storyboard = UIStoryboard.home
 
     // MARK: - Module setup -
 
@@ -34,4 +34,8 @@ final class HomeWireframe: BaseWireframe {
 // MARK: - Extensions -
 
 extension HomeWireframe: HomeWireframeInterface {
+    
+    var childViewControllers: [NLPViewController] {
+        return [LanguagesWireframe().viewController as? NLPViewController].compactMap { $0 }
+    }
 }

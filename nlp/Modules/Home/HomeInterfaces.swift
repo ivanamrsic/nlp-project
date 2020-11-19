@@ -13,6 +13,7 @@ import RxSwift
 import RxCocoa
 
 protocol HomeWireframeInterface: WireframeInterface {
+    var childViewControllers: [NLPViewController] { get }
 }
 
 protocol HomeViewInterface: ViewInterface {
@@ -31,6 +32,7 @@ enum Home {
     }
 
     struct ViewInput {
+        let tabBars: Driver<[NLPViewController]>
     }
 
 }

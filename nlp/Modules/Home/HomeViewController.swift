@@ -12,7 +12,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class HomeViewController: UIViewController {
+final class HomeViewController: UITabBarController {
 
     // MARK: - Public properties -
 
@@ -37,11 +37,23 @@ extension HomeViewController: HomeViewInterface {
 }
 
 private extension HomeViewController {
+    
+    typealias ChildViewControllers = [NLPViewController]
 
     func setupView() {
         let output = Home.ViewOutput()
 
         let input = presenter.configure(with: output)
+        
+        let tabItems: (ChildViewControllers) -> ChildViewControllers = { (controllers: ChildViewControllers) -> (ChildViewControllers) in
+            controllers.forEach { $0.tabBarItem =  $0.tabBarProperty?.item }
+            return controllers
+        }
+        
+        input.tabBars
+            .map(tabItems)
+            .drive(onNext: { [unowned self] in self.viewControllers = $0 })
+            .disposed(by: disposeBag)
     }
 
 }

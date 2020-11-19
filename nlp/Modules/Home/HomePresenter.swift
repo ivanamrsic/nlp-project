@@ -34,7 +34,7 @@ final class HomePresenter {
 extension HomePresenter: HomePresenterInterface {
 
     func configure(with output: Home.ViewOutput) -> Home.ViewInput {
-        return Home.ViewInput()
+        return Home.ViewInput(tabBars: .just(wireframe.childViewControllers))
     }
 
 }
