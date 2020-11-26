@@ -14,6 +14,11 @@ import RxCocoa
 
 final class LanguagesViewController: NLPViewController {
 
+    // MARK: - IBOutlets -
+    
+    @IBOutlet weak var inputTextView: UITextView!
+    @IBOutlet private weak var resultLabel: UILabel!
+    
     // MARK: - Public properties -
 
     var presenter: LanguagesPresenterInterface!
@@ -38,9 +43,13 @@ extension LanguagesViewController: LanguagesViewInterface {
 private extension LanguagesViewController {
 
     func setupView() {
-        let output = Languages.ViewOutput()
+        let output = Languages.ViewOutput(
+            inputText: inputTextView.rx.text.asDriver()
+        )
 
         let input = presenter.configure(with: output)
+        
+        input.result.drive(resultLabel.rx.text).disposed(by: disposeBag)
     }
 
 }

@@ -142,6 +142,7 @@
 		A8D50F7925659272009B2E50 /* nlp */ = {
 			isa = PBXGroup;
 			children = (
+				A8FF0A41256D70E4006AFBB1 /* Resources */,
 				A8C1DC102566941B0052438B /* Util */,
 				A8D50FC225668E70009B2E50 /* Modules */,
 				A8D50F95256593E4009B2E50 /* Base VIPER */,
@@ -199,6 +200,14 @@
 				A8D50FCA25668F01009B2E50 /* LanguagesWireframe.swift */,
 			);
 			path = Languages;
+			sourceTree = "<group>";
+		};
+		A8FF0A41256D70E4006AFBB1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -5,6 +5,9 @@
       location = "group:nlp.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:SentimentClassifier.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

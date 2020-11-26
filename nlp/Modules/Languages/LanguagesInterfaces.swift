@@ -28,9 +28,11 @@ protocol LanguagesInteractorInterface: InteractorInterface {
 enum Languages {
 
     struct ViewOutput {
+        let inputText: Driver<String?>
     }
 
     struct ViewInput {
+        let result: Driver<String>
     }
 
 }

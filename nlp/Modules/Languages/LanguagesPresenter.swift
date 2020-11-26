@@ -34,7 +34,56 @@ final class LanguagesPresenter {
 extension LanguagesPresenter: LanguagesPresenterInterface {
 
     func configure(with output: Languages.ViewOutput) -> Languages.ViewInput {
-        return Languages.ViewInput()
+        
+        let result = handle(inputText: output.inputText)
+        
+        return Languages.ViewInput(
+            result: result
+        )
     }
 
+}
+
+private extension LanguagesPresenter {
+    
+    func handle(inputText: Driver<String?>) -> Driver<String> {
+        return inputText.map { [unowned self] in self.processInputText(text: $0) }
+    }
+}
+
+private extension LanguagesPresenter {
+    
+    
+    func processInputText(text: String?) -> String {
+        
+        guard let text = text, text.count > 0 else {
+            return ""
+        }
+                
+        let tagger = NSLinguisticTagger(tagSchemes: [.language], options: 0)
+        tagger.string = text
+        
+        let lang = tagger.tag(at: 0, unit: .word, scheme: .language, tokenRange: nil)
+        
+        guard let langRawValue = lang?.rawValue else {
+            return ""
+        }
+        
+        return langRawValue == "und" ? "👀" : flag(country: (langRawValue.uppercased()))
+    }
+    
+    func flag(country:String) -> String {
+        
+        if country == "EN" {
+            return "🇬🇧"
+        }
+        
+        let base = 127397
+        var usv = String.UnicodeScalarView()
+        for i in country.utf16 {
+            usv.append(UnicodeScalar(base + Int(i))!)
+        }
+        return String(usv)
+    }
+    
 }
