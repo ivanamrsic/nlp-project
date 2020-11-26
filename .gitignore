@@ -47,4 +47,7 @@ DerivedData/
 ### Sentiment Classifier ###
 SentimentClassifier/Classifier/Resources/output.json
 
+
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/xcode,cocoapods
