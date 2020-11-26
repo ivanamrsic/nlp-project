@@ -41,7 +41,7 @@
 		A81FB3F62566BDAA00919B9E /* NLPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPViewController.swift; sourceTree = "<group>"; };
 		A8C1DC15256694BA0052438B /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
-		A8D50F7725659272009B2E50 /* nlp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nlp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8D50F7725659272009B2E50 /* SentimentClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentimentClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D50F7A25659272009B2E50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8D50F7C25659272009B2E50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A8D50F8325659275009B2E50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		A8D50F6E25659272009B2E50 = {
 			isa = PBXGroup;
 			children = (
-				A8D50F7925659272009B2E50 /* nlp */,
+				A8D50F7925659272009B2E50 /* SentimentClassifier */,
 				A8D50F7825659272009B2E50 /* Products */,
 				0274C147160CF7489F96B4CD /* Pods */,
 				111FF7ABD80E76496C3AED31 /* Frameworks */,
@@ -134,12 +134,12 @@
 		A8D50F7825659272009B2E50 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A8D50F7725659272009B2E50 /* nlp.app */,
+				A8D50F7725659272009B2E50 /* SentimentClassifier.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A8D50F7925659272009B2E50 /* nlp */ = {
+		A8D50F7925659272009B2E50 /* SentimentClassifier */ = {
 			isa = PBXGroup;
 			children = (
 				A8FF0A41256D70E4006AFBB1 /* Resources */,
@@ -152,7 +152,7 @@
 				A8D50F8525659275009B2E50 /* LaunchScreen.storyboard */,
 				A8D50F8825659275009B2E50 /* Info.plist */,
 			);
-			path = nlp;
+			path = SentimentClassifier;
 			sourceTree = "<group>";
 		};
 		A8D50F95256593E4009B2E50 /* Base VIPER */ = {
@@ -213,9 +213,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A8D50F7625659272009B2E50 /* nlp */ = {
+		A8D50F7625659272009B2E50 /* SentimentClassifier */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A8D50F8B25659275009B2E50 /* Build configuration list for PBXNativeTarget "nlp" */;
+			buildConfigurationList = A8D50F8B25659275009B2E50 /* Build configuration list for PBXNativeTarget "SentimentClassifier" */;
 			buildPhases = (
 				607574F84F6EFB86B6C79BB6 /* [CP] Check Pods Manifest.lock */,
 				A8D50F7325659272009B2E50 /* Sources */,
@@ -227,9 +227,9 @@
 			);
 			dependencies = (
 			);
-			name = nlp;
+			name = SentimentClassifier;
 			productName = nlp;
-			productReference = A8D50F7725659272009B2E50 /* nlp.app */;
+			productReference = A8D50F7725659272009B2E50 /* SentimentClassifier.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -246,7 +246,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A8D50F7225659272009B2E50 /* Build configuration list for PBXProject "nlp" */;
+			buildConfigurationList = A8D50F7225659272009B2E50 /* Build configuration list for PBXProject "SentimentClassifier" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -259,7 +259,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A8D50F7625659272009B2E50 /* nlp */,
+				A8D50F7625659272009B2E50 /* SentimentClassifier */,
 			);
 		};
 /* End PBXProject section */
@@ -486,7 +486,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86UEKV73HK;
-				INFOPLIST_FILE = nlp/Info.plist;
+				INFOPLIST_FILE = SentimentClassifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -506,7 +506,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86UEKV73HK;
-				INFOPLIST_FILE = nlp/Info.plist;
+				INFOPLIST_FILE = SentimentClassifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,7 +521,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A8D50F7225659272009B2E50 /* Build configuration list for PBXProject "nlp" */ = {
+		A8D50F7225659272009B2E50 /* Build configuration list for PBXProject "SentimentClassifier" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8D50F8925659275009B2E50 /* Debug */,
@@ -530,7 +530,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A8D50F8B25659275009B2E50 /* Build configuration list for PBXNativeTarget "nlp" */ = {
+		A8D50F8B25659275009B2E50 /* Build configuration list for PBXNativeTarget "SentimentClassifier" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8D50F8C25659275009B2E50 /* Debug */,
