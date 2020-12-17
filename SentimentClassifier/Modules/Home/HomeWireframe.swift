@@ -36,6 +36,9 @@ final class HomeWireframe: BaseWireframe {
 extension HomeWireframe: HomeWireframeInterface {
     
     var childViewControllers: [NLPViewController] {
-        return [LanguagesWireframe().viewController as? NLPViewController].compactMap { $0 }
+        return [
+            ClassifierWireframe().viewController as? NLPViewController,
+            LanguagesWireframe().viewController as? NLPViewController
+        ].compactMap { $0 }
     }
 }

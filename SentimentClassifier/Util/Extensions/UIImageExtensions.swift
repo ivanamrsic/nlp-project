@@ -17,6 +17,10 @@ extension UIImage {
         static var languageSelected: UIImage {
             return UIImage(named: "TabBarItems/language-selected")!
         }
+        
+        static var classifier: UIImage {
+            return UIImage(named: "TabBarItems/classifier")!
+        }
     }
     
 }

@@ -19,7 +19,6 @@ class ClassifierViewController: NSViewController {
     
     @IBOutlet private weak var inputTextView: NSTextView!
     @IBOutlet private weak var resultLabel: NSTextField!
-    @IBOutlet private weak var resultImageView: NSImageView!
 
     @IBOutlet private weak var progressIndicator: NSProgressIndicator!
     @IBOutlet private weak var classifierCreationDoneImage: NSImageView!
@@ -36,8 +35,7 @@ class ClassifierViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView(with: classifier.accuracy)
-        resultImageView.image = nil
-        createClassifierButton.isEnabled = false
+//        createClassifierButton.isEnabled = false
         helpLabel.isHidden = true
     }
 }
@@ -67,7 +65,6 @@ extension ClassifierViewController {
         guard let text = inputTextView.textStorage?.string else { return }
         let result = classifier.classify(text: text)
         resultLabel.stringValue = result.description
-        resultImageView.image = result.image
     }
 }
 
@@ -91,6 +88,5 @@ private extension ClassifierViewController {
     
     func clearResult() {
         resultLabel.stringValue = ""
-        resultImageView.image = nil
     }
 }

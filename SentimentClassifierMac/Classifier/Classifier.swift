@@ -21,8 +21,8 @@ class Classifier {
     
     // MARK: - Private properties -
         
-    private var sentimentClassifier: SentimentClassifier? {
-        try? SentimentClassifier(configuration: MLModelConfiguration())
+    private var sentimentClassifier: SentimentClassifierMac? {
+        try? SentimentClassifierMac(configuration: MLModelConfiguration())
     }
     
     private var metadata: Metadata? {
@@ -35,9 +35,9 @@ class Classifier {
 
 extension Classifier {
     
-    func classify(text: String) -> ClassifierResult {
+    func classify(text: String) -> ClassifierResultScale {
         let result = try? sentimentClassifier?.prediction(text: text)
-        return ClassifierResult(result: result?.label)
+        return ClassifierResultScale(result: result?.label)
     }
 }
 

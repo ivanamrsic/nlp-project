@@ -16,4 +16,8 @@ extension UIStoryboard {
     static var languages: UIStoryboard {
         return UIStoryboard(name: "Languages", bundle: nil)
     }
+    
+    static var classifier: UIStoryboard {
+        return UIStoryboard(name: "Classifier", bundle: nil)
+    }
 }

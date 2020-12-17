@@ -19,7 +19,13 @@ class ClassifierUtil {
     private static let (trainingData, testingData) =
         data.randomSplit(by: Constants.splitProportion, seed: Constants.generatorSeed)
     
-    private static var classifier: MLTextClassifier?
+    private static var classifier: MLTextClassifier? {
+        try? MLTextClassifier(
+            trainingData: trainingData,
+            textColumn: Constants.textColumn,
+            labelColumn: Constants.labelColumn
+        )
+    }
     
     private static var metadata = MLModelMetadata(
         author: Constants.classifierAuthor,
@@ -43,12 +49,6 @@ private extension ClassifierUtil {
     
     static var accuracy: ClassifierAccuracy? {
         
-        classifier = try? MLTextClassifier(
-            trainingData: trainingData,
-            textColumn: Constants.textColumn,
-            labelColumn: Constants.labelColumn
-        )
-        
         guard let classifier = classifier else { return nil }
         
         // metrics
@@ -71,7 +71,7 @@ private extension ClassifierUtil {
         FileManager.default.createFile(atPath: Constants.classifierFilePath, contents: nil)
         
         metadata.additional = accuracy?.dictionary
-        
+
         try? classifier?.write(
             to: URL(fileURLWithPath: Constants.classifierFilePath),
             metadata: metadata

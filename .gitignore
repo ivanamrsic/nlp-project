@@ -46,7 +46,7 @@ DerivedData/
 
 ### Sentiment Classifier ###
 SentimentClassifier/Classifier/Resources/output.json
-
+SentimentClassifierMac/Classifier/Resources/yelp_output.json
 
 .DS_Store
 

@@ -19,7 +19,7 @@ extension ClassifierUtil {
         static let splitProportion = 0.8
         static let generatorSeed = 5
         
-        static let classifierFilePath = "./SentimentClassifier.mlmodel"
+        static let classifierFilePath = "./SentimentClassifierMac.mlmodel"
         
         static let classifierAuthor = "Ivana Mrsic"
         static let classifierVersion = "1.0"

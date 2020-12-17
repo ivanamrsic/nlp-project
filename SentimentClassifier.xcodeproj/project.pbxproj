@@ -11,6 +11,15 @@
 		A81FB3F72566BDAA00919B9E /* NLPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81FB3F62566BDAA00919B9E /* NLPViewController.swift */; };
 		A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC15256694BA0052438B /* UIImageExtensions.swift */; };
 		A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */; };
+		A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */; };
+		A8D188A3258B5954008670B6 /* Classifier.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D1889D258B5954008670B6 /* Classifier.storyboard */; };
+		A8D188A4258B5954008670B6 /* ClassifierInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1889E258B5954008670B6 /* ClassifierInterfaces.swift */; };
+		A8D188A5258B5954008670B6 /* ClassifierPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1889F258B5954008670B6 /* ClassifierPresenter.swift */; };
+		A8D188A6258B5954008670B6 /* ClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188A0258B5954008670B6 /* ClassifierViewController.swift */; };
+		A8D188A7258B5954008670B6 /* ClassifierInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188A1258B5954008670B6 /* ClassifierInteractor.swift */; };
+		A8D188A8258B5954008670B6 /* ClassifierWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188A2258B5954008670B6 /* ClassifierWireframe.swift */; };
+		A8D188AB258B5F28008670B6 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188AA258B5F28008670B6 /* Classifier.swift */; };
+		A8D188AE258B5F82008670B6 /* ClassifierResultScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188AD258B5F82008670B6 /* ClassifierResultScale.swift */; };
 		A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F7A25659272009B2E50 /* AppDelegate.swift */; };
 		A8D50F7D25659272009B2E50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F7C25659272009B2E50 /* SceneDelegate.swift */; };
 		A8D50F8425659275009B2E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8D50F8325659275009B2E50 /* Assets.xcassets */; };
@@ -41,6 +50,15 @@
 		A81FB3F62566BDAA00919B9E /* NLPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPViewController.swift; sourceTree = "<group>"; };
 		A8C1DC15256694BA0052438B /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
+		A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentClassifierMac.mlmodel; sourceTree = "<group>"; };
+		A8D1889D258B5954008670B6 /* Classifier.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Classifier.storyboard; sourceTree = "<group>"; };
+		A8D1889E258B5954008670B6 /* ClassifierInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierInterfaces.swift; sourceTree = "<group>"; };
+		A8D1889F258B5954008670B6 /* ClassifierPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierPresenter.swift; sourceTree = "<group>"; };
+		A8D188A0258B5954008670B6 /* ClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierViewController.swift; sourceTree = "<group>"; };
+		A8D188A1258B5954008670B6 /* ClassifierInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierInteractor.swift; sourceTree = "<group>"; };
+		A8D188A2258B5954008670B6 /* ClassifierWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierWireframe.swift; sourceTree = "<group>"; };
+		A8D188AA258B5F28008670B6 /* Classifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		A8D188AD258B5F82008670B6 /* ClassifierResultScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierResultScale.swift; sourceTree = "<group>"; };
 		A8D50F7725659272009B2E50 /* SentimentClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentimentClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D50F7A25659272009B2E50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8D50F7C25659272009B2E50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +124,7 @@
 		A8C1DC102566941B0052438B /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A8D18898258B577C008670B6 /* Classifier */,
 				A81FB3F52566BD9000919B9E /* Supporting Files */,
 				A8C1DC11256694200052438B /* Extensions */,
 			);
@@ -119,6 +138,29 @@
 				A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A8D18898258B577C008670B6 /* Classifier */ = {
+			isa = PBXGroup;
+			children = (
+				A8D188AA258B5F28008670B6 /* Classifier.swift */,
+				A8D188AD258B5F82008670B6 /* ClassifierResultScale.swift */,
+				A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */,
+			);
+			path = Classifier;
+			sourceTree = "<group>";
+		};
+		A8D1889C258B593D008670B6 /* Classifier */ = {
+			isa = PBXGroup;
+			children = (
+				A8D1889D258B5954008670B6 /* Classifier.storyboard */,
+				A8D1889E258B5954008670B6 /* ClassifierInterfaces.swift */,
+				A8D1889F258B5954008670B6 /* ClassifierPresenter.swift */,
+				A8D188A0258B5954008670B6 /* ClassifierViewController.swift */,
+				A8D188A1258B5954008670B6 /* ClassifierInteractor.swift */,
+				A8D188A2258B5954008670B6 /* ClassifierWireframe.swift */,
+			);
+			path = Classifier;
 			sourceTree = "<group>";
 		};
 		A8D50F6E25659272009B2E50 = {
@@ -183,6 +225,7 @@
 		A8D50FC225668E70009B2E50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A8D1889C258B593D008670B6 /* Classifier */,
 				A8D50FC425668EE9009B2E50 /* Languages */,
 				A8D50FB225659476009B2E50 /* Home */,
 			);
@@ -271,6 +314,7 @@
 			files = (
 				A8D50F8725659275009B2E50 /* LaunchScreen.storyboard in Resources */,
 				A8D50F8425659275009B2E50 /* Assets.xcassets in Resources */,
+				A8D188A3258B5954008670B6 /* Classifier.storyboard in Resources */,
 				A8D50FCB25668F01009B2E50 /* Languages.storyboard in Resources */,
 				A8D50FB925659484009B2E50 /* Home.storyboard in Resources */,
 			);
@@ -325,6 +369,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */,
+				A8D188AB258B5F28008670B6 /* Classifier.swift in Sources */,
 				A8D50FCD25668F01009B2E50 /* LanguagesPresenter.swift in Sources */,
 				A8D50F9E256593FC009B2E50 /* InteractorInterface.swift in Sources */,
 				A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */,
@@ -332,14 +378,20 @@
 				A8D50FBD25659484009B2E50 /* HomeInteractor.swift in Sources */,
 				A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */,
 				A8D50FBE25659484009B2E50 /* HomeWireframe.swift in Sources */,
+				A8D188A4258B5954008670B6 /* ClassifierInterfaces.swift in Sources */,
 				A8D50FBB25659484009B2E50 /* HomePresenter.swift in Sources */,
+				A8D188A5258B5954008670B6 /* ClassifierPresenter.swift in Sources */,
 				A81FB3F72566BDAA00919B9E /* NLPViewController.swift in Sources */,
 				A8D50FCF25668F01009B2E50 /* LanguagesInteractor.swift in Sources */,
+				A8D188A7258B5954008670B6 /* ClassifierInteractor.swift in Sources */,
+				A8D188A6258B5954008670B6 /* ClassifierViewController.swift in Sources */,
 				A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */,
 				A8D50FA1256593FC009B2E50 /* ViewInterface.swift in Sources */,
 				A8D50FD025668F01009B2E50 /* LanguagesWireframe.swift in Sources */,
 				A8D50FCE25668F01009B2E50 /* LanguagesViewController.swift in Sources */,
+				A8D188A8258B5954008670B6 /* ClassifierWireframe.swift in Sources */,
 				A8D50FA0256593FC009B2E50 /* PresenterInterface.swift in Sources */,
+				A8D188AE258B5F82008670B6 /* ClassifierResultScale.swift in Sources */,
 				A8D50FBC25659484009B2E50 /* HomeViewController.swift in Sources */,
 				A8D50FBA25659484009B2E50 /* HomeInterfaces.swift in Sources */,
 				A8D50F9C256593FC009B2E50 /* UIStoryboardExtension.swift in Sources */,
