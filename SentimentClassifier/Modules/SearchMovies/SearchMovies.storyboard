@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Movies View Controller-->
+        <scene sceneID="XJ1-QA-Nrj">
+            <objects>
+                <viewController storyboardIdentifier="SearchMoviesViewController" id="zIc-eW-6fX" customClass="SearchMoviesViewController" customModule="SentimentClassifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lgf-oc-m2E" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="24" y="24" width="327" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TN3-yl-wlP">
+                                <rect key="frame" x="24" y="87" width="327" height="556"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TN3-yl-wlP" firstAttribute="top" secondItem="lgf-oc-m2E" secondAttribute="bottom" constant="24" id="BOx-H4-2Kc"/>
+                            <constraint firstItem="lgf-oc-m2E" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="Elr-NG-7ik"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="TN3-yl-wlP" secondAttribute="trailing" constant="24" id="U8k-h5-kmq"/>
+                            <constraint firstItem="TN3-yl-wlP" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="YJL-IV-fR8"/>
+                            <constraint firstItem="lgf-oc-m2E" firstAttribute="top" secondItem="3pi-N7-nbV" secondAttribute="top" constant="24" id="a36-mI-KKE"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="lgf-oc-m2E" secondAttribute="trailing" constant="24" id="gLn-qi-Wcm"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="bottom" secondItem="TN3-yl-wlP" secondAttribute="bottom" constant="24" id="wzD-JT-7pn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="lgf-oc-m2E" id="jcq-0h-EBB"/>
+                        <outlet property="tableView" destination="TN3-yl-wlP" id="ZgO-sr-0tC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="303"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="lgf-oc-m2E">
+            <size key="intrinsicContentSize" width="327" height="39.220703125"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

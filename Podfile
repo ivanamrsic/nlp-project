@@ -13,5 +13,6 @@ target 'SentimentClassifier' do
   pod 'RxCocoa'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Alamofire'
+  pod 'Kingfisher'
 
 end
