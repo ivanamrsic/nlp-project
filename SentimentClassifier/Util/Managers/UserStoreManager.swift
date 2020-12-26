@@ -10,6 +10,7 @@ import UIKit
 class UserStoreManager {
 
     static let profilePhotoKey = "profilePhoto"
+    static let languageKey = "language"
 }
 
 extension UserStoreManager {
@@ -19,8 +20,16 @@ extension UserStoreManager {
             return UserDefaults.standard.string(forKey:profilePhotoKey)
         }
         set {
-            // Save to UserDefaults
             UserDefaults.standard.set(newValue, forKey: profilePhotoKey)
+        }
+    }
+
+    static var language: Language {
+        get {
+            return Language.get(from: UserDefaults.standard.string(forKey: languageKey) ?? "english")
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue.rawValue, forKey: languageKey)
         }
     }
 }

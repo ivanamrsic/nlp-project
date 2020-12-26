@@ -24,7 +24,7 @@ final class CreateReviewPresenter {
 
     private let disposeBag = DisposeBag()
 
-    // MARK: - Lifecycle -
+    // MARK: - Lifecycle
 
     init(view: CreateReviewViewInterface, interactor: CreateReviewInteractorInterface, wireframe: CreateReviewWireframeInterface) {
         self.view = view
@@ -33,7 +33,7 @@ final class CreateReviewPresenter {
     }
 }
 
-// MARK: - Extensions -
+// MARK: - CreateReviewPresenterInterface -
 
 extension CreateReviewPresenter: CreateReviewPresenterInterface {
 
@@ -43,20 +43,25 @@ extension CreateReviewPresenter: CreateReviewPresenterInterface {
             title: movieRelay.asDriver()
         )
     }
-
 }
+
+// MARK: - Binding setup
+
+private extension CreateReviewPresenter {
+
+    func handle(searchMovie: Signal<Void>) {
+        searchMovie.emit(onNext: { [unowned wireframe, unowned self] in
+                wireframe.searchMovies(delegate: self)
+            })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - SearchResultDelegate
 
 extension CreateReviewPresenter: SearchResultDelegate {
 
     func process(result: SearchResponse.Movie) {
         movieRelay.accept(result.title)
-    }
-}
-
-private extension CreateReviewPresenter {
-
-    func handle(searchMovie: Signal<Void>) {
-        searchMovie.emit(onNext: { [unowned wireframe, unowned self] in wireframe.searchMovies(delegate: self) })
-            .disposed(by: disposeBag)
     }
 }

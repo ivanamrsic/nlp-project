@@ -40,5 +40,4 @@ enum Profile {
         let image: Driver<String?>
         let reviewCount: Driver<Int>
     }
-
 }

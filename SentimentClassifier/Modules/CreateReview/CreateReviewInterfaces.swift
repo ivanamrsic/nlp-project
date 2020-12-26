@@ -36,5 +36,4 @@ enum CreateReview {
     struct ViewInput {
         let title: Driver<String>
     }
-
 }

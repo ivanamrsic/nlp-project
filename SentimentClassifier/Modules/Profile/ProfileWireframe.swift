@@ -14,11 +14,11 @@ import RxCocoa
 
 final class ProfileWireframe: BaseWireframe {
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private let storyboard = UIStoryboard.profile
 
-    // MARK: - Module setup -
+    // MARK: - Module setup
 
     init() {
         let moduleViewController = storyboard.instantiateViewController(ofType: ProfileViewController.self)
@@ -33,7 +33,7 @@ final class ProfileWireframe: BaseWireframe {
 
 }
 
-// MARK: - Extensions -
+// MARK: - ProfileWireframeInterface
 
 extension ProfileWireframe: ProfileWireframeInterface {
 

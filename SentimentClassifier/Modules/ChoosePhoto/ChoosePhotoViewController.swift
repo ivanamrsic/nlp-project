@@ -45,10 +45,12 @@ final class ChoosePhotoViewController: NLPViewController {
 	
 }
 
-// MARK: - Extensions -
+// MARK: - ChoosePhotoViewInterface
 
 extension ChoosePhotoViewController: ChoosePhotoViewInterface {
 }
+
+// MARK: - Configuration
 
 private extension ChoosePhotoViewController {
 
@@ -56,11 +58,11 @@ private extension ChoosePhotoViewController {
         let output = ChoosePhoto.ViewOutput()
 
         let input = presenter.configure(with: output)
-
         handle(items: input.items)
     }
-
 }
+
+// MARK: - UI Setup
 
 private extension ChoosePhotoViewController {
 
@@ -68,6 +70,8 @@ private extension ChoosePhotoViewController {
         titleLabel.text = Strings.choosePhotoTitle
     }
 }
+
+// MARK: - Binding Setup
 
 private extension ChoosePhotoViewController {
 

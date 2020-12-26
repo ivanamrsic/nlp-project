@@ -22,43 +22,47 @@ final class CreateReviewViewController: NLPViewController {
     @IBOutlet private weak var reviewTitleTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var reviewTextView: UITextView!
     @IBOutlet private weak var submitButton: UIButton!
-    @IBOutlet weak var enterReviewLabel: UILabel!
-    
-    // MARK: - Public properties -
+
+    // MARK: - Public properties
 
     var presenter: CreateReviewPresenterInterface!
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private let disposeBag = DisposeBag()
 
-    // MARK: - Lifecycle -
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         setupUI()
     }
-	
 }
 
-// MARK: - Extensions -
+// MARK: - CreateReviewViewInterface
 
 extension CreateReviewViewController: CreateReviewViewInterface {
 }
 
+// MARK: - Configuration
+
 private extension CreateReviewViewController {
 
     func configure() {
+
+        let searchMovieAction = movieTitleTextField.rx.controlEvent(.editingDidBegin)
+
         let output = CreateReview.ViewOutput(
-            searchMovieAction: movieTitleTextField.rx.controlEvent(.editingDidBegin).asSignal()
+            searchMovieAction: searchMovieAction.asSignal()
         )
 
         let input = presenter.configure(with: output)
         handle(title: input.title)
     }
-
 }
+
+// MARK: - UI setup
 
 private extension CreateReviewViewController {
 
@@ -71,6 +75,8 @@ private extension CreateReviewViewController {
         submitButton.setTitle(Strings.createReview, for: .normal)
     }
 }
+
+// MARK: - Binding setup
 
 private extension CreateReviewViewController {
 

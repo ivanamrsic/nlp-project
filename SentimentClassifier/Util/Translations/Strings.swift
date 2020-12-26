@@ -7,14 +7,20 @@
 
 import Foundation
 
-enum Language {
-    case english
-    case croatian
+enum Language: String {
+    case english = "english"
+    case croatian = "croatian"
+
+    static func get(from string: String) -> Language {
+        if string == Language.english.rawValue {
+            return .english
+        }
+
+        return .croatian
+    }
 }
 
 struct Strings {
-
-    static var language: Language?
 
     static var searchForAMovie: String {
         chooseTranslation(eng: "Search for a movie...", cro: "Pretrazite filmove...")
@@ -81,8 +87,7 @@ struct Strings {
     }
 
     private static func chooseTranslation(eng: String, cro: String) -> String {
-        guard let language = language else { return "" }
-        switch language {
+        switch UserStoreManager.language {
         case .english: return eng
         case .croatian: return cro
         }

@@ -9,15 +9,18 @@ import UIKit
 
 struct ReviewTableCellItem {
 
+    // MARK: - Public properties
+
     let review: Review
-    let reviewScore: String
 
-    init(review: Review, reviewScore: String) {
+    // MARK: - Init
+
+    init(review: Review) {
         self.review = review
-        self.reviewScore = reviewScore
     }
-
 }
+
+// MARK: - TableCellItem
 
 extension ReviewTableCellItem: TableCellItem {
 

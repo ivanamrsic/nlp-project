@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class SearchResultTableViewCell: UITableViewCell {
+final class SearchResultTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
 
@@ -17,19 +17,25 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet private weak var yearLabel: UILabel!
     @IBOutlet private weak var typeLabel: UILabel!
 
+    // MARK: - Lifecycle
+
     override func prepareForReuse() {
         super.prepareForReuse()
         posterImageView.image = nil
     }
 }
 
+// MARK: - Configuration
+
 extension SearchResultTableViewCell {
 
     func configure(with item: SearchResultCellItem) {
-        let url = URL(string: item.movie.poster)
-        posterImageView.kf.setImage(with: url, placeholder: UIImage.moviePlaceholder)
         titleLabel.text = item.movie.title
         yearLabel.text = item.movie.year
         typeLabel.text = item.movie.type
+        posterImageView.kf.setImage(
+            with: URL(string: item.movie.poster),
+            placeholder: UIImage.moviePlaceholder
+        )
     }
 }

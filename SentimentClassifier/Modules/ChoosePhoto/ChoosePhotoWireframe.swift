@@ -31,7 +31,7 @@ final class ChoosePhotoWireframe: BaseWireframe {
 
 }
 
-// MARK: - Extensions -
+// MARK: - ChoosePhotoWireframeInterface
 
 extension ChoosePhotoWireframe: ChoosePhotoWireframeInterface {
 

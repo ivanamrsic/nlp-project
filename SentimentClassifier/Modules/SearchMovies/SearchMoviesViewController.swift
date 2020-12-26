@@ -24,11 +24,11 @@ final class SearchMoviesViewController: NLPViewController {
         }
     }
     
-    // MARK: - Public properties -
+    // MARK: - Public properties
 
     var presenter: SearchMoviesPresenterInterface!
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private lazy var dataSourceDelegate: TableDataSourceDelegate = {
         return TableDataSourceDelegate(tableView: self.tableView)
@@ -48,13 +48,14 @@ final class SearchMoviesViewController: NLPViewController {
         super.viewDidAppear(animated)
         inputTextField.becomeFirstResponder()
     }
-	
 }
 
-// MARK: - Extensions -
+// MARK: - SearchMoviesViewInterface
 
 extension SearchMoviesViewController: SearchMoviesViewInterface {
 }
+
+// MARK: - Configuration
 
 private extension SearchMoviesViewController {
 
@@ -66,8 +67,9 @@ private extension SearchMoviesViewController {
         let input = presenter.configure(with: output)
         handle(items: input.items)
     }
-
 }
+
+// MARK: - UI setup
 
 private extension SearchMoviesViewController {
 
@@ -75,6 +77,8 @@ private extension SearchMoviesViewController {
         inputTextField.placeholder = Strings.searchForAMovie
     }
 }
+
+// MARK: - Binding setup
 
 private extension SearchMoviesViewController {
 

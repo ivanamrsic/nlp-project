@@ -14,7 +14,7 @@ import RxCocoa
 
 final class SearchMoviesPresenter {
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private unowned let view: SearchMoviesViewInterface
     private let interactor: SearchMoviesInteractorInterface
@@ -24,7 +24,7 @@ final class SearchMoviesPresenter {
 
     private let disposeBag = DisposeBag()
 
-    // MARK: - Lifecycle -
+    // MARK: - Lifecycle
 
     init(view: SearchMoviesViewInterface, interactor: SearchMoviesInteractorInterface, wireframe: SearchMoviesWireframeInterface, delegate: SearchResultDelegate) {
         self.view = view
@@ -34,7 +34,7 @@ final class SearchMoviesPresenter {
     }
 }
 
-// MARK: - Extensions -
+// MARK: - SearchMoviesPresenterInterface -
 
 extension SearchMoviesPresenter: SearchMoviesPresenterInterface {
 
@@ -44,28 +44,35 @@ extension SearchMoviesPresenter: SearchMoviesPresenterInterface {
             items: items
         )
     }
-
 }
+
+// MARK: - Binding setup
 
 private extension SearchMoviesPresenter {
 
     func handle(inputText: Driver<String?>) -> Driver<[TableCellItem]> {
-
-        let toCells: (SearchResponse) -> [TableCellItem] = { [unowned self] in
-            $0.search.map { [unowned self] movie in
-                let didSelect: () -> Void = { [unowned self] in
-                    self.delegate.process(result: movie)
-                    self.wireframe.dismiss()
-                }
-                return SearchResultCellItem(movie: movie, didSelect: didSelect)
-            }
-        }
-
         return inputText.compactMap { $0 }
-            .filter { $0.count > 0 }
+            .filter { $0.count > 1 }
             .distinctUntilChanged()
             .debounce(.milliseconds(500))
-            .flatMap { [unowned interactor] in interactor.search(input: $0).asDriver(onErrorDriveWith: .empty()) }
-            .map(toCells)
+            .flatMap { [unowned interactor] in
+                interactor.search(input: $0).asDriver(onErrorDriveWith: .empty())
+            }
+            .map { [unowned self] in self.createCellItems(from: $0.search) }
+    }
+}
+
+// MARK: - Items creation
+
+private extension SearchMoviesPresenter {
+
+    func createCellItems(from movies: [SearchResponse.Movie]) -> [TableCellItem] {
+        movies.map { [unowned self] movie in
+            let didSelect: () -> Void = { [unowned self] in
+                self.delegate.process(result: movie)
+                self.wireframe.dismiss()
+            }
+            return SearchResultCellItem(movie: movie, didSelect: didSelect)
+        }
     }
 }

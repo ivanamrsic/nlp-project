@@ -9,8 +9,15 @@ import UIKit
 
 struct SearchResultCellItem {
 
+    // MARK: - Public properties
+
     let movie: SearchResponse.Movie
+
+    // MARK: - Private properties
+
     private let didSelect: (() -> Void)?
+
+    // MARK: - Init
 
     init(
         movie: SearchResponse.Movie, didSelect: (() -> Void)? = nil) {
@@ -18,6 +25,8 @@ struct SearchResultCellItem {
         self.didSelect = didSelect
     }
 }
+
+// MARK: - TableCellItem
 
 extension SearchResultCellItem: TableCellItem {
 

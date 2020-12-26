@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewTableViewCell: UITableViewCell {
+final class ReviewTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
 
@@ -16,9 +16,11 @@ class ReviewTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
 
-    @IBOutlet weak var reviewTextLabel: UILabel!
+    @IBOutlet private weak var reviewTextLabel: UILabel!
     
     @IBOutlet private weak var sentimentResultLabel: UILabel!
+
+    // MARK: - Lifecycle
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -30,12 +32,16 @@ class ReviewTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: - Configuration
+
 extension ReviewTableViewCell {
 
     func configure(with item: ReviewTableCellItem) {
         setupUI(with: item)
     }
 }
+
+// MARK: - UI Setup
 
 private extension ReviewTableViewCell {
 
@@ -44,6 +50,6 @@ private extension ReviewTableViewCell {
         titleLabel.text = item.review.title
         dateLabel.text = item.review.date
         reviewTextLabel.text = item.review.text
-        sentimentResultLabel.text = item.reviewScore
+        sentimentResultLabel.text = item.review.reviewScore
     }
 }

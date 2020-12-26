@@ -16,7 +16,7 @@ import Alamofire
 final class SearchMoviesInteractor {
 }
 
-// MARK: - Extensions -
+// MARK: - SearchMoviesInteractorInterface
 
 extension SearchMoviesInteractor: SearchMoviesInteractorInterface {
 
@@ -25,11 +25,7 @@ extension SearchMoviesInteractor: SearchMoviesInteractorInterface {
 
             let url = "https://www.omdbapi.com/?apiKey=\(Constants.apiKey)&s=\(input.replacingOccurrences(of: " ", with: "-"))"
 
-            let request = AF.request(
-                url,
-                method: .post,
-                encoding: JSONEncoding.default
-            )
+            let request = AF.request(url, method: .post, encoding: JSONEncoding.default)
 
             request
                 .validate()
@@ -47,5 +43,4 @@ extension SearchMoviesInteractor: SearchMoviesInteractorInterface {
             }
         }
     }
-
 }

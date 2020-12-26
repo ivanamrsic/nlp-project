@@ -57,10 +57,12 @@ final class ProfileViewController: NLPViewController {
     }
 }
 
-// MARK: - Extensions -
+// MARK: - ProfileViewInterface
 
 extension ProfileViewController: ProfileViewInterface {
 }
+
+// MARK: - Configuration
 
 private extension ProfileViewController {
 
@@ -77,8 +79,9 @@ private extension ProfileViewController {
         handle(image: input.image)
         handle(reviewCount: input.reviewCount)
     }
-
 }
+
+// MARK: - UI Setup
 
 private extension ProfileViewController {
 
@@ -90,6 +93,8 @@ private extension ProfileViewController {
     }
 }
 
+// MARK: - Binding Setup
+
 private extension ProfileViewController {
 
     func handle(items: Driver<[TableCellItem]>) {
@@ -99,13 +104,14 @@ private extension ProfileViewController {
     }
 
     func handle(image: Driver<String?>) {
-        image.drive(onNext: { [unowned choosePhotoButton] in
-            guard let imageName = $0 else { return }
-            let image = UIImage(named: imageName)?
-                    .withRenderingMode(.alwaysOriginal)
 
-                choosePhotoButton?.setImage(image, for: .normal)
-            })
+        let setImage: (String?) -> Void = { [unowned choosePhotoButton] in
+            guard let imageName = $0 else { return }
+            let image = UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal)
+            choosePhotoButton?.setImage(image, for: .normal)
+        }
+
+        image.drive(onNext: setImage)
             .disposed(by: disposeBag)
     }
 

@@ -15,7 +15,7 @@ final class ChoosePhotoInteractor {
 
 }
 
-// MARK: - ChoosePhotoInteractorInterface -
+// MARK: - ChoosePhotoInteractorInterface
 
 extension ChoosePhotoInteractor: ChoosePhotoInteractorInterface {
 

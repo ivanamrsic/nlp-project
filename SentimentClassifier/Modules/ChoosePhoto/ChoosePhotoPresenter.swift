@@ -14,13 +14,13 @@ import RxCocoa
 
 final class ChoosePhotoPresenter {
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private unowned let view: ChoosePhotoViewInterface
     private let interactor: ChoosePhotoInteractorInterface
     private let wireframe: ChoosePhotoWireframeInterface
 
-    // MARK: - Lifecycle -
+    // MARK: - Lifecycle
 
     init(view: ChoosePhotoViewInterface, interactor: ChoosePhotoInteractorInterface, wireframe: ChoosePhotoWireframeInterface) {
         self.view = view
@@ -29,7 +29,7 @@ final class ChoosePhotoPresenter {
     }
 }
 
-// MARK: - Extensions -
+// MARK: - ChoosePhotoPresenterInterface
 
 extension ChoosePhotoPresenter: ChoosePhotoPresenterInterface {
 
@@ -38,8 +38,9 @@ extension ChoosePhotoPresenter: ChoosePhotoPresenterInterface {
             items: .just(createItems())
         )
     }
-
 }
+
+// MARK: - Items creation
 
 private extension ChoosePhotoPresenter {
 

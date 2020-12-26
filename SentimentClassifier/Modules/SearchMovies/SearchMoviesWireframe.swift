@@ -31,7 +31,7 @@ final class SearchMoviesWireframe: BaseWireframe {
 
 }
 
-// MARK: - Extensions -
+// MARK: - SearchMoviesWireframeInterface -
 
 extension SearchMoviesWireframe: SearchMoviesWireframeInterface {
 

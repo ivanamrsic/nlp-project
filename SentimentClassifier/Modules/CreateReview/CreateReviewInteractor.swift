@@ -14,7 +14,7 @@ import RxSwift
 final class CreateReviewInteractor {
 }
 
-// MARK: - Extensions -
+// MARK: - CreateReviewInteractorInterface
 
 extension CreateReviewInteractor: CreateReviewInteractorInterface {
 }
