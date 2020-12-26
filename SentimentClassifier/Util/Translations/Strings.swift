@@ -36,6 +36,10 @@ struct Strings {
         chooseTranslation(eng: "Rating", cro: "Ocjena")
     }
 
+    static var createReviewTitle: String {
+        chooseTranslation(eng: "Create review", cro: "Stvori recenziju")
+    }
+
     static var choosePhotoTitle: String {
         chooseTranslation(eng: "Choose profile photo", cro: "Odaberi sliku profila")
     }

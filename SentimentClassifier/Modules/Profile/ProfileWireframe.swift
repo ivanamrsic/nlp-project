@@ -41,4 +41,7 @@ extension ProfileWireframe: ProfileWireframeInterface {
         navigationController?.presentWireframe(ChoosePhotoWireframe())
     }
 
+    func openCreateReview() {
+        navigationController?.presentWireframe(CreateReviewWireframe())
+    }
 }

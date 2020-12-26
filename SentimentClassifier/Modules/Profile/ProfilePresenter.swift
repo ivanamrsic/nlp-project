@@ -36,7 +36,8 @@ final class ProfilePresenter {
 extension ProfilePresenter: ProfilePresenterInterface {
 
     func configure(with output: Profile.ViewOutput) -> Profile.ViewInput {
-        handle(choosePhotoAction: output.choosePhotoAction)
+        handle(choosePhoto: output.choosePhotoAction)
+        handle(createReview: output.createReviewAction)
 
         let items = createItems()
 
@@ -51,8 +52,13 @@ extension ProfilePresenter: ProfilePresenterInterface {
 
 private extension ProfilePresenter {
 
-    func handle(choosePhotoAction: Signal<Void>) {
-        choosePhotoAction.emit(onNext: { [unowned wireframe] in wireframe.openChoosePhoto() })
+    func handle(choosePhoto: Signal<Void>) {
+        choosePhoto.emit(onNext: { [unowned wireframe] in wireframe.openChoosePhoto() })
+            .disposed(by: disposeBag)
+    }
+
+    func handle(createReview: Signal<Void>) {
+        createReview.emit(onNext: { [unowned wireframe] in wireframe.openCreateReview() })
             .disposed(by: disposeBag)
     }
 }

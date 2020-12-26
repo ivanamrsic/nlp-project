@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A81FB3F72566BDAA00919B9E /* NLPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81FB3F62566BDAA00919B9E /* NLPViewController.swift */; };
+		A84ABA1B2597812000358042 /* CreateReview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A84ABA152597812000358042 /* CreateReview.storyboard */; };
+		A84ABA1C2597812000358042 /* CreateReviewInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA162597812000358042 /* CreateReviewInterfaces.swift */; };
+		A84ABA1D2597812000358042 /* CreateReviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA172597812000358042 /* CreateReviewPresenter.swift */; };
+		A84ABA1E2597812000358042 /* CreateReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA182597812000358042 /* CreateReviewViewController.swift */; };
+		A84ABA1F2597812000358042 /* CreateReviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA192597812000358042 /* CreateReviewInteractor.swift */; };
+		A84ABA202597812000358042 /* CreateReviewWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA1A2597812000358042 /* CreateReviewWireframe.swift */; };
 		A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC15256694BA0052438B /* UIImageExtensions.swift */; };
 		A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */; };
 		A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */; };
@@ -80,6 +86,12 @@
 		6FB5546806FF6709B60E97BB /* Pods-nlp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nlp.release.xcconfig"; path = "Target Support Files/Pods-nlp/Pods-nlp.release.xcconfig"; sourceTree = "<group>"; };
 		A7D4C26C7E1B7C1AB43B8CA6 /* Pods-nlp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nlp.debug.xcconfig"; path = "Target Support Files/Pods-nlp/Pods-nlp.debug.xcconfig"; sourceTree = "<group>"; };
 		A81FB3F62566BDAA00919B9E /* NLPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPViewController.swift; sourceTree = "<group>"; };
+		A84ABA152597812000358042 /* CreateReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateReview.storyboard; sourceTree = "<group>"; };
+		A84ABA162597812000358042 /* CreateReviewInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewInterfaces.swift; sourceTree = "<group>"; };
+		A84ABA172597812000358042 /* CreateReviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewPresenter.swift; sourceTree = "<group>"; };
+		A84ABA182597812000358042 /* CreateReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewViewController.swift; sourceTree = "<group>"; };
+		A84ABA192597812000358042 /* CreateReviewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewInteractor.swift; sourceTree = "<group>"; };
+		A84ABA1A2597812000358042 /* CreateReviewWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewWireframe.swift; sourceTree = "<group>"; };
 		A8C1DC15256694BA0052438B /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentClassifierMac.mlmodel; sourceTree = "<group>"; };
@@ -188,6 +200,19 @@
 				A81FB3F62566BDAA00919B9E /* NLPViewController.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A84ABA142597811100358042 /* CreateReview */ = {
+			isa = PBXGroup;
+			children = (
+				A84ABA152597812000358042 /* CreateReview.storyboard */,
+				A84ABA162597812000358042 /* CreateReviewInterfaces.swift */,
+				A84ABA172597812000358042 /* CreateReviewPresenter.swift */,
+				A84ABA182597812000358042 /* CreateReviewViewController.swift */,
+				A84ABA192597812000358042 /* CreateReviewInteractor.swift */,
+				A84ABA1A2597812000358042 /* CreateReviewWireframe.swift */,
+			);
+			path = CreateReview;
 			sourceTree = "<group>";
 		};
 		A8C1DC102566941B0052438B /* Util */ = {
@@ -299,6 +324,7 @@
 		A8D50FC225668E70009B2E50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A84ABA142597811100358042 /* CreateReview */,
 				A8F2CF9A259763CD00040ABF /* ChoosePhoto */,
 				A8F2CF5B25973E3500040ABF /* Profile */,
 				A8D1889C258B593D008670B6 /* Classifier */,
@@ -486,6 +512,7 @@
 			files = (
 				A8F2CFA1259763E800040ABF /* ChoosePhoto.storyboard in Resources */,
 				A8F2CF6225973E4B00040ABF /* Profile.storyboard in Resources */,
+				A84ABA1B2597812000358042 /* CreateReview.storyboard in Resources */,
 				A8D50F8725659275009B2E50 /* LaunchScreen.storyboard in Resources */,
 				A8D50F8425659275009B2E50 /* Assets.xcassets in Resources */,
 				A8F2CF742597504200040ABF /* ReviewTableViewCell.xib in Resources */,
@@ -547,6 +574,7 @@
 			files = (
 				A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */,
 				A8D188AB258B5F28008670B6 /* ClassifierModel.swift in Sources */,
+				A84ABA1D2597812000358042 /* CreateReviewPresenter.swift in Sources */,
 				A8D50FCD25668F01009B2E50 /* LanguagesPresenter.swift in Sources */,
 				A8D50F9E256593FC009B2E50 /* InteractorInterface.swift in Sources */,
 				A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */,
@@ -568,6 +596,7 @@
 				A8D188A4258B5954008670B6 /* ClassifierInterfaces.swift in Sources */,
 				A8F2CF6F2597502B00040ABF /* ReviewTableCellItem.swift in Sources */,
 				A8D50FBB25659484009B2E50 /* HomePresenter.swift in Sources */,
+				A84ABA1F2597812000358042 /* CreateReviewInteractor.swift in Sources */,
 				A8F2CF6B2597487500040ABF /* Strings.swift in Sources */,
 				A8F2CF6525973E4B00040ABF /* ProfileViewController.swift in Sources */,
 				A8D188A5258B5954008670B6 /* ClassifierPresenter.swift in Sources */,
@@ -577,6 +606,8 @@
 				A8F2CFBB25976FFA00040ABF /* Storage.swift in Sources */,
 				A8D188A7258B5954008670B6 /* ClassifierInteractor.swift in Sources */,
 				A8D188A6258B5954008670B6 /* ClassifierViewController.swift in Sources */,
+				A84ABA1E2597812000358042 /* CreateReviewViewController.swift in Sources */,
+				A84ABA1C2597812000358042 /* CreateReviewInterfaces.swift in Sources */,
 				A8F2CF782597510100040ABF /* CellItem.swift in Sources */,
 				A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */,
 				A8D50FA1256593FC009B2E50 /* ViewInterface.swift in Sources */,
@@ -594,6 +625,7 @@
 				A8F2CF8E259751C500040ABF /* Reloader.swift in Sources */,
 				A8D188AE258B5F82008670B6 /* ClassifierResultScale.swift in Sources */,
 				A8D50FBC25659484009B2E50 /* HomeViewController.swift in Sources */,
+				A84ABA202597812000358042 /* CreateReviewWireframe.swift in Sources */,
 				A8D50FBA25659484009B2E50 /* HomeInterfaces.swift in Sources */,
 				A8D50F9C256593FC009B2E50 /* UIStoryboardExtension.swift in Sources */,
 				A8D50FCC25668F01009B2E50 /* LanguagesInterfaces.swift in Sources */,

@@ -28,7 +28,7 @@ final class ProfileViewController: NLPViewController {
     @IBOutlet private weak var ratingsCountLabel: UILabel!
 
     @IBOutlet private weak var ratingsSectionLabel: UILabel!
-    @IBOutlet private weak var addRatingButton: UIButton!
+    @IBOutlet private weak var createReviewButton: UIButton!
     
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
@@ -67,7 +67,8 @@ private extension ProfileViewController {
     func configure() {
 
         let output = Profile.ViewOutput(
-            choosePhotoAction: choosePhotoButton.rx.tap.asSignal()
+            choosePhotoAction: choosePhotoButton.rx.tap.asSignal(),
+            createReviewAction: createReviewButton.rx.tap.asSignal()
         )
 
         let input = presenter.configure(with: output)
