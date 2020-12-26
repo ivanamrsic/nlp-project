@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:SentimentClassifier.xcodeproj">
+      location = "group:SentimentClassifier.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SentimentClassifierMac.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

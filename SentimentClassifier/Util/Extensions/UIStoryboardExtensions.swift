@@ -20,4 +20,8 @@ extension UIStoryboard {
     static var classifier: UIStoryboard {
         return UIStoryboard(name: "Classifier", bundle: nil)
     }
+
+    static var profile: UIStoryboard {
+        return UIStoryboard(name: "Profile", bundle: nil)
+    }
 }

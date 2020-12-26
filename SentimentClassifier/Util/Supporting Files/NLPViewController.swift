@@ -15,6 +15,7 @@ class NLPViewController: UIViewController {
 enum TabBarProperty {
     case languages
     case classifier
+    case profile
     
     var item: UITabBarItem {
         switch self {
@@ -29,6 +30,12 @@ enum TabBarProperty {
                 title: "Classifier",
                 image: UIImage.TabBar.classifier,
                 selectedImage: UIImage.TabBar.classifier
+            )
+        case .profile:
+            return UITabBarItem(
+                title: "Profile",
+                image: UIImage.TabBar.user,
+                selectedImage: UIImage.TabBar.user
             )
         }
     }

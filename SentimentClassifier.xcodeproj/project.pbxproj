@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B6B9D8BC07FD4FA1835D793 /* Pods_nlp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FC309A7BD3E4041F44B03A /* Pods_nlp.framework */; };
 		A81FB3F72566BDAA00919B9E /* NLPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81FB3F62566BDAA00919B9E /* NLPViewController.swift */; };
 		A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC15256694BA0052438B /* UIImageExtensions.swift */; };
 		A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */; };
@@ -18,7 +17,7 @@
 		A8D188A6258B5954008670B6 /* ClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188A0258B5954008670B6 /* ClassifierViewController.swift */; };
 		A8D188A7258B5954008670B6 /* ClassifierInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188A1258B5954008670B6 /* ClassifierInteractor.swift */; };
 		A8D188A8258B5954008670B6 /* ClassifierWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188A2258B5954008670B6 /* ClassifierWireframe.swift */; };
-		A8D188AB258B5F28008670B6 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188AA258B5F28008670B6 /* Classifier.swift */; };
+		A8D188AB258B5F28008670B6 /* ClassifierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188AA258B5F28008670B6 /* ClassifierModel.swift */; };
 		A8D188AE258B5F82008670B6 /* ClassifierResultScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188AD258B5F82008670B6 /* ClassifierResultScale.swift */; };
 		A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F7A25659272009B2E50 /* AppDelegate.swift */; };
 		A8D50F7D25659272009B2E50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F7C25659272009B2E50 /* SceneDelegate.swift */; };
@@ -41,10 +40,31 @@
 		A8D50FCE25668F01009B2E50 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50FC825668F01009B2E50 /* LanguagesViewController.swift */; };
 		A8D50FCF25668F01009B2E50 /* LanguagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50FC925668F01009B2E50 /* LanguagesInteractor.swift */; };
 		A8D50FD025668F01009B2E50 /* LanguagesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50FCA25668F01009B2E50 /* LanguagesWireframe.swift */; };
+		A8F2CF6225973E4B00040ABF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F2CF5C25973E4B00040ABF /* Profile.storyboard */; };
+		A8F2CF6325973E4B00040ABF /* ProfileInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF5D25973E4B00040ABF /* ProfileInterfaces.swift */; };
+		A8F2CF6425973E4B00040ABF /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF5E25973E4B00040ABF /* ProfilePresenter.swift */; };
+		A8F2CF6525973E4B00040ABF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF5F25973E4B00040ABF /* ProfileViewController.swift */; };
+		A8F2CF6625973E4B00040ABF /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF6025973E4B00040ABF /* ProfileInteractor.swift */; };
+		A8F2CF6725973E4B00040ABF /* ProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF6125973E4B00040ABF /* ProfileWireframe.swift */; };
+		A8F2CF6B2597487500040ABF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF6A2597487500040ABF /* Strings.swift */; };
+		A8F2CF6F2597502B00040ABF /* ReviewTableCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF6E2597502B00040ABF /* ReviewTableCellItem.swift */; };
+		A8F2CF732597504200040ABF /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF712597504200040ABF /* ReviewTableViewCell.swift */; };
+		A8F2CF742597504200040ABF /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F2CF722597504200040ABF /* ReviewTableViewCell.xib */; };
+		A8F2CF782597510100040ABF /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF772597510100040ABF /* CellItem.swift */; };
+		A8F2CF7C2597511C00040ABF /* SectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF7B2597511C00040ABF /* SectionItem.swift */; };
+		A8F2CF7F2597513300040ABF /* Rx+DataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF7E2597513300040ABF /* Rx+DataSourceDelegate.swift */; };
+		A8F2CF822597515700040ABF /* BlankTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF812597515700040ABF /* BlankTableSection.swift */; };
+		A8F2CF852597517200040ABF /* TableCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF842597517200040ABF /* TableCellItem.swift */; };
+		A8F2CF882597518C00040ABF /* TableDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF872597518C00040ABF /* TableDataSourceDelegate.swift */; };
+		A8F2CF8B259751A300040ABF /* TableSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF8A259751A300040ABF /* TableSectionItem.swift */; };
+		A8F2CF8E259751C500040ABF /* Reloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF8D259751C500040ABF /* Reloader.swift */; };
+		A8F2CF91259753E900040ABF /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF90259753E900040ABF /* UITableViewExtensions.swift */; };
+		A8F2CF962597557800040ABF /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF952597557800040ABF /* Review.swift */; };
+		E074FAA9EE8CE1B4CC8D15EA /* Pods_SentimentClassifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65A7EFFE965E41BBC2CB9F8 /* Pods_SentimentClassifier.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		56FC309A7BD3E4041F44B03A /* Pods_nlp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nlp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		205D0E886FDAC4496083519B /* Pods-SentimentClassifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentimentClassifier.release.xcconfig"; path = "Target Support Files/Pods-SentimentClassifier/Pods-SentimentClassifier.release.xcconfig"; sourceTree = "<group>"; };
 		6FB5546806FF6709B60E97BB /* Pods-nlp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nlp.release.xcconfig"; path = "Target Support Files/Pods-nlp/Pods-nlp.release.xcconfig"; sourceTree = "<group>"; };
 		A7D4C26C7E1B7C1AB43B8CA6 /* Pods-nlp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nlp.debug.xcconfig"; path = "Target Support Files/Pods-nlp/Pods-nlp.debug.xcconfig"; sourceTree = "<group>"; };
 		A81FB3F62566BDAA00919B9E /* NLPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +77,7 @@
 		A8D188A0258B5954008670B6 /* ClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierViewController.swift; sourceTree = "<group>"; };
 		A8D188A1258B5954008670B6 /* ClassifierInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierInteractor.swift; sourceTree = "<group>"; };
 		A8D188A2258B5954008670B6 /* ClassifierWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierWireframe.swift; sourceTree = "<group>"; };
-		A8D188AA258B5F28008670B6 /* Classifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		A8D188AA258B5F28008670B6 /* ClassifierModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierModel.swift; sourceTree = "<group>"; };
 		A8D188AD258B5F82008670B6 /* ClassifierResultScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierResultScale.swift; sourceTree = "<group>"; };
 		A8D50F7725659272009B2E50 /* SentimentClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentimentClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D50F7A25659272009B2E50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +102,28 @@
 		A8D50FC825668F01009B2E50 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
 		A8D50FC925668F01009B2E50 /* LanguagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesInteractor.swift; sourceTree = "<group>"; };
 		A8D50FCA25668F01009B2E50 /* LanguagesWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesWireframe.swift; sourceTree = "<group>"; };
+		A8F2CF5C25973E4B00040ABF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		A8F2CF5D25973E4B00040ABF /* ProfileInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterfaces.swift; sourceTree = "<group>"; };
+		A8F2CF5E25973E4B00040ABF /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		A8F2CF5F25973E4B00040ABF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A8F2CF6025973E4B00040ABF /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		A8F2CF6125973E4B00040ABF /* ProfileWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWireframe.swift; sourceTree = "<group>"; };
+		A8F2CF6A2597487500040ABF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		A8F2CF6E2597502B00040ABF /* ReviewTableCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableCellItem.swift; sourceTree = "<group>"; };
+		A8F2CF712597504200040ABF /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		A8F2CF722597504200040ABF /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
+		A8F2CF772597510100040ABF /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
+		A8F2CF7B2597511C00040ABF /* SectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
+		A8F2CF7E2597513300040ABF /* Rx+DataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+DataSourceDelegate.swift"; sourceTree = "<group>"; };
+		A8F2CF812597515700040ABF /* BlankTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankTableSection.swift; sourceTree = "<group>"; };
+		A8F2CF842597517200040ABF /* TableCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellItem.swift; sourceTree = "<group>"; };
+		A8F2CF872597518C00040ABF /* TableDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSourceDelegate.swift; sourceTree = "<group>"; };
+		A8F2CF8A259751A300040ABF /* TableSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionItem.swift; sourceTree = "<group>"; };
+		A8F2CF8D259751C500040ABF /* Reloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reloader.swift; sourceTree = "<group>"; };
+		A8F2CF90259753E900040ABF /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		A8F2CF952597557800040ABF /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		EEAA52DE30A97BFB053C1F9E /* Pods-SentimentClassifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentimentClassifier.debug.xcconfig"; path = "Target Support Files/Pods-SentimentClassifier/Pods-SentimentClassifier.debug.xcconfig"; sourceTree = "<group>"; };
+		F65A7EFFE965E41BBC2CB9F8 /* Pods_SentimentClassifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SentimentClassifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B6B9D8BC07FD4FA1835D793 /* Pods_nlp.framework in Frameworks */,
+				E074FAA9EE8CE1B4CC8D15EA /* Pods_SentimentClassifier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +143,8 @@
 			children = (
 				A7D4C26C7E1B7C1AB43B8CA6 /* Pods-nlp.debug.xcconfig */,
 				6FB5546806FF6709B60E97BB /* Pods-nlp.release.xcconfig */,
+				EEAA52DE30A97BFB053C1F9E /* Pods-SentimentClassifier.debug.xcconfig */,
+				205D0E886FDAC4496083519B /* Pods-SentimentClassifier.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -108,7 +152,7 @@
 		111FF7ABD80E76496C3AED31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				56FC309A7BD3E4041F44B03A /* Pods_nlp.framework */,
+				F65A7EFFE965E41BBC2CB9F8 /* Pods_SentimentClassifier.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,6 +168,9 @@
 		A8C1DC102566941B0052438B /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A8F2CF932597556A00040ABF /* Networking */,
+				A8F2CF76259750ED00040ABF /* DataSourceDelegate */,
+				A8F2CF692597486400040ABF /* Translations */,
 				A8D18898258B577C008670B6 /* Classifier */,
 				A81FB3F52566BD9000919B9E /* Supporting Files */,
 				A8C1DC11256694200052438B /* Extensions */,
@@ -136,6 +183,7 @@
 			children = (
 				A8C1DC15256694BA0052438B /* UIImageExtensions.swift */,
 				A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */,
+				A8F2CF90259753E900040ABF /* UITableViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,7 +191,7 @@
 		A8D18898258B577C008670B6 /* Classifier */ = {
 			isa = PBXGroup;
 			children = (
-				A8D188AA258B5F28008670B6 /* Classifier.swift */,
+				A8D188AA258B5F28008670B6 /* ClassifierModel.swift */,
 				A8D188AD258B5F82008670B6 /* ClassifierResultScale.swift */,
 				A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */,
 			);
@@ -225,6 +273,7 @@
 		A8D50FC225668E70009B2E50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A8F2CF5B25973E3500040ABF /* Profile */,
 				A8D1889C258B593D008670B6 /* Classifier */,
 				A8D50FC425668EE9009B2E50 /* Languages */,
 				A8D50FB225659476009B2E50 /* Home */,
@@ -243,6 +292,69 @@
 				A8D50FCA25668F01009B2E50 /* LanguagesWireframe.swift */,
 			);
 			path = Languages;
+			sourceTree = "<group>";
+		};
+		A8F2CF5B25973E3500040ABF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2CF6D2597501900040ABF /* ReviewCell */,
+				A8F2CF5C25973E4B00040ABF /* Profile.storyboard */,
+				A8F2CF5D25973E4B00040ABF /* ProfileInterfaces.swift */,
+				A8F2CF5E25973E4B00040ABF /* ProfilePresenter.swift */,
+				A8F2CF5F25973E4B00040ABF /* ProfileViewController.swift */,
+				A8F2CF6025973E4B00040ABF /* ProfileInteractor.swift */,
+				A8F2CF6125973E4B00040ABF /* ProfileWireframe.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A8F2CF692597486400040ABF /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2CF6A2597487500040ABF /* Strings.swift */,
+			);
+			path = Translations;
+			sourceTree = "<group>";
+		};
+		A8F2CF6D2597501900040ABF /* ReviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2CF6E2597502B00040ABF /* ReviewTableCellItem.swift */,
+				A8F2CF712597504200040ABF /* ReviewTableViewCell.swift */,
+				A8F2CF722597504200040ABF /* ReviewTableViewCell.xib */,
+			);
+			path = ReviewCell;
+			sourceTree = "<group>";
+		};
+		A8F2CF76259750ED00040ABF /* DataSourceDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2CF772597510100040ABF /* CellItem.swift */,
+				A8F2CF7B2597511C00040ABF /* SectionItem.swift */,
+				A8F2CF7E2597513300040ABF /* Rx+DataSourceDelegate.swift */,
+				A8F2CF812597515700040ABF /* BlankTableSection.swift */,
+				A8F2CF842597517200040ABF /* TableCellItem.swift */,
+				A8F2CF872597518C00040ABF /* TableDataSourceDelegate.swift */,
+				A8F2CF8A259751A300040ABF /* TableSectionItem.swift */,
+				A8F2CF8D259751C500040ABF /* Reloader.swift */,
+			);
+			path = DataSourceDelegate;
+			sourceTree = "<group>";
+		};
+		A8F2CF932597556A00040ABF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2CF942597557000040ABF /* Models */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A8F2CF942597557000040ABF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2CF952597557800040ABF /* Review.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A8FF0A41256D70E4006AFBB1 /* Resources */ = {
@@ -312,8 +424,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F2CF6225973E4B00040ABF /* Profile.storyboard in Resources */,
 				A8D50F8725659275009B2E50 /* LaunchScreen.storyboard in Resources */,
 				A8D50F8425659275009B2E50 /* Assets.xcassets in Resources */,
+				A8F2CF742597504200040ABF /* ReviewTableViewCell.xib in Resources */,
 				A8D188A3258B5954008670B6 /* Classifier.storyboard in Resources */,
 				A8D50FCB25668F01009B2E50 /* Languages.storyboard in Resources */,
 				A8D50FB925659484009B2E50 /* Home.storyboard in Resources */,
@@ -338,7 +452,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-nlp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SentimentClassifier-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -351,15 +465,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nlp/Pods-nlp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SentimentClassifier/Pods-SentimentClassifier-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nlp/Pods-nlp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SentimentClassifier/Pods-SentimentClassifier-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nlp/Pods-nlp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SentimentClassifier/Pods-SentimentClassifier-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -370,32 +484,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */,
-				A8D188AB258B5F28008670B6 /* Classifier.swift in Sources */,
+				A8D188AB258B5F28008670B6 /* ClassifierModel.swift in Sources */,
 				A8D50FCD25668F01009B2E50 /* LanguagesPresenter.swift in Sources */,
 				A8D50F9E256593FC009B2E50 /* InteractorInterface.swift in Sources */,
 				A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */,
 				A8D50F9D256593FC009B2E50 /* BaseWireframe.swift in Sources */,
 				A8D50FBD25659484009B2E50 /* HomeInteractor.swift in Sources */,
+				A8F2CF962597557800040ABF /* Review.swift in Sources */,
+				A8F2CF7F2597513300040ABF /* Rx+DataSourceDelegate.swift in Sources */,
 				A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */,
+				A8F2CF7C2597511C00040ABF /* SectionItem.swift in Sources */,
+				A8F2CF882597518C00040ABF /* TableDataSourceDelegate.swift in Sources */,
+				A8F2CF6425973E4B00040ABF /* ProfilePresenter.swift in Sources */,
+				A8F2CF852597517200040ABF /* TableCellItem.swift in Sources */,
+				A8F2CF8B259751A300040ABF /* TableSectionItem.swift in Sources */,
 				A8D50FBE25659484009B2E50 /* HomeWireframe.swift in Sources */,
 				A8D188A4258B5954008670B6 /* ClassifierInterfaces.swift in Sources */,
+				A8F2CF6F2597502B00040ABF /* ReviewTableCellItem.swift in Sources */,
 				A8D50FBB25659484009B2E50 /* HomePresenter.swift in Sources */,
+				A8F2CF6B2597487500040ABF /* Strings.swift in Sources */,
+				A8F2CF6525973E4B00040ABF /* ProfileViewController.swift in Sources */,
 				A8D188A5258B5954008670B6 /* ClassifierPresenter.swift in Sources */,
 				A81FB3F72566BDAA00919B9E /* NLPViewController.swift in Sources */,
 				A8D50FCF25668F01009B2E50 /* LanguagesInteractor.swift in Sources */,
 				A8D188A7258B5954008670B6 /* ClassifierInteractor.swift in Sources */,
 				A8D188A6258B5954008670B6 /* ClassifierViewController.swift in Sources */,
+				A8F2CF782597510100040ABF /* CellItem.swift in Sources */,
 				A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */,
 				A8D50FA1256593FC009B2E50 /* ViewInterface.swift in Sources */,
 				A8D50FD025668F01009B2E50 /* LanguagesWireframe.swift in Sources */,
 				A8D50FCE25668F01009B2E50 /* LanguagesViewController.swift in Sources */,
+				A8F2CF91259753E900040ABF /* UITableViewExtensions.swift in Sources */,
 				A8D188A8258B5954008670B6 /* ClassifierWireframe.swift in Sources */,
+				A8F2CF732597504200040ABF /* ReviewTableViewCell.swift in Sources */,
 				A8D50FA0256593FC009B2E50 /* PresenterInterface.swift in Sources */,
+				A8F2CF6725973E4B00040ABF /* ProfileWireframe.swift in Sources */,
+				A8F2CF822597515700040ABF /* BlankTableSection.swift in Sources */,
+				A8F2CF8E259751C500040ABF /* Reloader.swift in Sources */,
 				A8D188AE258B5F82008670B6 /* ClassifierResultScale.swift in Sources */,
 				A8D50FBC25659484009B2E50 /* HomeViewController.swift in Sources */,
 				A8D50FBA25659484009B2E50 /* HomeInterfaces.swift in Sources */,
 				A8D50F9C256593FC009B2E50 /* UIStoryboardExtension.swift in Sources */,
 				A8D50FCC25668F01009B2E50 /* LanguagesInterfaces.swift in Sources */,
+				A8F2CF6325973E4B00040ABF /* ProfileInterfaces.swift in Sources */,
+				A8F2CF6625973E4B00040ABF /* ProfileInteractor.swift in Sources */,
 				A8D50F7D25659272009B2E50 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,7 +664,7 @@
 		};
 		A8D50F8C25659275009B2E50 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7D4C26C7E1B7C1AB43B8CA6 /* Pods-nlp.debug.xcconfig */;
+			baseConfigurationReference = EEAA52DE30A97BFB053C1F9E /* Pods-SentimentClassifier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -552,7 +684,7 @@
 		};
 		A8D50F8D25659275009B2E50 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FB5546806FF6709B60E97BB /* Pods-nlp.release.xcconfig */;
+			baseConfigurationReference = 205D0E886FDAC4496083519B /* Pods-SentimentClassifier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
