@@ -16,6 +16,18 @@ struct Strings {
 
     static var language: Language?
 
+    static var movieTitle: String {
+        chooseTranslation(eng: "Movie title", cro: "Naslov filma")
+    }
+
+    static var reviewTitle: String {
+        chooseTranslation(eng: "Review title", cro: "Naslov recenzije")
+    }
+
+    static var createReview: String {
+        chooseTranslation(eng: "Create review", cro: "Stvori recenziju")
+    }
+
     static var usernameTitle: String {
         chooseTranslation(eng: "Username", cro: "Korisnicko ime")
     }

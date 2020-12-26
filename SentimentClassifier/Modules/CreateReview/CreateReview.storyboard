@@ -4,6 +4,8 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,6 +26,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="12Z-V1-0WY">
+                                <rect key="frame" x="24" y="78" width="327" height="565"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A4e-LP-wm5" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Kcu-VJ-4bE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eNe-6K-jUm" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                        <rect key="frame" x="0.0" y="78" width="327" height="70"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rPH-Pj-bF5">
+                                        <rect key="frame" x="0.0" y="156" width="327" height="333.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE3-c3-vfN">
+                                        <rect key="frame" x="0.0" y="497.5" width="327" height="67.5"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rPH-Pj-bF5" secondAttribute="trailing" id="AIO-rr-g8P"/>
+                                    <constraint firstAttribute="trailing" secondItem="eNe-6K-jUm" secondAttribute="trailing" id="PdC-gv-xvk"/>
+                                    <constraint firstItem="A4e-LP-wm5" firstAttribute="height" secondItem="eNe-6K-jUm" secondAttribute="height" id="UXj-aj-l6P"/>
+                                    <constraint firstItem="A4e-LP-wm5" firstAttribute="leading" secondItem="12Z-V1-0WY" secondAttribute="leading" id="YXF-rh-kGm"/>
+                                    <constraint firstAttribute="trailing" secondItem="EE3-c3-vfN" secondAttribute="trailing" id="bhd-D9-fA3"/>
+                                    <constraint firstItem="rPH-Pj-bF5" firstAttribute="leading" secondItem="12Z-V1-0WY" secondAttribute="leading" id="gwj-uT-dEX"/>
+                                    <constraint firstItem="EE3-c3-vfN" firstAttribute="leading" secondItem="12Z-V1-0WY" secondAttribute="leading" id="k4H-zG-7v8"/>
+                                    <constraint firstItem="eNe-6K-jUm" firstAttribute="leading" secondItem="12Z-V1-0WY" secondAttribute="leading" id="wff-Gv-ZnX"/>
+                                    <constraint firstAttribute="trailing" secondItem="A4e-LP-wm5" secondAttribute="trailing" id="ylm-q2-NGG"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,9 +73,18 @@
                             <constraint firstItem="vKQ-9a-s5n" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="EO7-bi-nWh"/>
                             <constraint firstItem="vKQ-9a-s5n" firstAttribute="top" secondItem="3pi-N7-nbV" secondAttribute="top" constant="24" id="FSv-QS-37X"/>
                             <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="vKQ-9a-s5n" secondAttribute="trailing" constant="24" id="WIB-Lk-oxo"/>
+                            <constraint firstItem="12Z-V1-0WY" firstAttribute="top" secondItem="vKQ-9a-s5n" secondAttribute="bottom" constant="24" id="eeM-pQ-7hh"/>
+                            <constraint firstItem="12Z-V1-0WY" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="fc4-hE-NOT"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="12Z-V1-0WY" secondAttribute="trailing" constant="24" id="lN2-r0-BwQ"/>
+                            <constraint firstItem="rPH-Pj-bF5" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Z2g-4m-atm" secondAttribute="height" multiplier="0.5" id="rGo-iN-YlM"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="bottom" secondItem="12Z-V1-0WY" secondAttribute="bottom" constant="24" id="xIL-Kz-asY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="movieTitleTextField" destination="A4e-LP-wm5" id="iqP-na-NnV"/>
+                        <outlet property="reviewTextView" destination="rPH-Pj-bF5" id="enm-1a-VDo"/>
+                        <outlet property="reviewTitleTextField" destination="eNe-6K-jUm" id="vV8-p4-eoJ"/>
+                        <outlet property="submitButton" destination="EE3-c3-vfN" id="lhN-WN-7v7"/>
                         <outlet property="titleLabel" destination="vKQ-9a-s5n" id="bHF-x4-AQe"/>
                     </connections>
                 </viewController>
@@ -42,4 +93,20 @@
             <point key="canvasLocation" x="306" y="303"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="A4e-LP-wm5">
+            <size key="intrinsicContentSize" width="327" height="46.380859375"/>
+        </designable>
+        <designable name="eNe-6K-jUm">
+            <size key="intrinsicContentSize" width="327" height="46.380859375"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

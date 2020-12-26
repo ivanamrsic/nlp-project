@@ -11,13 +11,19 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SkyFloatingLabelTextField
 
 final class CreateReviewViewController: UIViewController {
 
     // MARK: - IBOutlets
 
     @IBOutlet private weak var titleLabel: UILabel!
-
+    @IBOutlet private weak var movieTitleTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var reviewTitleTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var reviewTextView: UITextView!
+    @IBOutlet private weak var submitButton: UIButton!
+    @IBOutlet weak var enterReviewLabel: UILabel!
+    
     // MARK: - Public properties -
 
     var presenter: CreateReviewPresenterInterface!
@@ -55,5 +61,10 @@ private extension CreateReviewViewController {
 
     func setupUI() {
         titleLabel.text = Strings.createReviewTitle
+        movieTitleTextField.placeholder = Strings.movieTitle
+        movieTitleTextField.title = Strings.movieTitle
+        reviewTitleTextField.placeholder = Strings.reviewTitle
+        reviewTitleTextField.title = Strings.reviewTitle
+        submitButton.setTitle(Strings.createReview, for: .normal)
     }
 }

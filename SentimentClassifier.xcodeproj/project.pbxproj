@@ -14,6 +14,7 @@
 		A84ABA1E2597812000358042 /* CreateReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA182597812000358042 /* CreateReviewViewController.swift */; };
 		A84ABA1F2597812000358042 /* CreateReviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA192597812000358042 /* CreateReviewInteractor.swift */; };
 		A84ABA202597812000358042 /* CreateReviewWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA1A2597812000358042 /* CreateReviewWireframe.swift */; };
+		A84ABA2925978BC400358042 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA2825978BC400358042 /* Constants.swift */; };
 		A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC15256694BA0052438B /* UIImageExtensions.swift */; };
 		A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */; };
 		A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */; };
@@ -92,6 +93,7 @@
 		A84ABA182597812000358042 /* CreateReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewViewController.swift; sourceTree = "<group>"; };
 		A84ABA192597812000358042 /* CreateReviewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewInteractor.swift; sourceTree = "<group>"; };
 		A84ABA1A2597812000358042 /* CreateReviewWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewWireframe.swift; sourceTree = "<group>"; };
+		A84ABA2825978BC400358042 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A8C1DC15256694BA0052438B /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentClassifierMac.mlmodel; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				A8F2CFBA25976FFA00040ABF /* Storage.swift */,
 				A81FB3F62566BDAA00919B9E /* NLPViewController.swift */,
+				A84ABA2825978BC400358042 /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				A8F2CFA2259763E800040ABF /* ChoosePhotoInterfaces.swift in Sources */,
 				A8D50F9D256593FC009B2E50 /* BaseWireframe.swift in Sources */,
 				A8D50FBD25659484009B2E50 /* HomeInteractor.swift in Sources */,
+				A84ABA2925978BC400358042 /* Constants.swift in Sources */,
 				A8F2CFA5259763E800040ABF /* ChoosePhotoInteractor.swift in Sources */,
 				A8F2CFA6259763E800040ABF /* ChoosePhotoWireframe.swift in Sources */,
 				A8F2CFA3259763E800040ABF /* ChoosePhotoPresenter.swift in Sources */,
