@@ -16,7 +16,7 @@ final class ProfileViewController: NLPViewController {
 
     // MARK: - IBOutlets
 
-    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var choosePhotoButton: UIButton!
 
     @IBOutlet private weak var usernameTitleLabel: UILabel!
     @IBOutlet private weak var usernameLabel: UILabel!
@@ -65,11 +65,16 @@ extension ProfileViewController: ProfileViewInterface {
 private extension ProfileViewController {
 
     func configure() {
-        let output = Profile.ViewOutput()
+
+        let output = Profile.ViewOutput(
+            choosePhotoAction: choosePhotoButton.rx.tap.asSignal()
+        )
 
         let input = presenter.configure(with: output)
 
         handle(items: input.items)
+        handle(image: input.image)
+        handle(reviewCount: input.reviewCount)
     }
 
 }
@@ -89,6 +94,24 @@ private extension ProfileViewController {
     func handle(items: Driver<[TableCellItem]>) {
         items
             .drive(dataSourceDelegate.rx.items)
+            .disposed(by: disposeBag)
+    }
+
+    func handle(image: Driver<String?>) {
+        image.drive(onNext: { [unowned choosePhotoButton] in
+            guard let imageName = $0 else { return }
+            let image = UIImage(named: imageName)?
+                    .withRenderingMode(.alwaysOriginal)
+
+                choosePhotoButton?.setImage(image, for: .normal)
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func handle(reviewCount: Driver<Int>) {
+        reviewCount
+            .map { String($0) }
+            .drive(ratingsCountLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }

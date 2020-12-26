@@ -24,4 +24,8 @@ extension UIStoryboard {
     static var profile: UIStoryboard {
         return UIStoryboard(name: "Profile", bundle: nil)
     }
+
+    static var choosePhoto: UIStoryboard {
+        return UIStoryboard(name: "ChoosePhoto", bundle: nil)
+    }
 }

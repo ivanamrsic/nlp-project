@@ -36,6 +36,30 @@ struct Strings {
         chooseTranslation(eng: "Rating", cro: "Ocjena")
     }
 
+    static var choosePhotoTitle: String {
+        chooseTranslation(eng: "Choose profile photo", cro: "Odaberi sliku profila")
+    }
+
+    static var cavemanPhoto: String {
+        chooseTranslation(eng: "Caveman", cro: "Pecinski covjek")
+    }
+
+    static var trashPhoto: String {
+        chooseTranslation(eng: "Fancy Trash", cro: "Smece")
+    }
+
+    static var chinchillaPhoto: String {
+        chooseTranslation(eng: "Chinchilla", cro: "Cincila")
+    }
+
+    static var edvardMunchPhoto: String {
+        chooseTranslation(eng: "Edvard Munch", cro: "Edvard Munch")
+    }
+
+    static var iceCreamPhoto: String {
+        chooseTranslation(eng: "Happy ice cream", cro: "Veseli sladoled")
+    }
+
     private static func chooseTranslation(eng: String, cro: String) -> String {
         guard let language = language else { return "" }
         switch language {

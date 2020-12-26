@@ -36,4 +36,9 @@ final class ProfileWireframe: BaseWireframe {
 // MARK: - Extensions -
 
 extension ProfileWireframe: ProfileWireframeInterface {
+
+    func openChoosePhoto() {
+        navigationController?.presentWireframe(ChoosePhotoWireframe())
+    }
+
 }

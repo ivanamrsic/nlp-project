@@ -20,6 +20,8 @@ final class ProfilePresenter {
     private let interactor: ProfileInteractorInterface
     private let wireframe: ProfileWireframeInterface
 
+    private let disposeBag = DisposeBag()
+
     // MARK: - Lifecycle -
 
     init(view: ProfileViewInterface, interactor: ProfileInteractorInterface, wireframe: ProfileWireframeInterface) {
@@ -34,9 +36,25 @@ final class ProfilePresenter {
 extension ProfilePresenter: ProfilePresenterInterface {
 
     func configure(with output: Profile.ViewOutput) -> Profile.ViewInput {
-        return Profile.ViewInput(items: .just(createItems()))
+        handle(choosePhotoAction: output.choosePhotoAction)
+
+        let items = createItems()
+
+        return Profile.ViewInput(
+            items: .just(items),
+            image: interactor.profilePhoto,
+            reviewCount: .just(items.count)
+        )
     }
 
+}
+
+private extension ProfilePresenter {
+
+    func handle(choosePhotoAction: Signal<Void>) {
+        choosePhotoAction.emit(onNext: { [unowned wireframe] in wireframe.openChoosePhoto() })
+            .disposed(by: disposeBag)
+    }
 }
 
 private extension ProfilePresenter {

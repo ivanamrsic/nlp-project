@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choose Photo View Controller-->
+        <scene sceneID="XJ1-QA-Nrj">
+            <objects>
+                <viewController storyboardIdentifier="ChoosePhotoViewController" id="zIc-eW-6fX" customClass="ChoosePhotoViewController" customModule="SentimentClassifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob4-oc-GnC">
+                                <rect key="frame" x="24" y="24" width="327" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="1sC-CK-3o3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AsB-j1-yd1">
+                                <rect key="frame" x="24" y="78" width="327" height="565"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="AsB-j1-yd1" secondAttribute="trailing" constant="24" id="66T-A8-jB6"/>
+                            <constraint firstItem="Ob4-oc-GnC" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="AhG-cC-wvZ"/>
+                            <constraint firstItem="AsB-j1-yd1" firstAttribute="top" secondItem="Ob4-oc-GnC" secondAttribute="bottom" constant="24" id="EnF-gE-Dlj"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="bottom" secondItem="AsB-j1-yd1" secondAttribute="bottom" constant="24" id="KGh-YX-yWR"/>
+                            <constraint firstItem="Ob4-oc-GnC" firstAttribute="top" secondItem="3pi-N7-nbV" secondAttribute="top" constant="24" id="edm-Tg-lb5"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="Ob4-oc-GnC" secondAttribute="trailing" constant="24" id="naB-wL-IwA"/>
+                            <constraint firstItem="AsB-j1-yd1" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="oE4-kr-LjH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="AsB-j1-yd1" id="b1V-NT-5Lc"/>
+                        <outlet property="titleLabel" destination="Ob4-oc-GnC" id="0LT-21-ti3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="303"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

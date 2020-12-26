@@ -27,12 +27,6 @@ extension UIImage {
         }
     }
 
-    struct Profile {
-        static var caveman: UIImage {
-            return UIImage(named: "Profile/caveman")!
-        }
-    }
-
     struct Common {
         static var add: UIImage {
             return UIImage(named: "Common/add")!

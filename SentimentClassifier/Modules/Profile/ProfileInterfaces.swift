@@ -13,6 +13,7 @@ import RxSwift
 import RxCocoa
 
 protocol ProfileWireframeInterface: WireframeInterface {
+    func openChoosePhoto()
 }
 
 protocol ProfileViewInterface: ViewInterface {
@@ -23,15 +24,19 @@ protocol ProfilePresenterInterface: PresenterInterface {
 }
 
 protocol ProfileInteractorInterface: InteractorInterface {
+    var profilePhoto: Driver<String?> { get }
 }
 
 enum Profile {
 
     struct ViewOutput {
+        let choosePhotoAction: Signal<Void>
     }
 
     struct ViewInput {
         let items: Driver<[TableCellItem]>
+        let image: Driver<String?>
+        let reviewCount: Driver<Int>
     }
 
 }

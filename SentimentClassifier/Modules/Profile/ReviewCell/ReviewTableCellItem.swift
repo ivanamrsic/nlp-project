@@ -27,6 +27,5 @@ extension ReviewTableCellItem: TableCellItem {
         let cell = tableView.dequeueReusableCell(ofType: ReviewTableViewCell.self, for: indexPath)
         cell.configure(with: self)
         return cell
-
     }
 }

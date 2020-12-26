@@ -10,6 +10,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 final class ProfileInteractor {
 }
@@ -17,4 +18,12 @@ final class ProfileInteractor {
 // MARK: - Extensions -
 
 extension ProfileInteractor: ProfileInteractorInterface {
+
+    var profilePhoto: Driver<String?> {
+        return UserDefaults.standard.rx
+            .observe(String.self, UserStoreManager.profilePhotoKey)
+            .debounce(.milliseconds(100), scheduler: MainScheduler.asyncInstance)
+            .debug("AAAAAA", trimOutput: false)
+            .asDriver(onErrorDriveWith: .empty())
+    }
 }

@@ -60,6 +60,18 @@
 		A8F2CF8E259751C500040ABF /* Reloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF8D259751C500040ABF /* Reloader.swift */; };
 		A8F2CF91259753E900040ABF /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF90259753E900040ABF /* UITableViewExtensions.swift */; };
 		A8F2CF962597557800040ABF /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF952597557800040ABF /* Review.swift */; };
+		A8F2CFA1259763E800040ABF /* ChoosePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F2CF9B259763E800040ABF /* ChoosePhoto.storyboard */; };
+		A8F2CFA2259763E800040ABF /* ChoosePhotoInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF9C259763E800040ABF /* ChoosePhotoInterfaces.swift */; };
+		A8F2CFA3259763E800040ABF /* ChoosePhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF9D259763E800040ABF /* ChoosePhotoPresenter.swift */; };
+		A8F2CFA4259763E800040ABF /* ChoosePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF9E259763E800040ABF /* ChoosePhotoViewController.swift */; };
+		A8F2CFA5259763E800040ABF /* ChoosePhotoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CF9F259763E800040ABF /* ChoosePhotoInteractor.swift */; };
+		A8F2CFA6259763E800040ABF /* ChoosePhotoWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CFA0259763E800040ABF /* ChoosePhotoWireframe.swift */; };
+		A8F2CFAA259764F300040ABF /* PhotoCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CFA9259764F300040ABF /* PhotoCellItem.swift */; };
+		A8F2CFAE2597650500040ABF /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CFAC2597650500040ABF /* PhotoTableViewCell.swift */; };
+		A8F2CFAF2597650500040ABF /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F2CFAD2597650500040ABF /* PhotoTableViewCell.xib */; };
+		A8F2CFB225976AAF00040ABF /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CFB125976AAF00040ABF /* ProfilePhoto.swift */; };
+		A8F2CFB725976F3600040ABF /* UserStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CFB625976F3600040ABF /* UserStoreManager.swift */; };
+		A8F2CFBB25976FFA00040ABF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2CFBA25976FFA00040ABF /* Storage.swift */; };
 		E074FAA9EE8CE1B4CC8D15EA /* Pods_SentimentClassifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65A7EFFE965E41BBC2CB9F8 /* Pods_SentimentClassifier.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +134,18 @@
 		A8F2CF8D259751C500040ABF /* Reloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reloader.swift; sourceTree = "<group>"; };
 		A8F2CF90259753E900040ABF /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		A8F2CF952597557800040ABF /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		A8F2CF9B259763E800040ABF /* ChoosePhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoosePhoto.storyboard; sourceTree = "<group>"; };
+		A8F2CF9C259763E800040ABF /* ChoosePhotoInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePhotoInterfaces.swift; sourceTree = "<group>"; };
+		A8F2CF9D259763E800040ABF /* ChoosePhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePhotoPresenter.swift; sourceTree = "<group>"; };
+		A8F2CF9E259763E800040ABF /* ChoosePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePhotoViewController.swift; sourceTree = "<group>"; };
+		A8F2CF9F259763E800040ABF /* ChoosePhotoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePhotoInteractor.swift; sourceTree = "<group>"; };
+		A8F2CFA0259763E800040ABF /* ChoosePhotoWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePhotoWireframe.swift; sourceTree = "<group>"; };
+		A8F2CFA9259764F300040ABF /* PhotoCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellItem.swift; sourceTree = "<group>"; };
+		A8F2CFAC2597650500040ABF /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		A8F2CFAD2597650500040ABF /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
+		A8F2CFB125976AAF00040ABF /* ProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
+		A8F2CFB625976F3600040ABF /* UserStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoreManager.swift; sourceTree = "<group>"; };
+		A8F2CFBA25976FFA00040ABF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		EEAA52DE30A97BFB053C1F9E /* Pods-SentimentClassifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentimentClassifier.debug.xcconfig"; path = "Target Support Files/Pods-SentimentClassifier/Pods-SentimentClassifier.debug.xcconfig"; sourceTree = "<group>"; };
 		F65A7EFFE965E41BBC2CB9F8 /* Pods_SentimentClassifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SentimentClassifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,6 +184,7 @@
 		A81FB3F52566BD9000919B9E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A8F2CFBA25976FFA00040ABF /* Storage.swift */,
 				A81FB3F62566BDAA00919B9E /* NLPViewController.swift */,
 			);
 			path = "Supporting Files";
@@ -168,6 +193,7 @@
 		A8C1DC102566941B0052438B /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A8F2CFB525976F2B00040ABF /* Managers */,
 				A8F2CF932597556A00040ABF /* Networking */,
 				A8F2CF76259750ED00040ABF /* DataSourceDelegate */,
 				A8F2CF692597486400040ABF /* Translations */,
@@ -273,6 +299,7 @@
 		A8D50FC225668E70009B2E50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A8F2CF9A259763CD00040ABF /* ChoosePhoto */,
 				A8F2CF5B25973E3500040ABF /* Profile */,
 				A8D1889C258B593D008670B6 /* Classifier */,
 				A8D50FC425668EE9009B2E50 /* Languages */,
@@ -357,6 +384,39 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A8F2CF9A259763CD00040ABF /* ChoosePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2CFA8259764E000040ABF /* PhotoCellItem */,
+				A8F2CF9B259763E800040ABF /* ChoosePhoto.storyboard */,
+				A8F2CF9C259763E800040ABF /* ChoosePhotoInterfaces.swift */,
+				A8F2CF9D259763E800040ABF /* ChoosePhotoPresenter.swift */,
+				A8F2CF9E259763E800040ABF /* ChoosePhotoViewController.swift */,
+				A8F2CF9F259763E800040ABF /* ChoosePhotoInteractor.swift */,
+				A8F2CFA0259763E800040ABF /* ChoosePhotoWireframe.swift */,
+				A8F2CFB125976AAF00040ABF /* ProfilePhoto.swift */,
+			);
+			path = ChoosePhoto;
+			sourceTree = "<group>";
+		};
+		A8F2CFA8259764E000040ABF /* PhotoCellItem */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2CFA9259764F300040ABF /* PhotoCellItem.swift */,
+				A8F2CFAC2597650500040ABF /* PhotoTableViewCell.swift */,
+				A8F2CFAD2597650500040ABF /* PhotoTableViewCell.xib */,
+			);
+			path = PhotoCellItem;
+			sourceTree = "<group>";
+		};
+		A8F2CFB525976F2B00040ABF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2CFB625976F3600040ABF /* UserStoreManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		A8FF0A41256D70E4006AFBB1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,11 +484,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F2CFA1259763E800040ABF /* ChoosePhoto.storyboard in Resources */,
 				A8F2CF6225973E4B00040ABF /* Profile.storyboard in Resources */,
 				A8D50F8725659275009B2E50 /* LaunchScreen.storyboard in Resources */,
 				A8D50F8425659275009B2E50 /* Assets.xcassets in Resources */,
 				A8F2CF742597504200040ABF /* ReviewTableViewCell.xib in Resources */,
 				A8D188A3258B5954008670B6 /* Classifier.storyboard in Resources */,
+				A8F2CFAF2597650500040ABF /* PhotoTableViewCell.xib in Resources */,
 				A8D50FCB25668F01009B2E50 /* Languages.storyboard in Resources */,
 				A8D50FB925659484009B2E50 /* Home.storyboard in Resources */,
 			);
@@ -488,8 +550,12 @@
 				A8D50FCD25668F01009B2E50 /* LanguagesPresenter.swift in Sources */,
 				A8D50F9E256593FC009B2E50 /* InteractorInterface.swift in Sources */,
 				A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */,
+				A8F2CFA2259763E800040ABF /* ChoosePhotoInterfaces.swift in Sources */,
 				A8D50F9D256593FC009B2E50 /* BaseWireframe.swift in Sources */,
 				A8D50FBD25659484009B2E50 /* HomeInteractor.swift in Sources */,
+				A8F2CFA5259763E800040ABF /* ChoosePhotoInteractor.swift in Sources */,
+				A8F2CFA6259763E800040ABF /* ChoosePhotoWireframe.swift in Sources */,
+				A8F2CFA3259763E800040ABF /* ChoosePhotoPresenter.swift in Sources */,
 				A8F2CF962597557800040ABF /* Review.swift in Sources */,
 				A8F2CF7F2597513300040ABF /* Rx+DataSourceDelegate.swift in Sources */,
 				A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */,
@@ -506,13 +572,18 @@
 				A8F2CF6525973E4B00040ABF /* ProfileViewController.swift in Sources */,
 				A8D188A5258B5954008670B6 /* ClassifierPresenter.swift in Sources */,
 				A81FB3F72566BDAA00919B9E /* NLPViewController.swift in Sources */,
+				A8F2CFAA259764F300040ABF /* PhotoCellItem.swift in Sources */,
 				A8D50FCF25668F01009B2E50 /* LanguagesInteractor.swift in Sources */,
+				A8F2CFBB25976FFA00040ABF /* Storage.swift in Sources */,
 				A8D188A7258B5954008670B6 /* ClassifierInteractor.swift in Sources */,
 				A8D188A6258B5954008670B6 /* ClassifierViewController.swift in Sources */,
 				A8F2CF782597510100040ABF /* CellItem.swift in Sources */,
 				A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */,
 				A8D50FA1256593FC009B2E50 /* ViewInterface.swift in Sources */,
+				A8F2CFB725976F3600040ABF /* UserStoreManager.swift in Sources */,
 				A8D50FD025668F01009B2E50 /* LanguagesWireframe.swift in Sources */,
+				A8F2CFAE2597650500040ABF /* PhotoTableViewCell.swift in Sources */,
+				A8F2CFB225976AAF00040ABF /* ProfilePhoto.swift in Sources */,
 				A8D50FCE25668F01009B2E50 /* LanguagesViewController.swift in Sources */,
 				A8F2CF91259753E900040ABF /* UITableViewExtensions.swift in Sources */,
 				A8D188A8258B5954008670B6 /* ClassifierWireframe.swift in Sources */,
@@ -528,6 +599,7 @@
 				A8D50FCC25668F01009B2E50 /* LanguagesInterfaces.swift in Sources */,
 				A8F2CF6325973E4B00040ABF /* ProfileInterfaces.swift in Sources */,
 				A8F2CF6625973E4B00040ABF /* ProfileInteractor.swift in Sources */,
+				A8F2CFA4259763E800040ABF /* ChoosePhotoViewController.swift in Sources */,
 				A8D50F7D25659272009B2E50 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

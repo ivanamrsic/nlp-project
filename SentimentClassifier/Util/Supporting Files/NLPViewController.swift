@@ -10,6 +10,11 @@ import UIKit
 class NLPViewController: UIViewController {
     
     var tabBarProperty: TabBarProperty?
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 }
 
 enum TabBarProperty {
