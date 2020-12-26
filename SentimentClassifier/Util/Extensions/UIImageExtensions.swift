@@ -8,6 +8,10 @@
 import UIKit
 
 extension UIImage {
+
+    static var moviePlaceholder: UIImage {
+        return UIImage(named: "movie-placeholder")!
+    }
     
     struct TabBar {
         static var language: UIImage {

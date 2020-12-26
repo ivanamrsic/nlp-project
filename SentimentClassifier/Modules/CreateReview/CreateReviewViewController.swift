@@ -13,7 +13,7 @@ import RxSwift
 import RxCocoa
 import SkyFloatingLabelTextField
 
-final class CreateReviewViewController: UIViewController {
+final class CreateReviewViewController: NLPViewController {
 
     // MARK: - IBOutlets
 
@@ -50,9 +50,12 @@ extension CreateReviewViewController: CreateReviewViewInterface {
 private extension CreateReviewViewController {
 
     func configure() {
-        let output = CreateReview.ViewOutput()
+        let output = CreateReview.ViewOutput(
+            searchMovieAction: movieTitleTextField.rx.controlEvent(.editingDidBegin).asSignal()
+        )
 
         let input = presenter.configure(with: output)
+        handle(title: input.title)
     }
 
 }
@@ -66,5 +69,13 @@ private extension CreateReviewViewController {
         reviewTitleTextField.placeholder = Strings.reviewTitle
         reviewTitleTextField.title = Strings.reviewTitle
         submitButton.setTitle(Strings.createReview, for: .normal)
+    }
+}
+
+private extension CreateReviewViewController {
+
+    func handle(title: Driver<String>) {
+        title.drive(movieTitleTextField.rx.text)
+            .disposed(by: disposeBag)
     }
 }

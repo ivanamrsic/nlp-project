@@ -20,14 +20,17 @@ final class SearchMoviesPresenter {
     private let interactor: SearchMoviesInteractorInterface
     private let wireframe: SearchMoviesWireframeInterface
 
+    private let delegate: SearchResultDelegate
+
     private let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle -
 
-    init(view: SearchMoviesViewInterface, interactor: SearchMoviesInteractorInterface, wireframe: SearchMoviesWireframeInterface) {
+    init(view: SearchMoviesViewInterface, interactor: SearchMoviesInteractorInterface, wireframe: SearchMoviesWireframeInterface, delegate: SearchResultDelegate) {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
+        self.delegate = delegate
     }
 }
 
@@ -36,22 +39,33 @@ final class SearchMoviesPresenter {
 extension SearchMoviesPresenter: SearchMoviesPresenterInterface {
 
     func configure(with output: SearchMovies.ViewOutput) -> SearchMovies.ViewInput {
-        handle(inputText: output.inputText)
-        return SearchMovies.ViewInput()
+        let items = handle(inputText: output.inputText)
+        return SearchMovies.ViewInput(
+            items: items
+        )
     }
 
 }
 
 private extension SearchMoviesPresenter {
 
-    func handle(inputText: Driver<String?>) {
+    func handle(inputText: Driver<String?>) -> Driver<[TableCellItem]> {
 
-        inputText.compactMap { $0 }
+        let toCells: (SearchResponse) -> [TableCellItem] = { [unowned self] in
+            $0.search.map { [unowned self] movie in
+                let didSelect: () -> Void = { [unowned self] in
+                    self.delegate.process(result: movie)
+                    self.wireframe.dismiss()
+                }
+                return SearchResultCellItem(movie: movie, didSelect: didSelect)
+            }
+        }
+
+        return inputText.compactMap { $0 }
             .filter { $0.count > 0 }
             .distinctUntilChanged()
             .debounce(.milliseconds(500))
             .flatMap { [unowned interactor] in interactor.search(input: $0).asDriver(onErrorDriveWith: .empty()) }
-            .drive(onNext: { print($0) })
-            .disposed(by: disposeBag)
+            .map(toCells)
     }
 }

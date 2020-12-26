@@ -20,12 +20,12 @@ final class SearchMoviesWireframe: BaseWireframe {
 
     // MARK: - Module setup -
 
-    init() {
+    init(delegate: SearchResultDelegate) {
         let moduleViewController = storyboard.instantiateViewController(ofType: SearchMoviesViewController.self)
         super.init(viewController: moduleViewController)
         
         let interactor = SearchMoviesInteractor()
-        let presenter = SearchMoviesPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
+        let presenter = SearchMoviesPresenter(view: moduleViewController, interactor: interactor, wireframe: self, delegate: delegate)
         moduleViewController.presenter = presenter
     }
 
@@ -34,4 +34,8 @@ final class SearchMoviesWireframe: BaseWireframe {
 // MARK: - Extensions -
 
 extension SearchMoviesWireframe: SearchMoviesWireframeInterface {
+
+    func dismiss() {
+        viewController.dismiss(animated: true, completion: nil)
+    }
 }

@@ -14,6 +14,7 @@ import RxCocoa
 
 protocol CreateReviewWireframeInterface: WireframeInterface {
     func dismiss()
+    func searchMovies(delegate: SearchResultDelegate)
 }
 
 protocol CreateReviewViewInterface: ViewInterface {
@@ -29,9 +30,11 @@ protocol CreateReviewInteractorInterface: InteractorInterface {
 enum CreateReview {
 
     struct ViewOutput {
+        let searchMovieAction: Signal<Void>
     }
 
     struct ViewInput {
+        let title: Driver<String>
     }
 
 }

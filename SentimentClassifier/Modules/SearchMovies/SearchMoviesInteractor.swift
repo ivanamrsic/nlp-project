@@ -23,8 +23,10 @@ extension SearchMoviesInteractor: SearchMoviesInteractorInterface {
     func search(input: String) -> Single<SearchResponse> {
         return Single.create { (observer) -> Disposable in
 
+            let url = "https://www.omdbapi.com/?apiKey=\(Constants.apiKey)&s=\(input.replacingOccurrences(of: " ", with: "-"))"
+
             let request = AF.request(
-                "https://www.omdbapi.com/?apiKey=\(Constants.apiKey)&s=\(input)",
+                url,
                 method: .post,
                 encoding: JSONEncoding.default
             )

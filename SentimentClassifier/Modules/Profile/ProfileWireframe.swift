@@ -42,6 +42,8 @@ extension ProfileWireframe: ProfileWireframeInterface {
     }
 
     func openCreateReview() {
-        navigationController?.presentWireframe(SearchMoviesWireframe())
+        let navController = UINavigationController()
+        navController.setRootWireframe(CreateReviewWireframe())
+        navigationController?.present(navController, animated: true, completion: nil)
     }
 }

@@ -12,7 +12,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol SearchResultDelegate {
+    func process(result: SearchResponse.Movie)
+}
+
 protocol SearchMoviesWireframeInterface: WireframeInterface {
+    func dismiss()
 }
 
 protocol SearchMoviesViewInterface: ViewInterface {
@@ -33,6 +38,7 @@ enum SearchMovies {
     }
 
     struct ViewInput {
+        let items: Driver<[TableCellItem]>
     }
 
 }

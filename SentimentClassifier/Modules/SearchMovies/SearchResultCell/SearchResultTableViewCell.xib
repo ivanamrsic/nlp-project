@@ -9,28 +9,28 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="KGk-i7-Jjw" customClass="SearchResultTableViewCell" customModule="SentimentClassifier" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="359" height="99"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="154" id="KGk-i7-Jjw" customClass="SearchResultTableViewCell" customModule="SentimentClassifier" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="154"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="359" height="99"/>
+                <rect key="frame" x="0.0" y="0.0" width="383" height="154"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="oZm-60-HHY">
-                        <rect key="frame" x="0.0" y="0.0" width="359" height="100"/>
+                        <rect key="frame" x="0.0" y="12" width="383" height="130"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BTT-D8-f45">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="15" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="7D1-r3-scn"/>
                                     <constraint firstAttribute="height" constant="100" id="qxy-ny-5mh"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PrI-x1-gbu">
-                                <rect key="frame" x="112" y="6" width="247" height="88"/>
+                                <rect key="frame" x="112" y="21" width="271" height="88"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H3-ll-5DO">
-                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H3-ll-5DO">
+                                        <rect key="frame" x="0.0" y="0.0" width="271" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -48,15 +48,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4H3-ll-5DO" secondAttribute="trailing" id="fMp-DL-w5a"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="oZm-60-HHY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3GX-R4-HsP"/>
-                    <constraint firstItem="oZm-60-HHY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4W5-hX-vFl"/>
+                    <constraint firstItem="oZm-60-HHY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="4W5-hX-vFl"/>
                     <constraint firstAttribute="trailing" secondItem="oZm-60-HHY" secondAttribute="trailing" id="iur-cf-g9Z"/>
-                    <constraint firstAttribute="bottom" secondItem="oZm-60-HHY" secondAttribute="bottom" id="op1-Sk-Z3c"/>
+                    <constraint firstAttribute="bottom" secondItem="oZm-60-HHY" secondAttribute="bottom" constant="12" id="op1-Sk-Z3c"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -66,7 +69,7 @@
                 <outlet property="typeLabel" destination="y1Q-qt-coF" id="PZ6-w8-dhS"/>
                 <outlet property="yearLabel" destination="ngE-Kd-Qfu" id="V2k-KA-KhR"/>
             </connections>
-            <point key="canvasLocation" x="41.304347826086961" y="73.325892857142847"/>
+            <point key="canvasLocation" x="58.695652173913047" y="91.071428571428569"/>
         </tableViewCell>
     </objects>
 </document>

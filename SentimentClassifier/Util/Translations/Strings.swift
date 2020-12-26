@@ -16,6 +16,10 @@ struct Strings {
 
     static var language: Language?
 
+    static var searchForAMovie: String {
+        chooseTranslation(eng: "Search for a movie...", cro: "Pretrazite filmove...")
+    }
+
     static var movieTitle: String {
         chooseTranslation(eng: "Movie title", cro: "Naslov filma")
     }

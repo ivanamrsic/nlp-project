@@ -13,18 +13,26 @@ import RxSwift
 import RxCocoa
 import SkyFloatingLabelTextField
 
-final class SearchMoviesViewController: UIViewController {
+final class SearchMoviesViewController: NLPViewController {
 
     // MARK: - IBOutlets
 
     @IBOutlet private weak var inputTextField: SkyFloatingLabelTextField!
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.registerNib(cellOfType: SearchResultTableViewCell.self)
+        }
+    }
     
     // MARK: - Public properties -
 
     var presenter: SearchMoviesPresenterInterface!
 
     // MARK: - Private properties -
+
+    private lazy var dataSourceDelegate: TableDataSourceDelegate = {
+        return TableDataSourceDelegate(tableView: self.tableView)
+    }()
 
     private let disposeBag = DisposeBag()
 
@@ -33,6 +41,12 @@ final class SearchMoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        setupUI()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        inputTextField.becomeFirstResponder()
     }
 	
 }
@@ -50,6 +64,22 @@ private extension SearchMoviesViewController {
         )
 
         let input = presenter.configure(with: output)
+        handle(items: input.items)
     }
 
+}
+
+private extension SearchMoviesViewController {
+
+    func setupUI() {
+        inputTextField.placeholder = Strings.searchForAMovie
+    }
+}
+
+private extension SearchMoviesViewController {
+
+    func handle(items: Driver<[TableCellItem]>) {
+        items.drive(dataSourceDelegate.rx.items)
+            .disposed(by: disposeBag)
+    }
 }

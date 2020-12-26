@@ -10,18 +10,16 @@ import UIKit
 struct ReviewTableCellItem {
 
     let review: Review
+    let reviewScore: String
 
-    init(review: Review) {
+    init(review: Review, reviewScore: String) {
         self.review = review
+        self.reviewScore = reviewScore
     }
 
 }
 
 extension ReviewTableCellItem: TableCellItem {
-
-    var reviewScore: String {
-        return ClassifierModel().classify(text: review.text).description
-    }
 
     func cell(from tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: ReviewTableViewCell.self, for: indexPath)

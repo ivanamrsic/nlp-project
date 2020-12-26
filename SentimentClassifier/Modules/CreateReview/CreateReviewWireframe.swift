@@ -38,4 +38,10 @@ extension CreateReviewWireframe: CreateReviewWireframeInterface {
     func dismiss() {
         viewController.dismiss(animated: true, completion: nil)
     }
+
+    func searchMovies(delegate: SearchResultDelegate) {
+        navigationController?.presentWireframe(
+            SearchMoviesWireframe(delegate: delegate)
+        )
+    }
 }

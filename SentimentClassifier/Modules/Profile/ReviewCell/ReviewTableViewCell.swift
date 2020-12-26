@@ -15,10 +15,19 @@ class ReviewTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
-    
-    @IBOutlet private weak var reviewTextLabel: UILabel!
 
+    @IBOutlet weak var reviewTextLabel: UILabel!
+    
     @IBOutlet private weak var sentimentResultLabel: UILabel!
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        movieTitleLabel.text = ""
+        titleLabel.text = ""
+        dateLabel.text = ""
+        reviewTextLabel.text = ""
+        sentimentResultLabel.text = ""
+    }
 }
 
 extension ReviewTableViewCell {
