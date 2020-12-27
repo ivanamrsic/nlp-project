@@ -29,7 +29,8 @@ final class ProfileViewController: NLPViewController {
 
     @IBOutlet private weak var ratingsSectionLabel: UILabel!
     @IBOutlet private weak var createReviewButton: UIButton!
-    
+    @IBOutlet private weak var filterReviewsButton: UIButton!
+
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.registerNib(cellOfType: ReviewTableViewCell.self)
@@ -71,6 +72,7 @@ private extension ProfileViewController {
         let output = Profile.ViewOutput(
             choosePhotoAction: choosePhotoButton.rx.tap.asSignal(),
             createReviewAction: createReviewButton.rx.tap.asSignal(),
+            filterReviewsAction: filterReviewsButton.rx.tap.asSignal(),
             viewWillAppear: rx.viewWillAppear.asSignal()
         )
 

@@ -22,6 +22,18 @@ enum Language: String {
 
 struct Strings {
 
+    static var filterBySentiment: String {
+        chooseTranslation(eng: "By sentiment", cro: "Po sentimentu")
+    }
+
+    static var filterReviewsTitle: String {
+        chooseTranslation(eng: "Filter reviews", cro: "Filtriraj recenzije")
+    }
+
+    static var filterAction: String {
+        chooseTranslation(eng: "Filter", cro: "Filtriraj")
+    }
+
     static var searchForAMovie: String {
         chooseTranslation(eng: "Search for a movie...", cro: "Pretrazite filmove...")
     }

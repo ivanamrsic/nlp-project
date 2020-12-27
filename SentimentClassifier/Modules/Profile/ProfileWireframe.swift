@@ -49,4 +49,8 @@ extension ProfileWireframe: ProfileWireframeInterface {
 
         return wireframe.viewController.rx.viewWillDisappear.asSignal()
     }
+
+    func openFilterReviews(with delegate: FilterDelegate) {
+        navigationController?.presentWireframe(FilterReviewsWireframe(delegate: delegate))
+    }
 }

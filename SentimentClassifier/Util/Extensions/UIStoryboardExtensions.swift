@@ -36,4 +36,8 @@ extension UIStoryboard {
     static var searchMovies: UIStoryboard {
         return UIStoryboard(name: "SearchMovies", bundle: nil)
     }
+
+    static var filterReviews: UIStoryboard {
+        return UIStoryboard(name: "FilterReviews", bundle: nil)
+    }
 }

@@ -30,6 +30,15 @@
 		A84ABA8A2598877C00358042 /* Review+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA882598877C00358042 /* Review+CoreDataClass.swift */; };
 		A84ABA8B2598877C00358042 /* Review+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABA892598877C00358042 /* Review+CoreDataProperties.swift */; };
 		A898C1F625989C3B0082403A /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C1F525989C3B0082403A /* UIViewExtensions.swift */; };
+		A898C2002598B3010082403A /* FilterReviews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A898C1FA2598B3010082403A /* FilterReviews.storyboard */; };
+		A898C2012598B3010082403A /* FilterReviewsInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C1FB2598B3010082403A /* FilterReviewsInterfaces.swift */; };
+		A898C2022598B3010082403A /* FilterReviewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C1FC2598B3010082403A /* FilterReviewsPresenter.swift */; };
+		A898C2032598B3010082403A /* FilterReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C1FD2598B3010082403A /* FilterReviewsViewController.swift */; };
+		A898C2042598B3010082403A /* FilterReviewsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C1FE2598B3010082403A /* FilterReviewsInteractor.swift */; };
+		A898C2052598B3010082403A /* FilterReviewsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C1FF2598B3010082403A /* FilterReviewsWireframe.swift */; };
+		A898C2132598B6D80082403A /* FilterCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C2122598B6D80082403A /* FilterCellItem.swift */; };
+		A898C2172598B6E60082403A /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C2152598B6E60082403A /* FilterTableViewCell.swift */; };
+		A898C2182598B6E60082403A /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A898C2162598B6E60082403A /* FilterTableViewCell.xib */; };
 		A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC15256694BA0052438B /* UIImageExtensions.swift */; };
 		A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */; };
 		A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */; };
@@ -123,6 +132,15 @@
 		A84ABA882598877C00358042 /* Review+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A84ABA892598877C00358042 /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A898C1F525989C3B0082403A /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		A898C1FA2598B3010082403A /* FilterReviews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterReviews.storyboard; sourceTree = "<group>"; };
+		A898C1FB2598B3010082403A /* FilterReviewsInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterReviewsInterfaces.swift; sourceTree = "<group>"; };
+		A898C1FC2598B3010082403A /* FilterReviewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterReviewsPresenter.swift; sourceTree = "<group>"; };
+		A898C1FD2598B3010082403A /* FilterReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterReviewsViewController.swift; sourceTree = "<group>"; };
+		A898C1FE2598B3010082403A /* FilterReviewsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterReviewsInteractor.swift; sourceTree = "<group>"; };
+		A898C1FF2598B3010082403A /* FilterReviewsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterReviewsWireframe.swift; sourceTree = "<group>"; };
+		A898C2122598B6D80082403A /* FilterCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellItem.swift; sourceTree = "<group>"; };
+		A898C2152598B6E60082403A /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		A898C2162598B6E60082403A /* FilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterTableViewCell.xib; sourceTree = "<group>"; };
 		A8C1DC15256694BA0052438B /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentClassifierMac.mlmodel; sourceTree = "<group>"; };
@@ -287,6 +305,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A898C1F92598B2EE0082403A /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				A898C2112598B6C60082403A /* FilterCellItem */,
+				A898C1FA2598B3010082403A /* FilterReviews.storyboard */,
+				A898C1FB2598B3010082403A /* FilterReviewsInterfaces.swift */,
+				A898C1FC2598B3010082403A /* FilterReviewsPresenter.swift */,
+				A898C1FD2598B3010082403A /* FilterReviewsViewController.swift */,
+				A898C1FE2598B3010082403A /* FilterReviewsInteractor.swift */,
+				A898C1FF2598B3010082403A /* FilterReviewsWireframe.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		A898C2112598B6C60082403A /* FilterCellItem */ = {
+			isa = PBXGroup;
+			children = (
+				A898C2122598B6D80082403A /* FilterCellItem.swift */,
+				A898C2152598B6E60082403A /* FilterTableViewCell.swift */,
+				A898C2162598B6E60082403A /* FilterTableViewCell.xib */,
+			);
+			path = FilterCellItem;
+			sourceTree = "<group>";
+		};
 		A8C1DC102566941B0052438B /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +441,7 @@
 		A8D50FC225668E70009B2E50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A898C1F92598B2EE0082403A /* Filter */,
 				A84ABA3225978C4500358042 /* SearchMovies */,
 				A84ABA142597811100358042 /* CreateReview */,
 				A8F2CF9A259763CD00040ABF /* ChoosePhoto */,
@@ -587,6 +630,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A898C2002598B3010082403A /* FilterReviews.storyboard in Resources */,
+				A898C2182598B6E60082403A /* FilterTableViewCell.xib in Resources */,
 				A8F2CFA1259763E800040ABF /* ChoosePhoto.storyboard in Resources */,
 				A8F2CF6225973E4B00040ABF /* Profile.storyboard in Resources */,
 				A84ABA1B2597812000358042 /* CreateReview.storyboard in Resources */,
@@ -655,6 +700,7 @@
 				A8D188AB258B5F28008670B6 /* ClassifierModel.swift in Sources */,
 				A84ABA5F259883D400358042 /* SentimentClassifier.xcdatamodeld in Sources */,
 				A84ABA1D2597812000358042 /* CreateReviewPresenter.swift in Sources */,
+				A898C2132598B6D80082403A /* FilterCellItem.swift in Sources */,
 				A8D50FCD25668F01009B2E50 /* LanguagesPresenter.swift in Sources */,
 				A8D50F9E256593FC009B2E50 /* InteractorInterface.swift in Sources */,
 				A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */,
@@ -662,19 +708,23 @@
 				A8D50F9D256593FC009B2E50 /* BaseWireframe.swift in Sources */,
 				A8D50FBD25659484009B2E50 /* HomeInteractor.swift in Sources */,
 				A84ABA2925978BC400358042 /* Constants.swift in Sources */,
+				A898C2012598B3010082403A /* FilterReviewsInterfaces.swift in Sources */,
 				A8F2CFA5259763E800040ABF /* ChoosePhotoInteractor.swift in Sources */,
 				A8F2CFA6259763E800040ABF /* ChoosePhotoWireframe.swift in Sources */,
 				A84ABA4125978E7600358042 /* SearchResponse.swift in Sources */,
 				A8F2CFA3259763E800040ABF /* ChoosePhotoPresenter.swift in Sources */,
 				A8F2CF7F2597513300040ABF /* Rx+DataSourceDelegate.swift in Sources */,
+				A898C2172598B6E60082403A /* FilterTableViewCell.swift in Sources */,
 				A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */,
 				A8F2CF7C2597511C00040ABF /* SectionItem.swift in Sources */,
 				A8F2CF882597518C00040ABF /* TableDataSourceDelegate.swift in Sources */,
+				A898C2042598B3010082403A /* FilterReviewsInteractor.swift in Sources */,
 				A8F2CF6425973E4B00040ABF /* ProfilePresenter.swift in Sources */,
 				A8F2CF852597517200040ABF /* TableCellItem.swift in Sources */,
 				A8F2CF8B259751A300040ABF /* TableSectionItem.swift in Sources */,
 				A8D50FBE25659484009B2E50 /* HomeWireframe.swift in Sources */,
 				A8D188A4258B5954008670B6 /* ClassifierInterfaces.swift in Sources */,
+				A898C2032598B3010082403A /* FilterReviewsViewController.swift in Sources */,
 				A8F2CF6F2597502B00040ABF /* ReviewTableCellItem.swift in Sources */,
 				A8D50FBB25659484009B2E50 /* HomePresenter.swift in Sources */,
 				A84ABA8B2598877C00358042 /* Review+CoreDataProperties.swift in Sources */,
@@ -692,8 +742,10 @@
 				A84ABA1E2597812000358042 /* CreateReviewViewController.swift in Sources */,
 				A84ABA86259884D800358042 /* PersistanceManager.swift in Sources */,
 				A84ABA3D25978C5B00358042 /* SearchMoviesInteractor.swift in Sources */,
+				A898C2022598B3010082403A /* FilterReviewsPresenter.swift in Sources */,
 				A84ABA1C2597812000358042 /* CreateReviewInterfaces.swift in Sources */,
 				A8F2CF782597510100040ABF /* CellItem.swift in Sources */,
+				A898C2052598B3010082403A /* FilterReviewsWireframe.swift in Sources */,
 				A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */,
 				A8D50FA1256593FC009B2E50 /* ViewInterface.swift in Sources */,
 				A898C1F625989C3B0082403A /* UIViewExtensions.swift in Sources */,

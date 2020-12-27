@@ -20,6 +20,8 @@ final class ProfilePresenter {
     private let interactor: ProfileInteractorInterface
     private let wireframe: ProfileWireframeInterface
 
+    private let filtersRelay = BehaviorRelay<[ClassifierResultScale]>(value: ClassifierResultScale.resultPossiblities)
+
     private let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle
@@ -36,6 +38,7 @@ final class ProfilePresenter {
 extension ProfilePresenter: ProfilePresenterInterface {
 
     func configure(with output: Profile.ViewOutput) -> Profile.ViewInput {
+        handle(filterReviews: output.filterReviewsAction)
         handle(choosePhoto: output.choosePhotoAction)
         let refresh = handle(createReview: output.createReviewAction)
 
@@ -63,6 +66,13 @@ private extension ProfilePresenter {
     func handle(createReview: Signal<Void>) -> Signal<Void> {
         return createReview.flatMap { [unowned wireframe] in wireframe.openCreateReview() }
     }
+
+    func handle(filterReviews: Signal<Void>) {
+        filterReviews.emit(onNext: { [unowned self, unowned wireframe] in
+                wireframe.openFilterReviews(with: self)
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 // MARK: - Item creation
@@ -70,10 +80,30 @@ private extension ProfilePresenter {
 private extension ProfilePresenter {
 
     func createItems(with refresh: Signal<Void>) -> Driver<[TableCellItem]> {
-        return refresh.flatMap { [unowned interactor] in
-                interactor.fetchReviews().asDriver(onErrorDriveWith: .empty())
+
+        let reviews = refresh.flatMap { [unowned interactor] in
+            interactor.fetchReviews().asDriver(onErrorDriveWith: .empty())
+        }
+        .asDriver(onErrorDriveWith: .empty())
+
+
+        return Driver.combineLatest(reviews, filtersRelay.asDriver(), resultSelector: {
+            (reviews, filters) -> [Review] in
+            return reviews.filter { review in
+                return filters.contains(where: { $0.description == review.sentiment })
             }
-            .asDriver(onErrorDriveWith: .empty())
+        })
             .map { $0.map { review in ReviewTableCellItem(review: review) } }
+    }
+}
+
+extension ProfilePresenter: FilterDelegate {
+
+    var currentFilters: [ClassifierResultScale] {
+        return filtersRelay.value
+    }
+
+    func process(sentimentFilters: [ClassifierResultScale]) {
+        filtersRelay.accept(sentimentFilters)
     }
 }

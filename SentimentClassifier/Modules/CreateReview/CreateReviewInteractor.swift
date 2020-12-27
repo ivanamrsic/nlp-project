@@ -21,12 +21,14 @@ extension CreateReviewInteractor: CreateReviewInteractorInterface {
 
     func save(reviewData: ReviewData) -> Driver<Bool> {
 
-        guard let title = reviewData.reviewTitle, title.count > 0,
-              let text = reviewData.reviewText, text.count > 0
-        else { return Driver.just(false).debounce(.milliseconds(1000)) }
+        guard
+            let movieTitle = reviewData.movieTitle, movieTitle.count > 0,
+            let title = reviewData.reviewTitle, title.count > 0,
+            let text = reviewData.reviewText, text.count > 0
+        else { return Driver.just(false) }
 
         let review = Review(context: PersistanceManager.context)
-        review.movieTitle = reviewData.movieTitle
+        review.movieTitle = movieTitle
         review.movieYear = reviewData.movieYear
         review.reviewTitle = title
         review.reviewText = text
@@ -35,8 +37,7 @@ extension CreateReviewInteractor: CreateReviewInteractorInterface {
 
         PersistanceManager.saveContext()
 
-        return Driver.just(true).debounce(.milliseconds(1000))
-
+        return Driver.just(true)
     }
 }
 

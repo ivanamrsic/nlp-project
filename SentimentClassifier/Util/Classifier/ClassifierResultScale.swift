@@ -33,6 +33,16 @@ enum ClassifierResultScale: Int {
             return "-"
         }
     }
+
+    static var resultPossiblities: [ClassifierResultScale] {
+        return [
+            .extremlySatisfied,
+            .satisfied,
+            .neutral,
+            .unsatisified,
+            .extremlyUnsatisifed
+        ]
+    }
     
     // MARK: - Initialization -
     

@@ -15,6 +15,7 @@ import RxCocoa
 protocol ProfileWireframeInterface: WireframeInterface {
     func openChoosePhoto()
     func openCreateReview() -> Signal<Void>
+    func openFilterReviews(with delegate: FilterDelegate)
 }
 
 protocol ProfileViewInterface: ViewInterface {
@@ -34,6 +35,7 @@ enum Profile {
     struct ViewOutput {
         let choosePhotoAction: Signal<Void>
         let createReviewAction: Signal<Void>
+        let filterReviewsAction: Signal<Void>
         let viewWillAppear: Signal<Void>
     }
 

@@ -64,6 +64,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="VGP-iS-84e"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
