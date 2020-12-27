@@ -70,7 +70,8 @@ private extension ProfileViewController {
 
         let output = Profile.ViewOutput(
             choosePhotoAction: choosePhotoButton.rx.tap.asSignal(),
-            createReviewAction: createReviewButton.rx.tap.asSignal()
+            createReviewAction: createReviewButton.rx.tap.asSignal(),
+            viewWillAppear: rx.viewWillAppear.asSignal()
         )
 
         let input = presenter.configure(with: output)
@@ -106,7 +107,10 @@ private extension ProfileViewController {
     func handle(image: Driver<String?>) {
 
         let setImage: (String?) -> Void = { [unowned choosePhotoButton] in
-            guard let imageName = $0 else { return }
+            guard let imageName = $0 else {
+                choosePhotoButton?.setTitle(Strings.choosePhotoTitle, for: .normal)
+                return
+            }
             let image = UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal)
             choosePhotoButton?.setImage(image, for: .normal)
         }

@@ -19,9 +19,12 @@ final class CreateReviewViewController: NLPViewController {
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var movieTitleTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var movieYearTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var reviewTitleTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var reviewTextView: UITextView!
     @IBOutlet private weak var submitButton: UIButton!
+
+    @IBOutlet private weak var activtyIndicator: UIActivityIndicatorView!
 
     // MARK: - Public properties
 
@@ -37,12 +40,18 @@ final class CreateReviewViewController: NLPViewController {
         super.viewDidLoad()
         configure()
         setupUI()
+        activtyIndicator.isHidden = true
     }
 }
 
 // MARK: - CreateReviewViewInterface
 
 extension CreateReviewViewController: CreateReviewViewInterface {
+
+    func stopLoading() {
+        activtyIndicator.isHidden = true
+        activtyIndicator.stopAnimating()
+    }
 }
 
 // MARK: - Configuration
@@ -53,12 +62,20 @@ private extension CreateReviewViewController {
 
         let searchMovieAction = movieTitleTextField.rx.controlEvent(.editingDidBegin)
 
+        let submitAction = submitButton.rx.tap.asSignal()
+            .do(onNext: { [unowned activtyIndicator] in
+                activtyIndicator?.startAnimating()
+                activtyIndicator?.isHidden = false
+            })
+            .flatMap { [unowned self] in self.reviewData }
+
         let output = CreateReview.ViewOutput(
-            searchMovieAction: searchMovieAction.asSignal()
+            searchMovieAction: searchMovieAction.asSignal(),
+            saveReviewAction: submitAction
         )
 
         let input = presenter.configure(with: output)
-        handle(title: input.title)
+        handle(movieData: input.movieData)
     }
 }
 
@@ -70,6 +87,8 @@ private extension CreateReviewViewController {
         titleLabel.text = Strings.createReviewTitle
         movieTitleTextField.placeholder = Strings.movieTitle
         movieTitleTextField.title = Strings.movieTitle
+        movieYearTextField.placeholder = Strings.movieYear
+        movieYearTextField.title = Strings.movieYear
         reviewTitleTextField.placeholder = Strings.reviewTitle
         reviewTitleTextField.title = Strings.reviewTitle
         submitButton.setTitle(Strings.createReview, for: .normal)
@@ -80,8 +99,26 @@ private extension CreateReviewViewController {
 
 private extension CreateReviewViewController {
 
-    func handle(title: Driver<String>) {
-        title.drive(movieTitleTextField.rx.text)
+    var reviewData: Signal<ReviewData> {
+        return Driver.combineLatest(
+                movieTitleTextField.rx.text.asDriver(),
+                movieYearTextField.rx.text.asDriver(),
+                reviewTitleTextField.rx.text.asDriver(),
+                reviewTextView.rx.text.asDriver()
+            )
+            .asSignal(onErrorSignalWith: .empty())
+            .map { ReviewData(movieTitle: $0, movieYear: $1, reviewTitle: $2, reviewText: $3) }
+    }
+
+    func handle(movieData: Driver<(title: String, year: String)>) {
+        movieData
+            .map { $0.title }
+            .drive(movieTitleTextField.rx.text)
+            .disposed(by: disposeBag)
+
+        movieData
+            .map { $0.year }
+            .drive(movieYearTextField.rx.text)
             .disposed(by: disposeBag)
     }
 }

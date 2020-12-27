@@ -41,9 +41,12 @@ extension ProfileWireframe: ProfileWireframeInterface {
         navigationController?.presentWireframe(ChoosePhotoWireframe())
     }
 
-    func openCreateReview() {
+    func openCreateReview() -> Signal<Void> {
         let navController = UINavigationController()
-        navController.setRootWireframe(CreateReviewWireframe())
+        let wireframe = CreateReviewWireframe()
+        navController.setRootWireframe(wireframe)
         navigationController?.present(navController, animated: true, completion: nil)
+
+        return wireframe.viewController.rx.viewWillDisappear.asSignal()
     }
 }

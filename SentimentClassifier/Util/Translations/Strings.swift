@@ -30,6 +30,10 @@ struct Strings {
         chooseTranslation(eng: "Movie title", cro: "Naslov filma")
     }
 
+    static var movieYear: String {
+        chooseTranslation(eng: "Movie year", cro: "Godina filma")
+    }
+
     static var reviewTitle: String {
         chooseTranslation(eng: "Review title", cro: "Naslov recenzije")
     }

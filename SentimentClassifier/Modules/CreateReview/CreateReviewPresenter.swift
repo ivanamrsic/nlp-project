@@ -20,7 +20,7 @@ final class CreateReviewPresenter {
     private let interactor: CreateReviewInteractorInterface
     private let wireframe: CreateReviewWireframeInterface
 
-    private let movieRelay = BehaviorRelay<String>(value: "")
+    private let movieRelay = BehaviorRelay<(title: String, year: String)>(value: ("", ""))
 
     private let disposeBag = DisposeBag()
 
@@ -39,8 +39,9 @@ extension CreateReviewPresenter: CreateReviewPresenterInterface {
 
     func configure(with output: CreateReview.ViewOutput) -> CreateReview.ViewInput {
         handle(searchMovie: output.searchMovieAction)
+        handle(saveReview: output.saveReviewAction)
         return CreateReview.ViewInput(
-            title: movieRelay.asDriver()
+            movieData: movieRelay.asDriver()
         )
     }
 }
@@ -55,6 +56,20 @@ private extension CreateReviewPresenter {
             })
             .disposed(by: disposeBag)
     }
+
+    func handle(saveReview: Signal<ReviewData>) {
+        saveReview
+            .asDriver(onErrorDriveWith: .empty())
+            .flatMap { [unowned interactor] in interactor.save(reviewData: $0) }
+            .drive(onNext: { [unowned wireframe, unowned view] didSave in
+                if didSave {
+                    wireframe.dismiss()
+                } else {
+                    view.stopLoading()
+                }
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 // MARK: - SearchResultDelegate
@@ -62,6 +77,6 @@ private extension CreateReviewPresenter {
 extension CreateReviewPresenter: SearchResultDelegate {
 
     func process(result: SearchResponse.Movie) {
-        movieRelay.accept(result.title)
+        movieRelay.accept((result.title, result.year))
     }
 }

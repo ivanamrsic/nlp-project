@@ -37,7 +37,7 @@ final class ReviewTableViewCell: UITableViewCell {
 extension ReviewTableViewCell {
 
     func configure(with item: ReviewTableCellItem) {
-        setupUI(with: item)
+        setupUI(with: item.review)
     }
 }
 
@@ -45,11 +45,13 @@ extension ReviewTableViewCell {
 
 private extension ReviewTableViewCell {
 
-    func setupUI(with item: ReviewTableCellItem) {
-        movieTitleLabel.text = item.review.movie
-        titleLabel.text = item.review.title
-        dateLabel.text = item.review.date
-        reviewTextLabel.text = item.review.text
-        sentimentResultLabel.text = item.review.reviewScore
+    func setupUI(with review: Review) {
+        let movieTitle = review.movieTitle ?? ""
+        let movieYear = review.movieYear != nil ? "(" + review.movieYear!  + ")" : ""
+        movieTitleLabel.text = "\(movieTitle) \(movieYear)"
+        titleLabel.text = review.reviewTitle
+        dateLabel.text = review.reviewDate
+        reviewTextLabel.text = review.reviewText
+        sentimentResultLabel.text = review.sentiment
     }
 }

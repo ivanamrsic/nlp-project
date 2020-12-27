@@ -37,14 +37,14 @@ extension ProfilePresenter: ProfilePresenterInterface {
 
     func configure(with output: Profile.ViewOutput) -> Profile.ViewInput {
         handle(choosePhoto: output.choosePhotoAction)
-        handle(createReview: output.createReviewAction)
+        let refresh = handle(createReview: output.createReviewAction)
 
-        let items = createItems()
+        let items = createItems(with: Signal.merge(refresh, output.viewWillAppear))
 
         return Profile.ViewInput(
-            items: .just(items),
+            items: items,
             image: interactor.profilePhoto,
-            reviewCount: .just(items.count)
+            reviewCount: items.map { $0.count }
         )
     }
 }
@@ -60,11 +60,8 @@ private extension ProfilePresenter {
             .disposed(by: disposeBag)
     }
 
-    func handle(createReview: Signal<Void>) {
-        createReview.emit(onNext: { [unowned wireframe] in
-                wireframe.openCreateReview()
-            })
-            .disposed(by: disposeBag)
+    func handle(createReview: Signal<Void>) -> Signal<Void> {
+        return createReview.flatMap { [unowned wireframe] in wireframe.openCreateReview() }
     }
 }
 
@@ -72,12 +69,11 @@ private extension ProfilePresenter {
 
 private extension ProfilePresenter {
 
-    func createItems() -> [TableCellItem] {
-        return [
-            ReviewTableCellItem(review: Review.r1),
-            ReviewTableCellItem(review: Review.r2),
-            ReviewTableCellItem(review: Review.r3),
-            ReviewTableCellItem(review: Review.r4)
-        ]
+    func createItems(with refresh: Signal<Void>) -> Driver<[TableCellItem]> {
+        return refresh.flatMap { [unowned interactor] in
+                interactor.fetchReviews().asDriver(onErrorDriveWith: .empty())
+            }
+            .asDriver(onErrorDriveWith: .empty())
+            .map { $0.map { review in ReviewTableCellItem(review: review) } }
     }
 }

@@ -12,12 +12,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+struct ReviewData {
+    let movieTitle: String?
+    let movieYear: String?
+    let reviewTitle: String?
+    let reviewText: String?
+}
+
 protocol CreateReviewWireframeInterface: WireframeInterface {
     func dismiss()
     func searchMovies(delegate: SearchResultDelegate)
 }
 
 protocol CreateReviewViewInterface: ViewInterface {
+    func stopLoading()
 }
 
 protocol CreateReviewPresenterInterface: PresenterInterface {
@@ -25,15 +33,17 @@ protocol CreateReviewPresenterInterface: PresenterInterface {
 }
 
 protocol CreateReviewInteractorInterface: InteractorInterface {
+    func save(reviewData: ReviewData) -> Driver<Bool>
 }
 
 enum CreateReview {
 
     struct ViewOutput {
         let searchMovieAction: Signal<Void>
+        let saveReviewAction: Signal<ReviewData>
     }
 
     struct ViewInput {
-        let title: Driver<String>
+        let movieData: Driver<(title: String, year: String)>
     }
 }

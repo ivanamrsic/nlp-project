@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="K8V-yF-LsJ" userLabel="User info Stack View">
                                 <rect key="frame" x="24" y="24" width="327" height="177.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79b-cS-l8l">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="79b-cS-l8l">
                                         <rect key="frame" x="0.0" y="39" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="T6i-ae-iaB"/>

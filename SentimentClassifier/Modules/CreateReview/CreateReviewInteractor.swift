@@ -10,6 +10,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 final class CreateReviewInteractor {
 }
@@ -17,4 +18,40 @@ final class CreateReviewInteractor {
 // MARK: - CreateReviewInteractorInterface
 
 extension CreateReviewInteractor: CreateReviewInteractorInterface {
+
+    func save(reviewData: ReviewData) -> Driver<Bool> {
+
+        guard let title = reviewData.reviewTitle, title.count > 0,
+              let text = reviewData.reviewText, text.count > 0
+        else { return Driver.just(false).debounce(.milliseconds(1000)) }
+
+        let review = Review(context: PersistanceManager.context)
+        review.movieTitle = reviewData.movieTitle
+        review.movieYear = reviewData.movieYear
+        review.reviewTitle = title
+        review.reviewText = text
+        review.reviewDate = currentDate
+        review.sentiment = classify(text: reviewData.reviewText)
+
+        PersistanceManager.saveContext()
+
+        return Driver.just(true).debounce(.milliseconds(1000))
+
+    }
+}
+
+private extension CreateReviewInteractor {
+
+    var currentDate: String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .medium
+        formatter.timeZone = TimeZone.current
+        return formatter.string(from: Date())
+    }
+
+    func classify(text: String?) -> String? {
+        guard let text = text else { return nil }
+        return ClassifierModel().classify(text: text).description
+    }
 }

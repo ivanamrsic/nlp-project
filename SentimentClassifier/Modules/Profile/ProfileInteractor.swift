@@ -11,6 +11,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import CoreData
 
 final class ProfileInteractor {
 }
@@ -23,5 +24,22 @@ extension ProfileInteractor: ProfileInteractorInterface {
         return UserDefaults.standard.rx
             .observe(String.self, UserStoreManager.profilePhotoKey)
             .asDriver(onErrorDriveWith: .empty())
+    }
+
+    func fetchReviews() -> Single<[Review]> {
+
+        return Single.create { observer -> Disposable in
+
+            let request: NSFetchRequest = Review.fetchRequest()
+
+            do {
+                let reviews = try PersistanceManager.context.fetch(request)
+                observer(.success(reviews))
+            } catch (let error) {
+                observer(.error(error))
+            }
+
+            return Disposables.create { }
+        }
     }
 }

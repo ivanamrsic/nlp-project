@@ -14,7 +14,7 @@ import RxCocoa
 
 protocol ProfileWireframeInterface: WireframeInterface {
     func openChoosePhoto()
-    func openCreateReview()
+    func openCreateReview() -> Signal<Void>
 }
 
 protocol ProfileViewInterface: ViewInterface {
@@ -26,6 +26,7 @@ protocol ProfilePresenterInterface: PresenterInterface {
 
 protocol ProfileInteractorInterface: InteractorInterface {
     var profilePhoto: Driver<String?> { get }
+    func fetchReviews() -> Single<[Review]>
 }
 
 enum Profile {
@@ -33,6 +34,7 @@ enum Profile {
     struct ViewOutput {
         let choosePhotoAction: Signal<Void>
         let createReviewAction: Signal<Void>
+        let viewWillAppear: Signal<Void>
     }
 
     struct ViewInput {
