@@ -86,10 +86,13 @@ private extension ProfilePresenter {
         }
         .asDriver(onErrorDriveWith: .empty())
 
-        let itemDeleted = PublishRelay<Void>()
+        let itemDeleted = BehaviorRelay<Void>(value: ())
 
         return Driver
-            .combineLatest(reviews, filtersRelay.asDriver(), itemDeleted.asDriver(onErrorDriveWith: .empty()))
+            .combineLatest(
+                reviews,
+                filtersRelay.asDriver(),
+                itemDeleted.asDriver(onErrorDriveWith: .empty()))
             .map { [unowned self] (reviews, filters, _) in
                 self.filter(reviews: reviews, filters: filters)
             }
@@ -102,7 +105,7 @@ private extension ProfilePresenter {
         }
     }
 
-    func mapToItems(reviews: [Review], itemDeleted: PublishRelay<Void>) -> [ReviewTableCellItem] {
+    func mapToItems(reviews: [Review], itemDeleted: BehaviorRelay<Void>) -> [ReviewTableCellItem] {
         return reviews.map { [unowned interactor] review in
             let didDelete: () -> Void = { [unowned interactor] in
                 interactor.delete(review: review)

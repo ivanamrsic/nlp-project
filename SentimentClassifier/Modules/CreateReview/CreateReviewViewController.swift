@@ -41,6 +41,7 @@ final class CreateReviewViewController: NLPViewController {
         configure()
         setupUI()
         activtyIndicator.isHidden = true
+        hideKeyboardWhenTappedAround()
     }
 }
 
