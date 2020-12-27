@@ -105,13 +105,13 @@
     </scenes>
     <designables>
         <designable name="A4e-LP-wm5">
-            <size key="intrinsicContentSize" width="327" height="46.380859375"/>
+            <size key="intrinsicContentSize" width="33" height="34"/>
         </designable>
         <designable name="Hgu-PQ-7PT">
-            <size key="intrinsicContentSize" width="327" height="46.380859375"/>
+            <size key="intrinsicContentSize" width="33" height="34"/>
         </designable>
         <designable name="eNe-6K-jUm">
-            <size key="intrinsicContentSize" width="327" height="46.380859375"/>
+            <size key="intrinsicContentSize" width="33" height="34"/>
         </designable>
     </designables>
     <resources>

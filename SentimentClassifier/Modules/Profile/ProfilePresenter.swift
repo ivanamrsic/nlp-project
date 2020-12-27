@@ -40,8 +40,8 @@ extension ProfilePresenter: ProfilePresenterInterface {
     func configure(with output: Profile.ViewOutput) -> Profile.ViewInput {
         handle(filterReviews: output.filterReviewsAction)
         handle(choosePhoto: output.choosePhotoAction)
-        let refresh = handle(createReview: output.createReviewAction)
 
+        let refresh = handle(createReview: output.createReviewAction)
         let items = createItems(with: Signal.merge(refresh, output.viewWillAppear))
 
         return Profile.ViewInput(
@@ -86,14 +86,30 @@ private extension ProfilePresenter {
         }
         .asDriver(onErrorDriveWith: .empty())
 
+        let itemDeleted = PublishRelay<Void>()
 
-        return Driver.combineLatest(reviews, filtersRelay.asDriver(), resultSelector: {
-            (reviews, filters) -> [Review] in
-            return reviews.filter { review in
-                return filters.contains(where: { $0.description == review.sentiment })
+        return Driver
+            .combineLatest(reviews, filtersRelay.asDriver(), itemDeleted.asDriver(onErrorDriveWith: .empty()))
+            .map { [unowned self] (reviews, filters, _) in
+                self.filter(reviews: reviews, filters: filters)
             }
-        })
-            .map { $0.map { review in ReviewTableCellItem(review: review) } }
+            .map { [unowned self] in self.mapToItems(reviews: $0, itemDeleted: itemDeleted) }
+    }
+
+    func filter(reviews: [Review], filters: [ClassifierResultScale]) -> [Review] {
+        return reviews.filter { review -> Bool in
+            filters.contains(where: { $0.description == review.sentiment })
+        }
+    }
+
+    func mapToItems(reviews: [Review], itemDeleted: PublishRelay<Void>) -> [ReviewTableCellItem] {
+        return reviews.map { [unowned interactor] review in
+            let didDelete: () -> Void = { [unowned interactor] in
+                interactor.delete(review: review)
+                itemDeleted.accept(())
+            }
+            return ReviewTableCellItem(review: review, didDelete: didDelete)
+        }
     }
 }
 

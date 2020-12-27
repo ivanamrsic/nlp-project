@@ -13,16 +13,29 @@ struct ReviewTableCellItem {
 
     let review: Review
 
+    // MARK: - Private properties
+
+    let didDelete: (() -> Void)?
+
     // MARK: - Init
 
-    init(review: Review) {
+    init(review: Review, didDelete: (() -> Void)? = nil) {
         self.review = review
+        self.didDelete = didDelete
     }
 }
 
 // MARK: - TableCellItem
 
 extension ReviewTableCellItem: TableCellItem {
+
+    var canDelete: Bool {
+        return didDelete != nil
+    }
+
+    func didDelete(at indexPath: IndexPath) {
+        didDelete?()
+    }
 
     func cell(from tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: ReviewTableViewCell.self, for: indexPath)

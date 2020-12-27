@@ -28,6 +28,7 @@ protocol ProfilePresenterInterface: PresenterInterface {
 protocol ProfileInteractorInterface: InteractorInterface {
     var profilePhoto: Driver<String?> { get }
     func fetchReviews() -> Single<[Review]>
+    func delete(review: Review)
 }
 
 enum Profile {

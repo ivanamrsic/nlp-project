@@ -42,4 +42,9 @@ extension ProfileInteractor: ProfileInteractorInterface {
             return Disposables.create { }
         }
     }
+
+    func delete(review: Review) {
+        PersistanceManager.context.delete(review)
+        PersistanceManager.saveContext()
+    }
 }
