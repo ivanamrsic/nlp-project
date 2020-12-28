@@ -29,11 +29,25 @@ extension UIImage {
         static var user: UIImage {
             return UIImage(named: "TabBarItems/user")!
         }
+
+        static var settings: UIImage {
+            return UIImage(named: "TabBarItems/gear")!
+        }
     }
 
     struct Common {
         static var add: UIImage {
             return UIImage(named: "Common/add")!
+        }
+    }
+
+    struct Flag {
+        static var croatia: UIImage {
+            return UIImage(named: "Flags/croatia")!
+        }
+
+        static var greatBritain: UIImage {
+            return UIImage(named: "Flags/great-britain")!
         }
     }
     

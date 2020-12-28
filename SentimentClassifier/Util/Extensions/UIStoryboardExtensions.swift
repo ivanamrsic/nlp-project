@@ -40,4 +40,8 @@ extension UIStoryboard {
     static var filterReviews: UIStoryboard {
         return UIStoryboard(name: "FilterReviews", bundle: nil)
     }
+
+    static var settings: UIStoryboard {
+        return UIStoryboard(name: "Settings", bundle: nil)
+    }
 }

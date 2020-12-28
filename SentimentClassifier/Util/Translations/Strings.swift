@@ -5,11 +5,11 @@
 //  Created by Ivana Mršić on 26.12.2020..
 //
 
-import Foundation
+import UIKit
 
 enum Language: String {
-    case english = "english"
-    case croatian = "croatian"
+    case english = "English"
+    case croatian = "Hrvatski"
 
     static func get(from string: String) -> Language {
         if string == Language.english.rawValue {
@@ -18,9 +18,32 @@ enum Language: String {
 
         return .croatian
     }
+
+    static var allOptions: [Language] {
+        return [.english, .croatian]
+    }
+
+    var image: UIImage? {
+        switch self {
+        case .english: return UIImage.Flag.greatBritain
+        case .croatian: return UIImage.Flag.croatia
+        }
+    }
 }
 
 struct Strings {
+
+    static var done: String {
+        chooseTranslation(eng: "Done", cro: "Gotovo")
+    }
+
+    static var chooseAppLanguage: String {
+        chooseTranslation(eng: "Choose language in the app", cro: "Odaberi jezik aplikacije")
+    }
+
+    static var chooseProfilePhoto: String {
+        chooseTranslation(eng: "Choose profile photo", cro: "Odaberi sliku profila")
+    }
 
     static var filterBySentiment: String {
         chooseTranslation(eng: "By sentiment", cro: "Po sentimentu")

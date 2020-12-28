@@ -37,6 +37,7 @@ extension HomeWireframe: HomeWireframeInterface {
     
     var childViewControllers: [NLPViewController] {
         return [
+            SettingsWireframe().viewController as? NLPViewController,
             ProfileWireframe().viewController as? NLPViewController,
             ClassifierWireframe().viewController as? NLPViewController,
             LanguagesWireframe().viewController as? NLPViewController

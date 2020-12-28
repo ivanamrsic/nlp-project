@@ -51,12 +51,6 @@ private extension ChoosePhotoPresenter {
             wireframe.dismiss()
         }
 
-        return [
-            PhotoCellItem(photo: .caveman, didSelect: didSelect),
-            PhotoCellItem(photo: .trash, didSelect: didSelect),
-            PhotoCellItem(photo: .chinchilla, didSelect: didSelect),
-            PhotoCellItem(photo: .edvardMunch, didSelect: didSelect),
-            PhotoCellItem(photo: .iceCream, didSelect: didSelect)
-        ]
+        return ProfilePhoto.allPhotos.map { PhotoCellItem(photo: $0, didSelect: didSelect) }
     }
 }

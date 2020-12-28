@@ -14,15 +14,15 @@ import RxCocoa
 
 final class HomeViewController: UITabBarController {
 
-    // MARK: - Public properties -
+    // MARK: - Public properties
 
     var presenter: HomePresenterInterface!
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private let disposeBag = DisposeBag()
 
-    // MARK: - Lifecycle -
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +46,10 @@ private extension HomeViewController {
         let input = presenter.configure(with: output)
         
         let tabItems: (ChildViewControllers) -> ChildViewControllers = { (controllers: ChildViewControllers) -> (ChildViewControllers) in
-            controllers.forEach { $0.tabBarItem =  $0.tabBarProperty?.item }
+            controllers.forEach { $0.tabBarItem = $0.tabBarProperty?.item }
             return controllers
         }
-        
+
         input.tabBars
             .map(tabItems)
             .drive(onNext: { [unowned self] in self.viewControllers = $0 })

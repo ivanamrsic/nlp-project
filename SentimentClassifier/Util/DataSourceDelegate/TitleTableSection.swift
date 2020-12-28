@@ -1,8 +1,8 @@
 //
-//  BlankTableSection.swift
+//  TitleTableSection.swift
 //  SentimentClassifier
 //
-//  Created by Ivana Mršić on 26.12.2020..
+//  Created by Ivana Mršić on 28.12.2020..
 //
 
 import UIKit
@@ -11,12 +11,14 @@ import UIKit
 /// Used in conjuction with table view data source delegate
 /// for easy mapping items to single section without footer
 /// or header - just like you didn't use section at all.
-public class BlankTableSection: TableSectionItem {
+public class TitleTableSection: TableSectionItem {
 
     public var items: [TableCellItem]
+    public var title: String?
 
-    public init(items: [TableCellItem]) {
+    public init(items: [TableCellItem], title: String) {
         self.items = items
+        self.title = title
     }
 
     public convenience init?(items: [TableCellItem]?) {
@@ -27,7 +29,7 @@ public class BlankTableSection: TableSectionItem {
     }
 
     public var headerHeight: CGFloat {
-        return .leastNonzeroMagnitude
+        return 50
     }
 
     public var footerHeight: CGFloat {
@@ -40,5 +42,9 @@ public class BlankTableSection: TableSectionItem {
 
     public var estimatedFooterHeight: CGFloat {
         return footerHeight
+    }
+
+    public func titleForHeader(from tableView: UITableView, at index: Int) -> String? {
+        return title
     }
 }

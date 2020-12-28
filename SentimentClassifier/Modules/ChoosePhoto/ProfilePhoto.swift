@@ -43,4 +43,10 @@ struct ProfilePhoto: Codable {
         static var edvardMunch: String { "Profile/edvard-munch" }
         static var iceCream: String { "Profile/ice-cream" }
     }
+
+    static var allPhotos: [ProfilePhoto] {
+        return [
+            .caveman, .trash, .chinchilla, .edvardMunch, .iceCream
+        ]
+    }
 }

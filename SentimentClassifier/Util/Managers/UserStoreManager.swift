@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class UserStoreManager {
 
@@ -29,7 +31,20 @@ extension UserStoreManager {
             return Language.get(from: UserDefaults.standard.string(forKey: languageKey) ?? "english")
         }
         set(newValue) {
-            UserDefaults.standard.set(newValue.rawValue, forKey: languageKey)
+            let value = newValue.rawValue
+            UserDefaults.standard.set(value, forKey: languageKey)
         }
+    }
+}
+
+extension UserStoreManager {
+
+    static var languageDriver: Driver<Language> {
+        return UserDefaults.standard.rx
+            .observe(String.self, UserStoreManager.languageKey)
+            .asDriver(onErrorDriveWith: .empty())
+            .compactMap { Language.get(from: $0!) }
+            .distinctUntilChanged()
+
     }
 }
