@@ -20,6 +20,6 @@ final class ChoosePhotoInteractor {
 extension ChoosePhotoInteractor: ChoosePhotoInteractorInterface {
 
     func save(photo: ProfilePhoto) {
-        UserStoreManager.profilePhoto = photo.imageName
+        UserStoreManager.profilePhoto = photo
     }
 }

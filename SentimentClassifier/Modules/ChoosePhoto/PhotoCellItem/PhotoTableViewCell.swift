@@ -29,7 +29,7 @@ extension PhotoTableViewCell {
 private extension PhotoTableViewCell {
 
     func setupUI(with item: PhotoCellItem) {
-        photoImageView.image = UIImage(named: item.photo.imageName)
-        titleLabel.text = item.photo.title
+        photoImageView.image = item.photo.image
+        titleLabel.text = item.photo.name
     }
 }

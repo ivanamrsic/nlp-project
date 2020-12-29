@@ -27,4 +27,13 @@ extension SettingsInteractor: SettingsInteractorInterface {
         get { return UserStoreManager.language }
         set(newValue) { UserStoreManager.language = newValue }
     }
+
+    var allPhotos: [ProfilePhoto] {
+        return ProfilePhoto.allPhotos
+    }
+
+    var selectedPhoto: ProfilePhoto {
+        get { return UserStoreManager.profilePhoto }
+        set(newValue) { UserStoreManager.profilePhoto = newValue }
+    }
 }

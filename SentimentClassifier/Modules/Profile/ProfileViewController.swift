@@ -110,14 +110,10 @@ private extension ProfileViewController {
             .disposed(by: disposeBag)
     }
 
-    func handle(image: Driver<String?>) {
+    func handle(image: Driver<ProfilePhoto>) {
 
-        let setImage: (String?) -> Void = { [unowned choosePhotoButton] in
-            guard let imageName = $0 else {
-                choosePhotoButton?.setTitle(Strings.choosePhotoTitle, for: .normal)
-                return
-            }
-            let image = UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal)
+        let setImage: (ProfilePhoto) -> Void = { [unowned choosePhotoButton] in
+            let image = $0.image.withRenderingMode(.alwaysOriginal)
             choosePhotoButton?.setImage(image, for: .normal)
         }
 

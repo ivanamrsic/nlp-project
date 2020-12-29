@@ -20,10 +20,8 @@ final class ProfileInteractor {
 
 extension ProfileInteractor: ProfileInteractorInterface {
 
-    var profilePhoto: Driver<String?> {
-        return UserDefaults.standard.rx
-            .observe(String.self, UserStoreManager.profilePhotoKey)
-            .asDriver(onErrorDriveWith: .empty())
+    var profilePhoto: Driver<ProfilePhoto> {
+        return UserStoreManager.profilePhotoDriver
     }
 
     func fetchReviews() -> Single<[Review]> {

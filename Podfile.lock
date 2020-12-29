@@ -6,6 +6,9 @@ PODS:
   - RxCocoa (5.1.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxGesture (3.0.2):
+    - RxCocoa (~> 5.1)
+    - RxSwift (~> 5.1)
   - RxRelay (5.1.0):
     - RxSwift (~> 5)
   - RxSwift (5.1.0)
@@ -15,6 +18,7 @@ DEPENDENCIES:
   - Alamofire
   - Kingfisher
   - RxCocoa
+  - RxGesture
   - RxSwift
   - SkyFloatingLabelTextField (~> 3.0)
 
@@ -23,6 +27,7 @@ SPEC REPOS:
     - Alamofire
     - Kingfisher
     - RxCocoa
+    - RxGesture
     - RxRelay
     - RxSwift
     - SkyFloatingLabelTextField
@@ -31,10 +36,11 @@ SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
+  RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
   RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
 
-PODFILE CHECKSUM: 83a7fe32291db174593c45932cb5dd578926dd82
+PODFILE CHECKSUM: 636ed473ae6d3878d7df56ebaf597845ef27597c
 
 COCOAPODS: 1.8.4

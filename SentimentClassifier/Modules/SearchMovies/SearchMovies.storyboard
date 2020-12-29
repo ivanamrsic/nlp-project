@@ -53,7 +53,7 @@
     </scenes>
     <designables>
         <designable name="lgf-oc-m2E">
-            <size key="intrinsicContentSize" width="327" height="46.380859375"/>
+            <size key="intrinsicContentSize" width="33" height="34"/>
         </designable>
     </designables>
     <resources>

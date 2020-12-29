@@ -25,6 +25,8 @@ protocol SettingsPresenterInterface: PresenterInterface {
 protocol SettingsInteractorInterface: InteractorInterface {
     var currentLanguage: Language { get set }
     var language: Driver<Language> { get }
+    var allPhotos: [ProfilePhoto] { get }
+    var selectedPhoto: ProfilePhoto { get set }
 }
 
 enum Settings {

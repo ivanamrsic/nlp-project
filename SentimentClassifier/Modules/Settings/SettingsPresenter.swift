@@ -45,8 +45,15 @@ extension SettingsPresenter: SettingsPresenterInterface {
 private extension SettingsPresenter {
 
     func imageSelectionSection() -> TableSectionItem {
+
+        let item = ImageSelectionCellItem(photos: interactor.allPhotos, selectedPhoto: interactor.selectedPhoto)
+
+        item.selectedValue
+            .drive(onNext: { [unowned interactor] in interactor.selectedPhoto = $0 })
+            .disposed(by: disposeBag)
+
         return TitleTableSection(
-            items: [ImageSelectionCellItem()],
+            items: [item],
             title: Strings.chooseProfilePhoto
         )
     }

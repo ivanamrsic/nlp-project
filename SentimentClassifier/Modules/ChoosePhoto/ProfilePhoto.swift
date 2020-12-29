@@ -7,41 +7,51 @@
 
 import UIKit
 
-struct ProfilePhoto: Codable {
-    let title: String
-    let imageName: String
+enum ProfilePhoto {
+    case caveman
+    case trash
+    case chinchilla
+    case edvardMunch
+    case iceCream
 
-    private init(title: String, imageName: String) {
-        self.title = title
-        self.imageName = imageName
+    var id: Int {
+        switch self {
+        case .caveman: return 1
+        case .trash: return 2
+        case .chinchilla: return 3
+        case .edvardMunch: return 4
+        case .iceCream: return 5
+        }
     }
 
-    static var caveman: ProfilePhoto {
-        ProfilePhoto(title: Strings.cavemanPhoto, imageName: Profile.caveman)
+    var name: String {
+        switch self {
+        case .caveman: return Strings.cavemanPhoto
+        case .trash: return Strings.trashPhoto
+        case .chinchilla: return Strings.chinchillaPhoto
+        case .edvardMunch: return Strings.edvardMunchPhoto
+        case .iceCream: return Strings.iceCreamPhoto
+        }
     }
 
-    static var trash: ProfilePhoto {
-        ProfilePhoto(title: Strings.trashPhoto, imageName: Profile.trash)
+    var image: UIImage {
+        switch self {
+        case .caveman: return UIImage(named: "Profile/caveman")!
+        case .trash: return UIImage(named: "Profile/trash")!
+        case .chinchilla: return UIImage(named: "Profile/chinchilla")!
+        case .edvardMunch: return UIImage(named: "Profile/edvard-munch")!
+        case .iceCream: return UIImage(named: "Profile/ice-cream")!
+        }
     }
 
-    static var chinchilla: ProfilePhoto {
-        ProfilePhoto(title: Strings.chinchillaPhoto, imageName: Profile.chinchilla)
-    }
-
-    static var edvardMunch: ProfilePhoto {
-        ProfilePhoto(title: Strings.edvardMunchPhoto, imageName: Profile.edvardMunch)
-    }
-
-    static var iceCream: ProfilePhoto {
-        ProfilePhoto(title: Strings.iceCreamPhoto, imageName: Profile.iceCream)
-    }
-
-    struct Profile {
-        static var caveman: String { "Profile/caveman" }
-        static var trash: String { "Profile/trash" }
-        static var chinchilla: String { "Profile/chinchilla" }
-        static var edvardMunch: String { "Profile/edvard-munch" }
-        static var iceCream: String { "Profile/ice-cream" }
+    static func get(from id: Int?) -> ProfilePhoto {
+        guard let id = id else { return .caveman }
+        if id == ProfilePhoto.caveman.id { return .caveman }
+        else if id == ProfilePhoto.trash.id { return .trash }
+        else if id == ProfilePhoto.chinchilla.id { return .chinchilla }
+        else if id == ProfilePhoto.edvardMunch.id { return .edvardMunch }
+        else if id == ProfilePhoto.iceCream.id { return .iceCream }
+        return .caveman
     }
 
     static var allPhotos: [ProfilePhoto] {

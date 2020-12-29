@@ -17,12 +17,13 @@ class UserStoreManager {
 
 extension UserStoreManager {
 
-    static var profilePhoto: String? {
+    static var profilePhoto: ProfilePhoto {
         get {
-            return UserDefaults.standard.string(forKey:profilePhotoKey)
+            let id = UserDefaults.standard.integer(forKey:profilePhotoKey)
+            return ProfilePhoto.get(from: id)
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: profilePhotoKey)
+            UserDefaults.standard.set(newValue.id, forKey: profilePhotoKey)
         }
     }
 
@@ -46,5 +47,13 @@ extension UserStoreManager {
             .compactMap { Language.get(from: $0!) }
             .distinctUntilChanged()
 
+    }
+
+    static var profilePhotoDriver: Driver<ProfilePhoto> {
+        return UserDefaults.standard.rx
+            .observe(Int.self, UserStoreManager.profilePhotoKey)
+            .asDriver(onErrorDriveWith: .empty())
+            .compactMap { ProfilePhoto.get(from: $0!) }
+            .distinctUntilChanged()
     }
 }

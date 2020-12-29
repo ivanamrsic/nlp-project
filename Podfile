@@ -11,6 +11,7 @@ target 'SentimentClassifier' do
 
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxGesture'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Alamofire'
   pod 'Kingfisher'

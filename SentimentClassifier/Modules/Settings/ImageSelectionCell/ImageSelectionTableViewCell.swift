@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ImageSelectionTableViewCell: UITableViewCell {
 
@@ -13,33 +15,24 @@ class ImageSelectionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
-    
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - Lifecycle
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        stackView.arrangedSubviews.forEach { view in
+            view.removeFromSuperview()
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
+
+// MARK: - Configuration
 
 extension ImageSelectionTableViewCell {
 
     func configure(with item: ImageSelectionCellItem) {
-        ProfilePhoto.allPhotos.forEach { [unowned stackView] in
-            stackView?.addArrangedSubview(createView(photoName: $0.imageName))
+        item.photoViews.forEach { [unowned stackView] in
+            stackView?.addArrangedSubview($0)
         }
-    }
-
-    func createView(photoName: String) -> UIView {
-        let view = Bundle.main.load(viewOfType: ImageSelectionView.self)
-        view.configure(with: UIImage(named: photoName))
-        view.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        return view
     }
 }
