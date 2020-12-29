@@ -14,7 +14,7 @@ import RxCocoa
 
 final class SettingsPresenter {
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private unowned let view: SettingsViewInterface
     private let interactor: SettingsInteractorInterface
@@ -22,7 +22,7 @@ final class SettingsPresenter {
 
     private let disposeBag = DisposeBag()
 
-    // MARK: - Lifecycle -
+    // MARK: - Lifecycle
 
     init(view: SettingsViewInterface, interactor: SettingsInteractorInterface, wireframe: SettingsWireframeInterface) {
         self.view = view
@@ -31,18 +31,35 @@ final class SettingsPresenter {
     }
 }
 
-// MARK: - Extensions -
+// MARK: - SettingsPresenterInterface
 
 extension SettingsPresenter: SettingsPresenterInterface {
 
     func configure(with output: Settings.ViewOutput) -> Settings.ViewInput {
         return Settings.ViewInput(
-            sections: createSections()
+            sections: createSections(with: output.viewWillAppear)
         )
     }
 }
 
+// MARK: - Sections creation
+
 private extension SettingsPresenter {
+
+    func createSections(with refresh: Signal<Void>) -> Driver<[TableSectionItem]> {
+        return Driver.combineLatest(
+                interactor.language,
+                refresh.asDriver(onErrorDriveWith: .empty()),
+                resultSelector: { (language, _) in language }
+            )
+            .startWith(interactor.currentLanguage)
+            .map { _ in
+                [
+                    self.imageSelectionSection(),
+                    self.languageSelectionSection()
+                ]
+            }
+    }
 
     func imageSelectionSection() -> TableSectionItem {
 
@@ -70,16 +87,5 @@ private extension SettingsPresenter {
             items: [languageItem],
             title: Strings.chooseAppLanguage
         )
-    }
-
-    func createSections() -> Driver<[TableSectionItem]> {
-
-        return interactor.language
-            .startWith(interactor.currentLanguage)
-            .map { _ in [
-                self.imageSelectionSection(),
-                self.languageSelectionSection()
-                ]
-            }
     }
 }

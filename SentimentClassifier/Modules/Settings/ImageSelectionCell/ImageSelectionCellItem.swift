@@ -46,8 +46,13 @@ extension ImageSelectionCellItem: TableCellItem {
 
 extension ImageSelectionCellItem {
 
-    var photoViews: [UIView] {
-        return photos.map { return self.createImageSelectionView(with: $0) }
+    var photoViews: [(view: UIView, selected: Bool)] {
+        return photos.map { return
+            (
+                view: self.createImageSelectionView(with: $0),
+                selected: selectedPhoto.value.id == $0.id
+            )
+        }
     }
 
     var selectedValue: Driver<ProfilePhoto> {
@@ -62,7 +67,7 @@ private extension ImageSelectionCellItem {
     func createImageSelectionView(with photo: ProfilePhoto) -> UIView {
         return loadView(
             image: photo.image,
-            isSelected: selectedValue.map { $0.name == photo.name },
+            isSelected: selectedValue.map { $0.id == photo.id },
             setSelected: { [unowned selectedPhoto] in selectedPhoto.accept(photo) }
         )
     }

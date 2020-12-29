@@ -32,6 +32,7 @@ protocol SettingsInteractorInterface: InteractorInterface {
 enum Settings {
 
     struct ViewOutput {
+        let viewWillAppear: Signal<Void>
     }
 
     struct ViewInput {

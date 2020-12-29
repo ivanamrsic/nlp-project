@@ -43,21 +43,27 @@ final class SettingsViewController: NLPViewController {
     }
 }
 
-// MARK: - Extensions -
+// MARK: - SettingsViewInterface
 
 extension SettingsViewController: SettingsViewInterface {
 }
 
+// MARK: - Configuration
+
 private extension SettingsViewController {
 
     func configure() {
-        let output = Settings.ViewOutput()
+        let output = Settings.ViewOutput(
+            viewWillAppear: rx.viewWillAppear.asSignal()
+        )
 
         let input = presenter.configure(with: output)
         handle(sections: input.sections)
     }
 
 }
+
+// MARK: - Binding setup
 
 private extension SettingsViewController {
 

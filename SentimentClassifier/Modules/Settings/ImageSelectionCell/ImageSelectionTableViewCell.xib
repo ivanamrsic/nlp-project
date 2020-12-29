@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="424" height="267"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skz-zD-tYP">
+                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skz-zD-tYP">
                         <rect key="frame" x="0.0" y="0.0" width="424" height="267"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="378" placeholderIntrinsicHeight="179" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="INb-Cq-eeF">
