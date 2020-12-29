@@ -44,4 +44,8 @@ extension UIStoryboard {
     static var settings: UIStoryboard {
         return UIStoryboard(name: "Settings", bundle: nil)
     }
+
+    static var editPersonalInfo: UIStoryboard {
+        return UIStoryboard(name: "EditPersonalInfo", bundle: nil)
+    }
 }

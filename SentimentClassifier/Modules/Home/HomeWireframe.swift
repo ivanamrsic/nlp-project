@@ -35,12 +35,36 @@ final class HomeWireframe: BaseWireframe {
 
 extension HomeWireframe: HomeWireframeInterface {
     
-    var childViewControllers: [NLPViewController] {
-        return [
-            SettingsWireframe().viewController as? NLPViewController,
-            ProfileWireframe().viewController as? NLPViewController,
-            ClassifierWireframe().viewController as? NLPViewController,
-            LanguagesWireframe().viewController as? NLPViewController
-        ].compactMap { $0 }
+    var childViewControllers: [NLPNavigationController] {
+        return [settings, profile, classifier, langauges]
+    }
+}
+
+// MARK: - Child wireframes
+
+private extension HomeWireframe {
+
+    var settings: NLPNavigationController {
+        let settings = NLPNavigationController(rootViewController: SettingsWireframe().viewController)
+        settings.tabBarProperty = .settings
+        return settings
+    }
+
+    var profile: NLPNavigationController {
+        let profile = NLPNavigationController(rootViewController: ProfileWireframe().viewController)
+        profile.tabBarProperty = .profile
+        return profile
+    }
+
+    var classifier: NLPNavigationController {
+        let classifier = NLPNavigationController(rootViewController: ClassifierWireframe().viewController)
+        classifier.tabBarProperty = .classifier
+        return classifier
+    }
+
+    var langauges: NLPNavigationController {
+        let languages = NLPNavigationController(rootViewController: LanguagesWireframe().viewController)
+        languages.tabBarProperty = .languages
+        return languages
     }
 }

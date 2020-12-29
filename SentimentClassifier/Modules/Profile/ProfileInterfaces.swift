@@ -27,6 +27,8 @@ protocol ProfilePresenterInterface: PresenterInterface {
 
 protocol ProfileInteractorInterface: InteractorInterface {
     var profilePhoto: Driver<ProfilePhoto> { get }
+    var username: Driver<String?> { get }
+    var email: Driver<String?> { get }
     func fetchReviews() -> Single<[Review]>
     func delete(review: Review)
 }
@@ -41,6 +43,8 @@ enum Profile {
     }
 
     struct ViewInput {
+        let username: Driver<String?>
+        let email: Driver<String?>
         let items: Driver<[TableCellItem]>
         let image: Driver<ProfilePhoto>
         let reviewCount: Driver<Int>

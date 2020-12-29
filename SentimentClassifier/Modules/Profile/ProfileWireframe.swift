@@ -23,8 +23,6 @@ final class ProfileWireframe: BaseWireframe {
     init() {
         let moduleViewController = storyboard.instantiateViewController(ofType: ProfileViewController.self)
         super.init(viewController: moduleViewController)
-
-        moduleViewController.tabBarProperty = .profile
         
         let interactor = ProfileInteractor()
         let presenter = ProfilePresenter(view: moduleViewController, interactor: interactor, wireframe: self)

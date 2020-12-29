@@ -55,10 +55,24 @@ private extension SettingsPresenter {
             .startWith(interactor.currentLanguage)
             .map { _ in
                 [
+                    self.generalSection(),
                     self.imageSelectionSection(),
                     self.languageSelectionSection()
                 ]
             }
+    }
+
+    func generalSection() -> TableSectionItem {
+
+        let item = GeneralCellItem(
+            title: Strings.personalInfo,
+            didSelect: { [unowned wireframe] in wireframe.openEditPersonalInfo() }
+        )
+
+        return TitleTableSection(
+            items: [item],
+            title: Strings.general
+        )
     }
 
     func imageSelectionSection() -> TableSectionItem {

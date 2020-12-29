@@ -45,6 +45,8 @@ extension ProfilePresenter: ProfilePresenterInterface {
         let items = createItems(with: Signal.merge(refresh, output.viewWillAppear))
 
         return Profile.ViewInput(
+            username: interactor.username,
+            email: interactor.email,
             items: items,
             image: interactor.profilePhoto,
             reviewCount: items.map { $0.count }

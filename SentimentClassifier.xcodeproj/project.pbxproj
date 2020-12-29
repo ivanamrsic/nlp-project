@@ -54,8 +54,17 @@
 		A898C2412598FC520082403A /* LanguageSelectionCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C2402598FC520082403A /* LanguageSelectionCellItem.swift */; };
 		A898C2452598FC640082403A /* LanguageSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C2432598FC640082403A /* LanguageSelectionTableViewCell.swift */; };
 		A898C2462598FC640082403A /* LanguageSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A898C2442598FC640082403A /* LanguageSelectionTableViewCell.xib */; };
-		A898C2492599E2580082403A /* TabBarProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C2482599E2570082403A /* TabBarProperty.swift */; };
+		A898C2492599E2580082403A /* NLPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C2482599E2570082403A /* NLPNavigationController.swift */; };
 		A898C24D2599FBC30082403A /* TitleTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C24C2599FBC30082403A /* TitleTableSection.swift */; };
+		A898C25A259B7DED0082403A /* GeneralCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C259259B7DED0082403A /* GeneralCellItem.swift */; };
+		A898C25E259B7E0B0082403A /* GeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C25C259B7E0B0082403A /* GeneralTableViewCell.swift */; };
+		A898C25F259B7E0B0082403A /* GeneralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A898C25D259B7E0B0082403A /* GeneralTableViewCell.xib */; };
+		A898C268259B80820082403A /* EditPersonalInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A898C262259B80820082403A /* EditPersonalInfo.storyboard */; };
+		A898C269259B80820082403A /* EditPersonalInfoInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C263259B80820082403A /* EditPersonalInfoInterfaces.swift */; };
+		A898C26A259B80820082403A /* EditPersonalInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C264259B80820082403A /* EditPersonalInfoPresenter.swift */; };
+		A898C26B259B80820082403A /* EditPersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C265259B80820082403A /* EditPersonalInfoViewController.swift */; };
+		A898C26C259B80820082403A /* EditPersonalInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C266259B80820082403A /* EditPersonalInfoInteractor.swift */; };
+		A898C26D259B80820082403A /* EditPersonalInfoWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C267259B80820082403A /* EditPersonalInfoWireframe.swift */; };
 		A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC15256694BA0052438B /* UIImageExtensions.swift */; };
 		A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */; };
 		A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */; };
@@ -172,8 +181,17 @@
 		A898C2402598FC520082403A /* LanguageSelectionCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionCellItem.swift; sourceTree = "<group>"; };
 		A898C2432598FC640082403A /* LanguageSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		A898C2442598FC640082403A /* LanguageSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageSelectionTableViewCell.xib; sourceTree = "<group>"; };
-		A898C2482599E2570082403A /* TabBarProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarProperty.swift; sourceTree = "<group>"; };
+		A898C2482599E2570082403A /* NLPNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPNavigationController.swift; sourceTree = "<group>"; };
 		A898C24C2599FBC30082403A /* TitleTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableSection.swift; sourceTree = "<group>"; };
+		A898C259259B7DED0082403A /* GeneralCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCellItem.swift; sourceTree = "<group>"; };
+		A898C25C259B7E0B0082403A /* GeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewCell.swift; sourceTree = "<group>"; };
+		A898C25D259B7E0B0082403A /* GeneralTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralTableViewCell.xib; sourceTree = "<group>"; };
+		A898C262259B80820082403A /* EditPersonalInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPersonalInfo.storyboard; sourceTree = "<group>"; };
+		A898C263259B80820082403A /* EditPersonalInfoInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInfoInterfaces.swift; sourceTree = "<group>"; };
+		A898C264259B80820082403A /* EditPersonalInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInfoPresenter.swift; sourceTree = "<group>"; };
+		A898C265259B80820082403A /* EditPersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInfoViewController.swift; sourceTree = "<group>"; };
+		A898C266259B80820082403A /* EditPersonalInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInfoInteractor.swift; sourceTree = "<group>"; };
+		A898C267259B80820082403A /* EditPersonalInfoWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInfoWireframe.swift; sourceTree = "<group>"; };
 		A8C1DC15256694BA0052438B /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentClassifierMac.mlmodel; sourceTree = "<group>"; };
@@ -276,9 +294,9 @@
 		A81FB3F52566BD9000919B9E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A898C2482599E2570082403A /* NLPNavigationController.swift */,
 				A81FB3F62566BDAA00919B9E /* NLPViewController.swift */,
 				A84ABA2825978BC400358042 /* Constants.swift */,
-				A898C2482599E2570082403A /* TabBarProperty.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -364,6 +382,7 @@
 		A898C21A2598E4090082403A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A898C258259B7DDA0082403A /* GeneralCell */,
 				A898C23F2598FC3F0082403A /* LanguageSelectionCell */,
 				A898C2292598E8790082403A /* ImageSelectionCell */,
 				A898C21B2598E4160082403A /* Settings.storyboard */,
@@ -404,6 +423,29 @@
 				A898C2442598FC640082403A /* LanguageSelectionTableViewCell.xib */,
 			);
 			path = LanguageSelectionCell;
+			sourceTree = "<group>";
+		};
+		A898C258259B7DDA0082403A /* GeneralCell */ = {
+			isa = PBXGroup;
+			children = (
+				A898C259259B7DED0082403A /* GeneralCellItem.swift */,
+				A898C25C259B7E0B0082403A /* GeneralTableViewCell.swift */,
+				A898C25D259B7E0B0082403A /* GeneralTableViewCell.xib */,
+			);
+			path = GeneralCell;
+			sourceTree = "<group>";
+		};
+		A898C261259B806C0082403A /* EditPersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A898C262259B80820082403A /* EditPersonalInfo.storyboard */,
+				A898C263259B80820082403A /* EditPersonalInfoInterfaces.swift */,
+				A898C264259B80820082403A /* EditPersonalInfoPresenter.swift */,
+				A898C265259B80820082403A /* EditPersonalInfoViewController.swift */,
+				A898C266259B80820082403A /* EditPersonalInfoInteractor.swift */,
+				A898C267259B80820082403A /* EditPersonalInfoWireframe.swift */,
+			);
+			path = EditPersonalInfo;
 			sourceTree = "<group>";
 		};
 		A8C1DC102566941B0052438B /* Util */ = {
@@ -519,6 +561,7 @@
 		A8D50FC225668E70009B2E50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A898C261259B806C0082403A /* EditPersonalInfo */,
 				A898C21A2598E4090082403A /* Settings */,
 				A898C1F92598B2EE0082403A /* Filter */,
 				A84ABA3225978C4500358042 /* SearchMovies */,
@@ -717,6 +760,7 @@
 				A84ABA1B2597812000358042 /* CreateReview.storyboard in Resources */,
 				A8D50F8725659275009B2E50 /* LaunchScreen.storyboard in Resources */,
 				A8D50F8425659275009B2E50 /* Assets.xcassets in Resources */,
+				A898C25F259B7E0B0082403A /* GeneralTableViewCell.xib in Resources */,
 				A8F2CF742597504200040ABF /* ReviewTableViewCell.xib in Resources */,
 				A84ABA4A25979D5700358042 /* SearchResultTableViewCell.xib in Resources */,
 				A898C2212598E4170082403A /* Settings.storyboard in Resources */,
@@ -725,6 +769,7 @@
 				A898C22D2598E8960082403A /* ImageSelectionTableViewCell.xib in Resources */,
 				A84ABA3925978C5B00358042 /* SearchMovies.storyboard in Resources */,
 				A8D50FCB25668F01009B2E50 /* Languages.storyboard in Resources */,
+				A898C268259B80820082403A /* EditPersonalInfo.storyboard in Resources */,
 				A898C23A2598ECEA0082403A /* ImageSelectionView.xib in Resources */,
 				A898C2462598FC640082403A /* LanguageSelectionTableViewCell.xib in Resources */,
 				A8D50FB925659484009B2E50 /* Home.storyboard in Resources */,
@@ -793,7 +838,7 @@
 				A8D50FBD25659484009B2E50 /* HomeInteractor.swift in Sources */,
 				A84ABA2925978BC400358042 /* Constants.swift in Sources */,
 				A898C2452598FC640082403A /* LanguageSelectionTableViewCell.swift in Sources */,
-				A898C2492599E2580082403A /* TabBarProperty.swift in Sources */,
+				A898C2492599E2580082403A /* NLPNavigationController.swift in Sources */,
 				A898C2012598B3010082403A /* FilterReviewsInterfaces.swift in Sources */,
 				A898C2252598E4170082403A /* SettingsInteractor.swift in Sources */,
 				A8F2CFA5259763E800040ABF /* ChoosePhotoInteractor.swift in Sources */,
@@ -802,6 +847,7 @@
 				A8F2CFA3259763E800040ABF /* ChoosePhotoPresenter.swift in Sources */,
 				A8F2CF7F2597513300040ABF /* Rx+DataSourceDelegate.swift in Sources */,
 				A898C2172598B6E60082403A /* FilterTableViewCell.swift in Sources */,
+				A898C26A259B80820082403A /* EditPersonalInfoPresenter.swift in Sources */,
 				A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */,
 				A8F2CF7C2597511C00040ABF /* SectionItem.swift in Sources */,
 				A8F2CF882597518C00040ABF /* TableDataSourceDelegate.swift in Sources */,
@@ -810,6 +856,7 @@
 				A8F2CF6425973E4B00040ABF /* ProfilePresenter.swift in Sources */,
 				A8F2CF852597517200040ABF /* TableCellItem.swift in Sources */,
 				A8F2CF8B259751A300040ABF /* TableSectionItem.swift in Sources */,
+				A898C25E259B7E0B0082403A /* GeneralTableViewCell.swift in Sources */,
 				A8D50FBE25659484009B2E50 /* HomeWireframe.swift in Sources */,
 				A8D188A4258B5954008670B6 /* ClassifierInterfaces.swift in Sources */,
 				A898C2032598B3010082403A /* FilterReviewsViewController.swift in Sources */,
@@ -821,6 +868,8 @@
 				A898C2362598ECDC0082403A /* ImageSelectionView.swift in Sources */,
 				A84ABA3A25978C5B00358042 /* SearchMoviesInterfaces.swift in Sources */,
 				A8F2CF6525973E4B00040ABF /* ProfileViewController.swift in Sources */,
+				A898C269259B80820082403A /* EditPersonalInfoInterfaces.swift in Sources */,
+				A898C26B259B80820082403A /* EditPersonalInfoViewController.swift in Sources */,
 				A8D188A5258B5954008670B6 /* ClassifierPresenter.swift in Sources */,
 				A898C2262598E4170082403A /* SettingsWireframe.swift in Sources */,
 				A81FB3F72566BDAA00919B9E /* NLPViewController.swift in Sources */,
@@ -834,7 +883,9 @@
 				A84ABA86259884D800358042 /* PersistanceManager.swift in Sources */,
 				A84ABA3D25978C5B00358042 /* SearchMoviesInteractor.swift in Sources */,
 				A898C2022598B3010082403A /* FilterReviewsPresenter.swift in Sources */,
+				A898C26D259B80820082403A /* EditPersonalInfoWireframe.swift in Sources */,
 				A84ABA1C2597812000358042 /* CreateReviewInterfaces.swift in Sources */,
+				A898C25A259B7DED0082403A /* GeneralCellItem.swift in Sources */,
 				A8F2CF782597510100040ABF /* CellItem.swift in Sources */,
 				A898C2052598B3010082403A /* FilterReviewsWireframe.swift in Sources */,
 				A898C2312598E8A60082403A /* ImageSelectionCellItem.swift in Sources */,
@@ -862,6 +913,7 @@
 				A8D50FBC25659484009B2E50 /* HomeViewController.swift in Sources */,
 				A84ABA3B25978C5B00358042 /* SearchMoviesPresenter.swift in Sources */,
 				A84ABA3C25978C5B00358042 /* SearchMoviesViewController.swift in Sources */,
+				A898C26C259B80820082403A /* EditPersonalInfoInteractor.swift in Sources */,
 				A84ABA202597812000358042 /* CreateReviewWireframe.swift in Sources */,
 				A8D50FBA25659484009B2E50 /* HomeInterfaces.swift in Sources */,
 				A8D50F9C256593FC009B2E50 /* UIStoryboardExtension.swift in Sources */,

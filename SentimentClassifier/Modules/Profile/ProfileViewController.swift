@@ -82,6 +82,8 @@ private extension ProfileViewController {
 
         let input = presenter.configure(with: output)
 
+        handle(username: input.username)
+        handle(email: input.email)
         handle(items: input.items)
         handle(image: input.image)
         handle(reviewCount: input.reviewCount)
@@ -103,6 +105,18 @@ private extension ProfileViewController {
 // MARK: - Binding Setup
 
 private extension ProfileViewController {
+
+    func handle(username: Driver<String?>) {
+        username
+            .drive(usernameLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+
+    func handle(email: Driver<String?>) {
+        email
+            .drive(emailLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
 
     func handle(items: Driver<[TableCellItem]>) {
         items

@@ -1,11 +1,16 @@
 //
-//  TabBarProperty.swift
+//  NLPNavigationController.swift
 //  SentimentClassifier
 //
 //  Created by Ivana Mršić on 28.12.2020..
 //
 
 import UIKit
+
+class NLPNavigationController: UINavigationController {
+
+    var tabBarProperty: TabBarProperty?
+}
 
 enum TabBarProperty {
     case languages

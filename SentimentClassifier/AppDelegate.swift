@@ -13,6 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UserStoreManager.language = Language.english
+        if UserStoreManager.username == nil {
+            UserStoreManager.username = "-"
+        }
+        if UserStoreManager.email == nil {
+            UserStoreManager.email = "-"
+        }
         return true
     }
 

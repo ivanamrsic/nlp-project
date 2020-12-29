@@ -24,8 +24,6 @@ final class LanguagesWireframe: BaseWireframe {
         let moduleViewController = storyboard.instantiateViewController(ofType: LanguagesViewController.self)
         super.init(viewController: moduleViewController)
         
-        moduleViewController.tabBarProperty = .languages
-
         let interactor = LanguagesInteractor()
         let presenter = LanguagesPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter

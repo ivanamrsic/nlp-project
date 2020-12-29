@@ -23,8 +23,6 @@ final class SettingsWireframe: BaseWireframe {
     init() {
         let moduleViewController = storyboard.instantiateViewController(ofType: SettingsViewController.self)
         super.init(viewController: moduleViewController)
-
-        moduleViewController.tabBarProperty = .settings
         
         let interactor = SettingsInteractor()
         let presenter = SettingsPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
@@ -36,4 +34,8 @@ final class SettingsWireframe: BaseWireframe {
 // MARK: - SettingsWireframeInterface
 
 extension SettingsWireframe: SettingsWireframeInterface {
+
+    func openEditPersonalInfo() {
+        navigationController?.pushWireframe(EditPersonalInfoWireframe())
+    }
 }

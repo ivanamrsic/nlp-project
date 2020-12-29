@@ -18,6 +18,7 @@ final class SettingsViewController: NLPViewController {
 
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
+            self.tableView.registerNib(cellOfType: GeneralTableViewCell.self)
             self.tableView.registerNib(cellOfType: ImageSelectionTableViewCell.self)
             self.tableView.registerNib(cellOfType: LanguageSelectionTableViewCell.self)
         }

@@ -33,6 +33,22 @@ enum Language: String {
 
 struct Strings {
 
+    static var personalInfo: String {
+        chooseTranslation(eng: "Personal info", cro: "Osobni podaci")
+    }
+
+    static var editPersonalInfo: String {
+        chooseTranslation(eng: "Edit personal info", cro: "Uredi osobni podatke")
+    }
+
+    static var save: String {
+        chooseTranslation(eng: "Save", cro: "Spremi")
+    }
+
+    static var general: String {
+        chooseTranslation(eng: "General", cro: "Opcenito")
+    }
+
     static var done: String {
         chooseTranslation(eng: "Done", cro: "Gotovo")
     }

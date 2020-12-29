@@ -23,8 +23,6 @@ final class ClassifierWireframe: BaseWireframe {
     init() {
         let moduleViewController = storyboard.instantiateViewController(ofType: ClassifierViewController.self)
         super.init(viewController: moduleViewController)
-        
-        moduleViewController.tabBarProperty = .classifier
 
         let interactor = ClassifierInteractor()
         let presenter = ClassifierPresenter(view: moduleViewController, interactor: interactor, wireframe: self)

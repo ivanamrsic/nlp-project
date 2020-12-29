@@ -13,6 +13,7 @@ import RxSwift
 import RxCocoa
 
 protocol SettingsWireframeInterface: WireframeInterface {
+    func openEditPersonalInfo()
 }
 
 protocol SettingsViewInterface: ViewInterface {

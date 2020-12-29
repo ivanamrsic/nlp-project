@@ -13,6 +13,8 @@ class UserStoreManager {
 
     static let profilePhotoKey = "profilePhoto"
     static let languageKey = "language"
+    static let usernameKey = "username"
+    static let emailKey = "email"
 }
 
 extension UserStoreManager {
@@ -22,7 +24,7 @@ extension UserStoreManager {
             let id = UserDefaults.standard.integer(forKey:profilePhotoKey)
             return ProfilePhoto.get(from: id)
         }
-        set {
+        set(newValue) {
             UserDefaults.standard.set(newValue.id, forKey: profilePhotoKey)
         }
     }
@@ -36,6 +38,16 @@ extension UserStoreManager {
             UserDefaults.standard.set(value, forKey: languageKey)
         }
     }
+
+    static var username: String? {
+        get { return UserDefaults.standard.string(forKey: usernameKey) }
+        set(newValue) { UserDefaults.standard.set(newValue, forKey: usernameKey) }
+    }
+
+    static var email: String? {
+        get { return UserDefaults.standard.string(forKey: emailKey) }
+        set(newValue) { UserDefaults.standard.set(newValue, forKey: emailKey) }
+    }
 }
 
 extension UserStoreManager {
@@ -46,7 +58,6 @@ extension UserStoreManager {
             .asDriver(onErrorDriveWith: .empty())
             .compactMap { Language.get(from: $0!) }
             .distinctUntilChanged()
-
     }
 
     static var profilePhotoDriver: Driver<ProfilePhoto> {
@@ -54,6 +65,20 @@ extension UserStoreManager {
             .observe(Int.self, UserStoreManager.profilePhotoKey)
             .asDriver(onErrorDriveWith: .empty())
             .compactMap { ProfilePhoto.get(from: $0!) }
+            .distinctUntilChanged()
+    }
+
+    static var usernameDriver: Driver<String?> {
+        return UserDefaults.standard.rx
+            .observe(String.self, UserStoreManager.usernameKey)
+            .asDriver(onErrorDriveWith: .empty())
+            .distinctUntilChanged()
+    }
+
+    static var emailDriver: Driver<String?> {
+        return UserDefaults.standard.rx
+            .observe(String.self, UserStoreManager.emailKey)
+            .asDriver(onErrorDriveWith: .empty())
             .distinctUntilChanged()
     }
 }

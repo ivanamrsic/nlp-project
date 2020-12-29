@@ -24,6 +24,14 @@ extension ProfileInteractor: ProfileInteractorInterface {
         return UserStoreManager.profilePhotoDriver
     }
 
+    var username: Driver<String?> {
+        return UserStoreManager.usernameDriver
+    }
+
+    var email: Driver<String?> {
+        return UserStoreManager.emailDriver
+    }
+
     func fetchReviews() -> Single<[Review]> {
 
         return Single.create { observer -> Disposable in

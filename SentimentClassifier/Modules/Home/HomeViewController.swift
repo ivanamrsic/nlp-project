@@ -38,7 +38,7 @@ extension HomeViewController: HomeViewInterface {
 
 private extension HomeViewController {
     
-    typealias ChildViewControllers = [NLPViewController]
+    typealias ChildViewControllers = [NLPNavigationController]
 
     func setupView() {
         let output = Home.ViewOutput()
@@ -49,6 +49,8 @@ private extension HomeViewController {
             controllers.forEach { $0.tabBarItem = $0.tabBarProperty?.item }
             return controllers
         }
+
+        self.hidesBottomBarWhenPushed = false
 
         input.tabBars
             .map(tabItems)

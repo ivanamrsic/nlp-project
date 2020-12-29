@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Personal Info View Controller-->
+        <scene sceneID="XJ1-QA-Nrj">
+            <objects>
+                <viewController storyboardIdentifier="EditPersonalInfoViewController" id="zIc-eW-6fX" customClass="EditPersonalInfoViewController" customModule="SentimentClassifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inH-EB-0KZ">
+                                <rect key="frame" x="24" y="24" width="327" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ecq-s4-DuC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SZy-fN-fAS">
+                                <rect key="frame" x="24" y="98" width="327" height="148"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gjw-eU-ng8" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="y4I-tq-P6x"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9gk-QF-G9O" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                        <rect key="frame" x="0.0" y="78" width="327" height="70"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9gk-QF-G9O" firstAttribute="height" secondItem="gjw-eU-ng8" secondAttribute="height" id="gYp-6j-PzB"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTg-PC-wsB">
+                                <rect key="frame" x="24" y="593" width="327" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aUW-F4-6xh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="inH-EB-0KZ" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="FEt-oo-sXK"/>
+                            <constraint firstItem="SZy-fN-fAS" firstAttribute="top" secondItem="inH-EB-0KZ" secondAttribute="bottom" constant="24" id="GQ1-Vs-k4L"/>
+                            <constraint firstItem="inH-EB-0KZ" firstAttribute="top" secondItem="3pi-N7-nbV" secondAttribute="top" constant="24" id="I10-yu-Qph"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="SZy-fN-fAS" secondAttribute="trailing" constant="24" id="TCp-iu-LP1"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="xTg-PC-wsB" secondAttribute="trailing" constant="24" id="Wl1-Np-jer"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="bottom" secondItem="xTg-PC-wsB" secondAttribute="bottom" constant="24" id="gjN-H2-dne"/>
+                            <constraint firstItem="xTg-PC-wsB" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="ib0-70-b9y"/>
+                            <constraint firstItem="xTg-PC-wsB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9gk-QF-G9O" secondAttribute="bottom" constant="24" id="rFD-3F-cPL"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="inH-EB-0KZ" secondAttribute="trailing" constant="24" id="sC5-sW-LE1"/>
+                            <constraint firstItem="SZy-fN-fAS" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="sbN-kr-tO5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="9gk-QF-G9O" id="nrJ-xY-ES9"/>
+                        <outlet property="saveButton" destination="xTg-PC-wsB" id="nir-sv-M1C"/>
+                        <outlet property="titleLabel" destination="inH-EB-0KZ" id="Odf-2p-6xT"/>
+                        <outlet property="usernameTextField" destination="gjw-eU-ng8" id="849-vf-gTf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="303"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="9gk-QF-G9O">
+            <size key="intrinsicContentSize" width="327" height="46.380859375"/>
+        </designable>
+        <designable name="gjw-eU-ng8">
+            <size key="intrinsicContentSize" width="327" height="46.380859375"/>
+        </designable>
+    </designables>
+</document>
