@@ -20,6 +20,8 @@ final class ChooseClassifierPresenter {
     private let interactor: ChooseClassifierInteractorInterface
     private let wireframe: ChooseClassifierWireframeInterface
 
+    private let disposeBag = DisposeBag()
+
     // MARK: - Lifecycle -
 
     init(view: ChooseClassifierViewInterface, interactor: ChooseClassifierInteractorInterface, wireframe: ChooseClassifierWireframeInterface) {
@@ -42,11 +44,22 @@ extension ChooseClassifierPresenter: ChooseClassifierPresenterInterface {
 private extension ChooseClassifierPresenter {
 
     func createItems() -> [TableCellItem] {
+
+        let didSelectClassifier = BehaviorRelay<ClassifierModelType>(value: interactor.currentClassifier)
+
+        didSelectClassifier.asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: { [unowned interactor] in interactor.currentClassifier = $0 })
+            .disposed(by: disposeBag)
+
         return interactor.allClassifiers
-            .map { [unowned wireframe] data in ClassifierDescriptionCellItem(
-                title: data.name,
-                didSelectDetails: { [unowned wireframe] in wireframe.openClassifierDetails(with: data)
-                })
+            .map { [unowned wireframe] data in
+
+                ClassifierDescriptionCellItem(
+                    title: data.name,
+                    isSelectedClassifier: interactor.classifierDriver.map { $0 == data.type },
+                    didSelectClassifier: { didSelectClassifier.accept(data.type) },
+                    didSelectDetails: { [unowned wireframe] in wireframe.openClassifierDetails(with: data)}
+                )
             }
     }
 }

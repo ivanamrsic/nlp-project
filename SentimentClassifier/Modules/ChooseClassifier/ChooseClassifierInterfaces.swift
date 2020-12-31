@@ -25,6 +25,8 @@ protocol ChooseClassifierPresenterInterface: PresenterInterface {
 
 protocol ChooseClassifierInteractorInterface: InteractorInterface {
     var allClassifiers: [ClassifierInfo] { get }
+    var classifierDriver: Driver<ClassifierModelType> { get }
+    var currentClassifier: ClassifierModelType { get set }
 }
 
 enum ChooseClassifier {

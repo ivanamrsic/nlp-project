@@ -51,6 +51,7 @@ extension ScaleClassifier: CustomClassifier {
     static var data: ClassifierInfo {
         ClassifierInfo(
             name: "Scale classifier",
+            type: .scale,
             dataInfo: dataInfo,
             accuracy: accuracy,
             labels: allResults

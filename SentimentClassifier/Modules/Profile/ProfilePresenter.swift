@@ -83,7 +83,11 @@ private extension ProfilePresenter {
 
     func createItems(with refresh: Signal<Void>) -> Driver<[TableCellItem]> {
 
-        let reviews = refresh.flatMap { [unowned interactor] in
+        let reviews = refresh
+            .do(onNext: { [unowned filtersRelay] in
+                filtersRelay.accept(ClassifierManager.shared.allResults)
+            })
+            .flatMap { [unowned interactor] in
             interactor.fetchReviews().asDriver(onErrorDriveWith: .empty())
         }
         .asDriver(onErrorDriveWith: .empty())

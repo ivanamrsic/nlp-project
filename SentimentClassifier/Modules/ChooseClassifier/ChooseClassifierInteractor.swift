@@ -10,6 +10,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 final class ChooseClassifierInteractor {
 }
@@ -20,5 +21,14 @@ extension ChooseClassifierInteractor: ChooseClassifierInteractorInterface {
 
     var allClassifiers: [ClassifierInfo] {
         return ClassifierManager.allClassifiers
+    }
+
+    var currentClassifier: ClassifierModelType {
+        get { return UserStoreManager.classifier }
+        set(newValue) { UserStoreManager.classifier = newValue }
+    }
+
+    var classifierDriver: Driver<ClassifierModelType> {
+        return UserStoreManager.classifierDriver
     }
 }

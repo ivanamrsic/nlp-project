@@ -40,6 +40,10 @@ extension ProfileInteractor: ProfileInteractorInterface {
 
             do {
                 let reviews = try PersistanceManager.context.fetch(request)
+                reviews.forEach { review in
+                    guard let text = review.reviewText else { return }
+                    review.sentiment = ClassifierManager.shared.classify(text: text)
+                }
                 observer(.success(reviews))
             } catch (let error) {
                 observer(.error(error))

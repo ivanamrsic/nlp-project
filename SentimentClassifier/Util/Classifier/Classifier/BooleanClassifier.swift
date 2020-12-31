@@ -48,6 +48,7 @@ extension BooleanClassifier: CustomClassifier {
     static var data: ClassifierInfo {
         ClassifierInfo(
             name: "Binary sentiment classification",
+            type: .boolean,
             dataInfo: dataInfo,
             accuracy: accuracy,
             labels: allResults

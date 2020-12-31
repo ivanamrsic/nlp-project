@@ -6,17 +6,34 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 struct ClassifierDescriptionCellItem {
 
-    let title: String
-    let didSelectDetails: (() -> Void)
+    // MARK: - Public Properties
 
-    init(title: String, didSelectDetails: @escaping (() -> Void)) {
+    let title: String
+    let isSelectedClassifier: Driver<Bool>
+    let didSelectDetails: (() -> Void)
+    let didSelectClassifier: (() -> Void)
+
+    // MARK: - Init
+
+    init(
+        title: String,
+        isSelectedClassifier: Driver<Bool>,
+        didSelectClassifier: @escaping (() -> Void),
+        didSelectDetails: @escaping (() -> Void)
+    ) {
         self.title = title
+        self.isSelectedClassifier = isSelectedClassifier
+        self.didSelectClassifier = didSelectClassifier
         self.didSelectDetails = didSelectDetails
-    }
+     }
 }
+
+// MARK: - TableCellItem
 
 extension ClassifierDescriptionCellItem: TableCellItem {
 

@@ -9,6 +9,7 @@ import Foundation
 
 struct ClassifierInfo {
     let name: String
+    let type: ClassifierModelType
     let dataInfo: DataInfo
     let accuracy: ClassifierAccuracy?
     let labels: [String]

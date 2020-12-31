@@ -683,8 +683,8 @@
 		A8D50FC225668E70009B2E50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A8CB81C5259C87F100D6B97A /* ClassifierDetails */,
 				A8CB8184259B9E6100D6B97A /* ChooseClassifier */,
+				A8CB81C5259C87F100D6B97A /* ClassifierDetails */,
 				A898C261259B806C0082403A /* EditPersonalInfo */,
 				A898C21A2598E4090082403A /* Settings */,
 				A898C1F92598B2EE0082403A /* Filter */,
