@@ -28,10 +28,6 @@ final class EditPersonalInfoViewController: NLPViewController {
 
     // MARK: - Private properties
 
-    private lazy var closeButton: UIBarButtonItem = {
-        return UIBarButtonItem(systemItem: .close)
-    }()
-
     private let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle
@@ -40,6 +36,7 @@ final class EditPersonalInfoViewController: NLPViewController {
         super.viewDidLoad()
         configure()
         setupUI()
+        hideKeyboardWhenTappedAround()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -62,8 +59,7 @@ private extension EditPersonalInfoViewController {
         let output = EditPersonalInfo.ViewOutput(
             saveAction: saveButton.rx.tap.asSignal(),
             username: usernameTextField.rx.text.asDriver(),
-            email: emailTextField.rx.text.asDriver(),
-            closeAction: closeButton.rx.tap.asSignal()
+            email: emailTextField.rx.text.asDriver()
         )
 
         let input = presenter.configure(with: output)
@@ -84,7 +80,6 @@ private extension EditPersonalInfoViewController {
         emailTextField.placeholder = Strings.emailTitle
         emailTextField.title = Strings.emailTitle
         saveButton.setTitle(Strings.save, for: .normal)
-        navigationItem.backBarButtonItem = closeButton
     }
 }
 

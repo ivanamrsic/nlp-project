@@ -35,7 +35,6 @@ enum EditPersonalInfo {
         let saveAction: Signal<Void>
         let username: Driver<String?>
         let email: Driver<String?>
-        let closeAction: Signal<Void>
     }
 
     struct ViewInput {

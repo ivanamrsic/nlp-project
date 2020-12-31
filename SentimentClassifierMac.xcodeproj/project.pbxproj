@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A841D64F257100F0003B0BCC /* yelp_output.json in Resources */ = {isa = PBXBuildFile; fileRef = A841D64E257100F0003B0BCC /* yelp_output.json */; };
 		A8808FBC25704297004C69D0 /* SentimentClassifierMac.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8808FBB25704296004C69D0 /* SentimentClassifierMac.mlmodel */; };
 		A8D18896258B5055008670B6 /* ClassifierResultScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D18895258B5055008670B6 /* ClassifierResultScale.swift */; };
 		A8FAB386256E77BF00BE2069 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAB385256E77BF00BE2069 /* AppDelegate.swift */; };
@@ -24,7 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A841D64E257100F0003B0BCC /* yelp_output.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = yelp_output.json; sourceTree = "<group>"; };
 		A8808FBB25704296004C69D0 /* SentimentClassifierMac.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentClassifierMac.mlmodel; sourceTree = "<group>"; };
 		A8D18895258B5055008670B6 /* ClassifierResultScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierResultScale.swift; sourceTree = "<group>"; };
 		A8FAB382256E77BF00BE2069 /* SentimentClassifierMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentimentClassifierMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +106,6 @@
 		A8FAB3A7256E9B5E00BE2069 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A841D64E257100F0003B0BCC /* yelp_output.json */,
 				A8808FBB25704296004C69D0 /* SentimentClassifierMac.mlmodel */,
 				A8FAB3A1256E979B00BE2069 /* SentimentClassifier.mlmodel */,
 				A8FAB39A256E783900BE2069 /* output.json */,
@@ -184,7 +181,6 @@
 			files = (
 				A8FAB38A256E77C200BE2069 /* Assets.xcassets in Resources */,
 				A8FAB38D256E77C200BE2069 /* Main.storyboard in Resources */,
-				A841D64F257100F0003B0BCC /* yelp_output.json in Resources */,
 				A8FAB39B256E783900BE2069 /* output.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

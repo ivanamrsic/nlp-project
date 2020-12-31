@@ -85,14 +85,18 @@ private extension CreateReviewViewController {
 private extension CreateReviewViewController {
 
     func setupUI() {
-        titleLabel.text = Strings.createReviewTitle
+        titleLabel.text = Strings.createReview
         movieTitleTextField.placeholder = Strings.movieTitle
         movieTitleTextField.title = Strings.movieTitle
+        movieTitleTextField.titleColor = UIColor.NLP.primary
         movieYearTextField.placeholder = Strings.movieYear
         movieYearTextField.title = Strings.movieYear
+        movieYearTextField.titleColor = UIColor.NLP.primary
         reviewTitleTextField.placeholder = Strings.reviewTitle
         reviewTitleTextField.title = Strings.reviewTitle
-        submitButton.setTitle(Strings.createReview, for: .normal)
+        reviewTitleTextField.titleColor = UIColor.NLP.primary
+        submitButton.layer.cornerRadius = 25
+        submitButton.setTitle(Strings.create, for: .normal)
     }
 }
 

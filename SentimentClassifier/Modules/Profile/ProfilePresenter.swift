@@ -20,7 +20,7 @@ final class ProfilePresenter {
     private let interactor: ProfileInteractorInterface
     private let wireframe: ProfileWireframeInterface
 
-    private let filtersRelay = BehaviorRelay<[ClassifierResultScale]>(value: ClassifierResultScale.resultPossiblities)
+    private let filtersRelay = BehaviorRelay<[String]>(value: ClassifierManager.shared.allResults)
 
     private let disposeBag = DisposeBag()
 
@@ -101,9 +101,9 @@ private extension ProfilePresenter {
             .map { [unowned self] in self.mapToItems(reviews: $0, itemDeleted: itemDeleted) }
     }
 
-    func filter(reviews: [Review], filters: [ClassifierResultScale]) -> [Review] {
+    func filter(reviews: [Review], filters: [String]) -> [Review] {
         return reviews.filter { review -> Bool in
-            filters.contains(where: { $0.description == review.sentiment })
+            filters.contains(where: { $0 == review.sentiment })
         }
     }
 
@@ -120,11 +120,11 @@ private extension ProfilePresenter {
 
 extension ProfilePresenter: FilterDelegate {
 
-    var currentFilters: [ClassifierResultScale] {
+    var currentFilters: [String] {
         return filtersRelay.value
     }
 
-    func process(sentimentFilters: [ClassifierResultScale]) {
+    func process(sentimentFilters: [String]) {
         filtersRelay.accept(sentimentFilters)
     }
 }

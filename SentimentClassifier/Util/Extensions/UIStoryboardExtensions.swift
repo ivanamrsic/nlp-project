@@ -48,4 +48,12 @@ extension UIStoryboard {
     static var editPersonalInfo: UIStoryboard {
         return UIStoryboard(name: "EditPersonalInfo", bundle: nil)
     }
+
+    static var chooseClassifier: UIStoryboard {
+        return UIStoryboard(name: "ChooseClassifier", bundle: nil)
+    }
+
+    static var classifierDetails: UIStoryboard {
+        return UIStoryboard(name: "ClassifierDetails", bundle: nil)
+    }
 }

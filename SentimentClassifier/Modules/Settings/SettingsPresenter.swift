@@ -57,7 +57,8 @@ private extension SettingsPresenter {
                 [
                     self.generalSection(),
                     self.imageSelectionSection(),
-                    self.languageSelectionSection()
+                    self.languageSelectionSection(),
+                    self.classifierSection()
                 ]
             }
     }
@@ -100,6 +101,19 @@ private extension SettingsPresenter {
         return TitleTableSection(
             items: [languageItem],
             title: Strings.chooseAppLanguage
+        )
+    }
+
+    func classifierSection() -> TableSectionItem {
+
+        let item = GeneralCellItem(
+            title: Strings.chooseClassifier,
+            didSelect: { [unowned wireframe] in wireframe.openChooseClassifier() }
+        )
+
+        return TitleTableSection(
+            items: [item],
+            title: Strings.classifier
         )
     }
 }

@@ -15,6 +15,7 @@ class UserStoreManager {
     static let languageKey = "language"
     static let usernameKey = "username"
     static let emailKey = "email"
+    static let classifierKey = "classifier"
 }
 
 extension UserStoreManager {
@@ -48,6 +49,16 @@ extension UserStoreManager {
         get { return UserDefaults.standard.string(forKey: emailKey) }
         set(newValue) { UserDefaults.standard.set(newValue, forKey: emailKey) }
     }
+
+    static var classifier: ClassifierModelType {
+        get {
+            let value = UserDefaults.standard.string(forKey: classifierKey)
+            return ClassifierModelType.get(from: value)
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue.rawValue, forKey: classifierKey)
+        }
+    }
 }
 
 extension UserStoreManager {
@@ -79,6 +90,14 @@ extension UserStoreManager {
         return UserDefaults.standard.rx
             .observe(String.self, UserStoreManager.emailKey)
             .asDriver(onErrorDriveWith: .empty())
+            .distinctUntilChanged()
+    }
+
+    static var classifierDriver: Driver<ClassifierModelType> {
+        return UserDefaults.standard.rx
+            .observe(String.self, UserStoreManager.classifierKey)
+            .asDriver(onErrorDriveWith: .empty())
+            .compactMap { ClassifierModelType.get(from: $0) }
             .distinctUntilChanged()
     }
 }

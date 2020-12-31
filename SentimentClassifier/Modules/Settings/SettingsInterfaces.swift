@@ -14,6 +14,7 @@ import RxCocoa
 
 protocol SettingsWireframeInterface: WireframeInterface {
     func openEditPersonalInfo()
+    func openChooseClassifier()
 }
 
 protocol SettingsViewInterface: ViewInterface {

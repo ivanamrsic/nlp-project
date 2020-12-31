@@ -38,4 +38,8 @@ extension SettingsWireframe: SettingsWireframeInterface {
     func openEditPersonalInfo() {
         navigationController?.pushWireframe(EditPersonalInfoWireframe())
     }
+
+    func openChooseClassifier() {
+        navigationController?.pushWireframe(ChooseClassifierWireframe())
+    }
 }

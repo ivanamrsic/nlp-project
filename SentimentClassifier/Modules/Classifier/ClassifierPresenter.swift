@@ -45,7 +45,7 @@ private extension ClassifierPresenter {
     func handle(classifyAction: Signal<String?>) -> Driver<String?> {
         return classifyAction
             .compactMap { $0 }
-            .map { ClassifierModel().classify(text: $0).description }
+            .map { ClassifierManager.shared.classify(text: $0).description }
             .asDriver(onErrorDriveWith: .empty())
     }
 }

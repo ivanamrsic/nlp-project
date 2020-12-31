@@ -53,6 +53,6 @@ private extension CreateReviewInteractor {
 
     func classify(text: String?) -> String? {
         guard let text = text else { return nil }
-        return ClassifierModel().classify(text: text).description
+        return ClassifierManager.shared.classify(text: text)
     }
 }

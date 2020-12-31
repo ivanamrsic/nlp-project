@@ -13,7 +13,7 @@ struct FilterCellItem {
 
     // MARK: - Public properties
 
-    let classifierScore: ClassifierResultScale
+    let classifierScore: String
 
     // MARK: - Private properties
 
@@ -21,7 +21,7 @@ struct FilterCellItem {
 
     // MARK: - Init
 
-    init(classifierScore: ClassifierResultScale, isSelected: Bool) {
+    init(classifierScore: String, isSelected: Bool) {
         self.classifierScore = classifierScore
         self.isSelected = BehaviorRelay<Bool>(value: isSelected)
     }

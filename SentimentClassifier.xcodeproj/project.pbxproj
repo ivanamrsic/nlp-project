@@ -67,6 +67,30 @@
 		A898C26D259B80820082403A /* EditPersonalInfoWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C267259B80820082403A /* EditPersonalInfoWireframe.swift */; };
 		A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC15256694BA0052438B /* UIImageExtensions.swift */; };
 		A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */; };
+		A8CB818B259B9E7700D6B97A /* ChooseClassifier.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8CB8185259B9E7700D6B97A /* ChooseClassifier.storyboard */; };
+		A8CB818C259B9E7700D6B97A /* ChooseClassifierInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB8186259B9E7700D6B97A /* ChooseClassifierInterfaces.swift */; };
+		A8CB818D259B9E7700D6B97A /* ChooseClassifierPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB8187259B9E7700D6B97A /* ChooseClassifierPresenter.swift */; };
+		A8CB818E259B9E7700D6B97A /* ChooseClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB8188259B9E7700D6B97A /* ChooseClassifierViewController.swift */; };
+		A8CB818F259B9E7700D6B97A /* ChooseClassifierInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB8189259B9E7700D6B97A /* ChooseClassifierInteractor.swift */; };
+		A8CB8190259B9E7700D6B97A /* ChooseClassifierWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB818A259B9E7700D6B97A /* ChooseClassifierWireframe.swift */; };
+		A8CB8196259BABCC00D6B97A /* ClassifierModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB8195259BABCC00D6B97A /* ClassifierModelType.swift */; };
+		A8CB8199259BABF000D6B97A /* BooleanClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB8198259BABF000D6B97A /* BooleanClassifier.swift */; };
+		A8CB819F259BAC4000D6B97A /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB819E259BAC4000D6B97A /* Classifier.swift */; };
+		A8CB81A3259BB3BF00D6B97A /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81A2259BB3BF00D6B97A /* Language.swift */; };
+		A8CB81A6259BB7E000D6B97A /* ClassifierData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81A5259BB7E000D6B97A /* ClassifierData.swift */; };
+		A8CB81AA259BB83000D6B97A /* ClassifierDescriptionCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81A9259BB83000D6B97A /* ClassifierDescriptionCellItem.swift */; };
+		A8CB81AE259BB84400D6B97A /* ClassifierDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81AC259BB84400D6B97A /* ClassifierDescriptionTableViewCell.swift */; };
+		A8CB81AF259BB84400D6B97A /* ClassifierDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CB81AD259BB84400D6B97A /* ClassifierDescriptionTableViewCell.xib */; };
+		A8CB81B2259BC84700D6B97A /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81B1259BC84700D6B97A /* UIColorExtensions.swift */; };
+		A8CB81B5259BC89D00D6B97A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8CB81B4259BC89D00D6B97A /* Colors.xcassets */; };
+		A8CB81BA259C79AE00D6B97A /* ClassifierAccuracy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81B9259C79AE00D6B97A /* ClassifierAccuracy.swift */; };
+		A8CB81BF259C832900D6B97A /* SentimentClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81BE259C832900D6B97A /* SentimentClassifier.mlmodel */; };
+		A8CB81CC259C881100D6B97A /* ClassifierDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8CB81C6259C881100D6B97A /* ClassifierDetails.storyboard */; };
+		A8CB81CD259C881100D6B97A /* ClassifierDetailsInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81C7259C881100D6B97A /* ClassifierDetailsInterfaces.swift */; };
+		A8CB81CE259C881100D6B97A /* ClassifierDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81C8259C881100D6B97A /* ClassifierDetailsPresenter.swift */; };
+		A8CB81CF259C881100D6B97A /* ClassifierDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81C9259C881100D6B97A /* ClassifierDetailsViewController.swift */; };
+		A8CB81D0259C881100D6B97A /* ClassifierDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81CA259C881100D6B97A /* ClassifierDetailsInteractor.swift */; };
+		A8CB81D1259C881100D6B97A /* ClassifierDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81CB259C881100D6B97A /* ClassifierDetailsWireframe.swift */; };
 		A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */; };
 		A8D188A3258B5954008670B6 /* Classifier.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D1889D258B5954008670B6 /* Classifier.storyboard */; };
 		A8D188A4258B5954008670B6 /* ClassifierInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1889E258B5954008670B6 /* ClassifierInterfaces.swift */; };
@@ -74,8 +98,8 @@
 		A8D188A6258B5954008670B6 /* ClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188A0258B5954008670B6 /* ClassifierViewController.swift */; };
 		A8D188A7258B5954008670B6 /* ClassifierInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188A1258B5954008670B6 /* ClassifierInteractor.swift */; };
 		A8D188A8258B5954008670B6 /* ClassifierWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188A2258B5954008670B6 /* ClassifierWireframe.swift */; };
-		A8D188AB258B5F28008670B6 /* ClassifierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188AA258B5F28008670B6 /* ClassifierModel.swift */; };
-		A8D188AE258B5F82008670B6 /* ClassifierResultScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188AD258B5F82008670B6 /* ClassifierResultScale.swift */; };
+		A8D188AB258B5F28008670B6 /* ClassifierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188AA258B5F28008670B6 /* ClassifierManager.swift */; };
+		A8D188AE258B5F82008670B6 /* ScaleClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D188AD258B5F82008670B6 /* ScaleClassifier.swift */; };
 		A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F7A25659272009B2E50 /* AppDelegate.swift */; };
 		A8D50F7D25659272009B2E50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D50F7C25659272009B2E50 /* SceneDelegate.swift */; };
 		A8D50F8425659275009B2E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8D50F8325659275009B2E50 /* Assets.xcassets */; };
@@ -194,6 +218,30 @@
 		A898C267259B80820082403A /* EditPersonalInfoWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInfoWireframe.swift; sourceTree = "<group>"; };
 		A8C1DC15256694BA0052438B /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
+		A8CB8185259B9E7700D6B97A /* ChooseClassifier.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseClassifier.storyboard; sourceTree = "<group>"; };
+		A8CB8186259B9E7700D6B97A /* ChooseClassifierInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseClassifierInterfaces.swift; sourceTree = "<group>"; };
+		A8CB8187259B9E7700D6B97A /* ChooseClassifierPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseClassifierPresenter.swift; sourceTree = "<group>"; };
+		A8CB8188259B9E7700D6B97A /* ChooseClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseClassifierViewController.swift; sourceTree = "<group>"; };
+		A8CB8189259B9E7700D6B97A /* ChooseClassifierInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseClassifierInteractor.swift; sourceTree = "<group>"; };
+		A8CB818A259B9E7700D6B97A /* ChooseClassifierWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseClassifierWireframe.swift; sourceTree = "<group>"; };
+		A8CB8195259BABCC00D6B97A /* ClassifierModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierModelType.swift; sourceTree = "<group>"; };
+		A8CB8198259BABF000D6B97A /* BooleanClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanClassifier.swift; sourceTree = "<group>"; };
+		A8CB819E259BAC4000D6B97A /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		A8CB81A2259BB3BF00D6B97A /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		A8CB81A5259BB7E000D6B97A /* ClassifierData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierData.swift; sourceTree = "<group>"; };
+		A8CB81A9259BB83000D6B97A /* ClassifierDescriptionCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierDescriptionCellItem.swift; sourceTree = "<group>"; };
+		A8CB81AC259BB84400D6B97A /* ClassifierDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		A8CB81AD259BB84400D6B97A /* ClassifierDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassifierDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		A8CB81B1259BC84700D6B97A /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		A8CB81B4259BC89D00D6B97A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		A8CB81B9259C79AE00D6B97A /* ClassifierAccuracy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierAccuracy.swift; sourceTree = "<group>"; };
+		A8CB81BE259C832900D6B97A /* SentimentClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentClassifier.mlmodel; sourceTree = "<group>"; };
+		A8CB81C6259C881100D6B97A /* ClassifierDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClassifierDetails.storyboard; sourceTree = "<group>"; };
+		A8CB81C7259C881100D6B97A /* ClassifierDetailsInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierDetailsInterfaces.swift; sourceTree = "<group>"; };
+		A8CB81C8259C881100D6B97A /* ClassifierDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierDetailsPresenter.swift; sourceTree = "<group>"; };
+		A8CB81C9259C881100D6B97A /* ClassifierDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierDetailsViewController.swift; sourceTree = "<group>"; };
+		A8CB81CA259C881100D6B97A /* ClassifierDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierDetailsInteractor.swift; sourceTree = "<group>"; };
+		A8CB81CB259C881100D6B97A /* ClassifierDetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierDetailsWireframe.swift; sourceTree = "<group>"; };
 		A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentClassifierMac.mlmodel; sourceTree = "<group>"; };
 		A8D1889D258B5954008670B6 /* Classifier.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Classifier.storyboard; sourceTree = "<group>"; };
 		A8D1889E258B5954008670B6 /* ClassifierInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierInterfaces.swift; sourceTree = "<group>"; };
@@ -201,8 +249,8 @@
 		A8D188A0258B5954008670B6 /* ClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierViewController.swift; sourceTree = "<group>"; };
 		A8D188A1258B5954008670B6 /* ClassifierInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierInteractor.swift; sourceTree = "<group>"; };
 		A8D188A2258B5954008670B6 /* ClassifierWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierWireframe.swift; sourceTree = "<group>"; };
-		A8D188AA258B5F28008670B6 /* ClassifierModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierModel.swift; sourceTree = "<group>"; };
-		A8D188AD258B5F82008670B6 /* ClassifierResultScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierResultScale.swift; sourceTree = "<group>"; };
+		A8D188AA258B5F28008670B6 /* ClassifierManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierManager.swift; sourceTree = "<group>"; };
+		A8D188AD258B5F82008670B6 /* ScaleClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleClassifier.swift; sourceTree = "<group>"; };
 		A8D50F7725659272009B2E50 /* SentimentClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentimentClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D50F7A25659272009B2E50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8D50F7C25659272009B2E50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -341,6 +389,7 @@
 		A84ABA8E259887B600358042 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				A84ABA5D259883D400358042 /* SentimentClassifier.xcdatamodeld */,
 				A84ABA8F259887B600358042 /* Models */,
 			);
 			path = CoreData;
@@ -451,6 +500,7 @@
 		A8C1DC102566941B0052438B /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A8D50F95256593E4009B2E50 /* Base VIPER */,
 				A84ABA8E259887B600358042 /* CoreData */,
 				A8F2CFB525976F2B00040ABF /* Managers */,
 				A8F2CF932597556A00040ABF /* Networking */,
@@ -471,16 +521,94 @@
 				A8F2CF90259753E900040ABF /* UITableViewExtensions.swift */,
 				A898C1F525989C3B0082403A /* UIViewExtensions.swift */,
 				A898C23C2598EE260082403A /* BundleExtensions.swift */,
+				A8CB81B1259BC84700D6B97A /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A8CB8176259B9C2700D6B97A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A8D50F8825659275009B2E50 /* Info.plist */,
+				A8D50F7A25659272009B2E50 /* AppDelegate.swift */,
+				A8D50F7C25659272009B2E50 /* SceneDelegate.swift */,
+				A8D50F8525659275009B2E50 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A8CB8184259B9E6100D6B97A /* ChooseClassifier */ = {
+			isa = PBXGroup;
+			children = (
+				A8CB81A8259BB81300D6B97A /* ClassifierDescriptionCell */,
+				A8CB8185259B9E7700D6B97A /* ChooseClassifier.storyboard */,
+				A8CB8186259B9E7700D6B97A /* ChooseClassifierInterfaces.swift */,
+				A8CB8187259B9E7700D6B97A /* ChooseClassifierPresenter.swift */,
+				A8CB8188259B9E7700D6B97A /* ChooseClassifierViewController.swift */,
+				A8CB8189259B9E7700D6B97A /* ChooseClassifierInteractor.swift */,
+				A8CB818A259B9E7700D6B97A /* ChooseClassifierWireframe.swift */,
+			);
+			path = ChooseClassifier;
+			sourceTree = "<group>";
+		};
+		A8CB819B259BABF500D6B97A /* Classifier */ = {
+			isa = PBXGroup;
+			children = (
+				A8CB819E259BAC4000D6B97A /* Classifier.swift */,
+				A8CB8198259BABF000D6B97A /* BooleanClassifier.swift */,
+				A8D188AD258B5F82008670B6 /* ScaleClassifier.swift */,
+			);
+			path = Classifier;
+			sourceTree = "<group>";
+		};
+		A8CB819C259BAC0A00D6B97A /* ClassifierModels */ = {
+			isa = PBXGroup;
+			children = (
+				A8CB81BE259C832900D6B97A /* SentimentClassifier.mlmodel */,
+				A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */,
+			);
+			path = ClassifierModels;
+			sourceTree = "<group>";
+		};
+		A8CB81A8259BB81300D6B97A /* ClassifierDescriptionCell */ = {
+			isa = PBXGroup;
+			children = (
+				A8CB81A9259BB83000D6B97A /* ClassifierDescriptionCellItem.swift */,
+				A8CB81AC259BB84400D6B97A /* ClassifierDescriptionTableViewCell.swift */,
+				A8CB81AD259BB84400D6B97A /* ClassifierDescriptionTableViewCell.xib */,
+			);
+			path = ClassifierDescriptionCell;
+			sourceTree = "<group>";
+		};
+		A8CB81C2259C834500D6B97A /* ClassifierDataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				A8CB81A5259BB7E000D6B97A /* ClassifierData.swift */,
+				A8CB81B9259C79AE00D6B97A /* ClassifierAccuracy.swift */,
+				A8CB8195259BABCC00D6B97A /* ClassifierModelType.swift */,
+			);
+			path = ClassifierDataTypes;
+			sourceTree = "<group>";
+		};
+		A8CB81C5259C87F100D6B97A /* ClassifierDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A8CB81C6259C881100D6B97A /* ClassifierDetails.storyboard */,
+				A8CB81C7259C881100D6B97A /* ClassifierDetailsInterfaces.swift */,
+				A8CB81C8259C881100D6B97A /* ClassifierDetailsPresenter.swift */,
+				A8CB81C9259C881100D6B97A /* ClassifierDetailsViewController.swift */,
+				A8CB81CA259C881100D6B97A /* ClassifierDetailsInteractor.swift */,
+				A8CB81CB259C881100D6B97A /* ClassifierDetailsWireframe.swift */,
+			);
+			path = ClassifierDetails;
 			sourceTree = "<group>";
 		};
 		A8D18898258B577C008670B6 /* Classifier */ = {
 			isa = PBXGroup;
 			children = (
-				A8D188AA258B5F28008670B6 /* ClassifierModel.swift */,
-				A8D188AD258B5F82008670B6 /* ClassifierResultScale.swift */,
-				A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */,
+				A8CB819B259BABF500D6B97A /* Classifier */,
+				A8CB81C2259C834500D6B97A /* ClassifierDataTypes */,
+				A8CB819C259BAC0A00D6B97A /* ClassifierModels */,
 			);
 			path = Classifier;
 			sourceTree = "<group>";
@@ -519,16 +647,10 @@
 		A8D50F7925659272009B2E50 /* SentimentClassifier */ = {
 			isa = PBXGroup;
 			children = (
+				A8CB8176259B9C2700D6B97A /* Application */,
 				A8FF0A41256D70E4006AFBB1 /* Resources */,
 				A8C1DC102566941B0052438B /* Util */,
 				A8D50FC225668E70009B2E50 /* Modules */,
-				A8D50F95256593E4009B2E50 /* Base VIPER */,
-				A8D50F7A25659272009B2E50 /* AppDelegate.swift */,
-				A8D50F7C25659272009B2E50 /* SceneDelegate.swift */,
-				A8D50F8325659275009B2E50 /* Assets.xcassets */,
-				A8D50F8525659275009B2E50 /* LaunchScreen.storyboard */,
-				A8D50F8825659275009B2E50 /* Info.plist */,
-				A84ABA5D259883D400358042 /* SentimentClassifier.xcdatamodeld */,
 			);
 			path = SentimentClassifier;
 			sourceTree = "<group>";
@@ -561,6 +683,8 @@
 		A8D50FC225668E70009B2E50 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A8CB81C5259C87F100D6B97A /* ClassifierDetails */,
+				A8CB8184259B9E6100D6B97A /* ChooseClassifier */,
 				A898C261259B806C0082403A /* EditPersonalInfo */,
 				A898C21A2598E4090082403A /* Settings */,
 				A898C1F92598B2EE0082403A /* Filter */,
@@ -606,6 +730,7 @@
 			isa = PBXGroup;
 			children = (
 				A8F2CF6A2597487500040ABF /* Strings.swift */,
+				A8CB81A2259BB3BF00D6B97A /* Language.swift */,
 			);
 			path = Translations;
 			sourceTree = "<group>";
@@ -680,6 +805,7 @@
 		A8F2CFB525976F2B00040ABF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A8D188AA258B5F28008670B6 /* ClassifierManager.swift */,
 				A8F2CFB625976F3600040ABF /* UserStoreManager.swift */,
 				A84ABA85259884D800358042 /* PersistanceManager.swift */,
 			);
@@ -689,6 +815,8 @@
 		A8FF0A41256D70E4006AFBB1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A8D50F8325659275009B2E50 /* Assets.xcassets */,
+				A8CB81B4259BC89D00D6B97A /* Colors.xcassets */,
 			);
 			name = Resources;
 			path = Util;
@@ -764,8 +892,12 @@
 				A8F2CF742597504200040ABF /* ReviewTableViewCell.xib in Resources */,
 				A84ABA4A25979D5700358042 /* SearchResultTableViewCell.xib in Resources */,
 				A898C2212598E4170082403A /* Settings.storyboard in Resources */,
+				A8CB81AF259BB84400D6B97A /* ClassifierDescriptionTableViewCell.xib in Resources */,
 				A8D188A3258B5954008670B6 /* Classifier.storyboard in Resources */,
 				A8F2CFAF2597650500040ABF /* PhotoTableViewCell.xib in Resources */,
+				A8CB81CC259C881100D6B97A /* ClassifierDetails.storyboard in Resources */,
+				A8CB81B5259BC89D00D6B97A /* Colors.xcassets in Resources */,
+				A8CB818B259B9E7700D6B97A /* ChooseClassifier.storyboard in Resources */,
 				A898C22D2598E8960082403A /* ImageSelectionTableViewCell.xib in Resources */,
 				A84ABA3925978C5B00358042 /* SearchMovies.storyboard in Resources */,
 				A8D50FCB25668F01009B2E50 /* Languages.storyboard in Resources */,
@@ -826,11 +958,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */,
-				A8D188AB258B5F28008670B6 /* ClassifierModel.swift in Sources */,
+				A8D188AB258B5F28008670B6 /* ClassifierManager.swift in Sources */,
 				A84ABA5F259883D400358042 /* SentimentClassifier.xcdatamodeld in Sources */,
 				A84ABA1D2597812000358042 /* CreateReviewPresenter.swift in Sources */,
 				A898C2132598B6D80082403A /* FilterCellItem.swift in Sources */,
 				A8D50FCD25668F01009B2E50 /* LanguagesPresenter.swift in Sources */,
+				A8CB81BF259C832900D6B97A /* SentimentClassifier.mlmodel in Sources */,
+				A8CB818D259B9E7700D6B97A /* ChooseClassifierPresenter.swift in Sources */,
+				A8CB81D1259C881100D6B97A /* ClassifierDetailsWireframe.swift in Sources */,
 				A8D50F9E256593FC009B2E50 /* InteractorInterface.swift in Sources */,
 				A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */,
 				A8F2CFA2259763E800040ABF /* ChoosePhotoInterfaces.swift in Sources */,
@@ -839,11 +974,14 @@
 				A84ABA2925978BC400358042 /* Constants.swift in Sources */,
 				A898C2452598FC640082403A /* LanguageSelectionTableViewCell.swift in Sources */,
 				A898C2492599E2580082403A /* NLPNavigationController.swift in Sources */,
+				A8CB81CF259C881100D6B97A /* ClassifierDetailsViewController.swift in Sources */,
 				A898C2012598B3010082403A /* FilterReviewsInterfaces.swift in Sources */,
+				A8CB81AE259BB84400D6B97A /* ClassifierDescriptionTableViewCell.swift in Sources */,
 				A898C2252598E4170082403A /* SettingsInteractor.swift in Sources */,
 				A8F2CFA5259763E800040ABF /* ChoosePhotoInteractor.swift in Sources */,
 				A8F2CFA6259763E800040ABF /* ChoosePhotoWireframe.swift in Sources */,
 				A84ABA4125978E7600358042 /* SearchResponse.swift in Sources */,
+				A8CB81A3259BB3BF00D6B97A /* Language.swift in Sources */,
 				A8F2CFA3259763E800040ABF /* ChoosePhotoPresenter.swift in Sources */,
 				A8F2CF7F2597513300040ABF /* Rx+DataSourceDelegate.swift in Sources */,
 				A898C2172598B6E60082403A /* FilterTableViewCell.swift in Sources */,
@@ -851,9 +989,11 @@
 				A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */,
 				A8F2CF7C2597511C00040ABF /* SectionItem.swift in Sources */,
 				A8F2CF882597518C00040ABF /* TableDataSourceDelegate.swift in Sources */,
+				A8CB8196259BABCC00D6B97A /* ClassifierModelType.swift in Sources */,
 				A898C2042598B3010082403A /* FilterReviewsInteractor.swift in Sources */,
 				A898C2242598E4170082403A /* SettingsViewController.swift in Sources */,
 				A8F2CF6425973E4B00040ABF /* ProfilePresenter.swift in Sources */,
+				A8CB818C259B9E7700D6B97A /* ChooseClassifierInterfaces.swift in Sources */,
 				A8F2CF852597517200040ABF /* TableCellItem.swift in Sources */,
 				A8F2CF8B259751A300040ABF /* TableSectionItem.swift in Sources */,
 				A898C25E259B7E0B0082403A /* GeneralTableViewCell.swift in Sources */,
@@ -864,6 +1004,7 @@
 				A8D50FBB25659484009B2E50 /* HomePresenter.swift in Sources */,
 				A84ABA8B2598877C00358042 /* Review+CoreDataProperties.swift in Sources */,
 				A84ABA1F2597812000358042 /* CreateReviewInteractor.swift in Sources */,
+				A8CB81CD259C881100D6B97A /* ClassifierDetailsInterfaces.swift in Sources */,
 				A8F2CF6B2597487500040ABF /* Strings.swift in Sources */,
 				A898C2362598ECDC0082403A /* ImageSelectionView.swift in Sources */,
 				A84ABA3A25978C5B00358042 /* SearchMoviesInterfaces.swift in Sources */,
@@ -882,9 +1023,11 @@
 				A84ABA1E2597812000358042 /* CreateReviewViewController.swift in Sources */,
 				A84ABA86259884D800358042 /* PersistanceManager.swift in Sources */,
 				A84ABA3D25978C5B00358042 /* SearchMoviesInteractor.swift in Sources */,
+				A8CB81B2259BC84700D6B97A /* UIColorExtensions.swift in Sources */,
 				A898C2022598B3010082403A /* FilterReviewsPresenter.swift in Sources */,
 				A898C26D259B80820082403A /* EditPersonalInfoWireframe.swift in Sources */,
 				A84ABA1C2597812000358042 /* CreateReviewInterfaces.swift in Sources */,
+				A8CB818E259B9E7700D6B97A /* ChooseClassifierViewController.swift in Sources */,
 				A898C25A259B7DED0082403A /* GeneralCellItem.swift in Sources */,
 				A8F2CF782597510100040ABF /* CellItem.swift in Sources */,
 				A898C2052598B3010082403A /* FilterReviewsWireframe.swift in Sources */,
@@ -892,9 +1035,11 @@
 				A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */,
 				A8D50FA1256593FC009B2E50 /* ViewInterface.swift in Sources */,
 				A898C23D2598EE260082403A /* BundleExtensions.swift in Sources */,
+				A8CB8190259B9E7700D6B97A /* ChooseClassifierWireframe.swift in Sources */,
 				A898C1F625989C3B0082403A /* UIViewExtensions.swift in Sources */,
 				A8F2CFB725976F3600040ABF /* UserStoreManager.swift in Sources */,
 				A8D50FD025668F01009B2E50 /* LanguagesWireframe.swift in Sources */,
+				A8CB81A6259BB7E000D6B97A /* ClassifierData.swift in Sources */,
 				A8F2CFAE2597650500040ABF /* PhotoTableViewCell.swift in Sources */,
 				A8F2CFB225976AAF00040ABF /* ProfilePhoto.swift in Sources */,
 				A8D50FCE25668F01009B2E50 /* LanguagesViewController.swift in Sources */,
@@ -903,25 +1048,32 @@
 				A8F2CF732597504200040ABF /* ReviewTableViewCell.swift in Sources */,
 				A8D50FA0256593FC009B2E50 /* PresenterInterface.swift in Sources */,
 				A898C2412598FC520082403A /* LanguageSelectionCellItem.swift in Sources */,
+				A8CB81AA259BB83000D6B97A /* ClassifierDescriptionCellItem.swift in Sources */,
 				A8F2CF6725973E4B00040ABF /* ProfileWireframe.swift in Sources */,
 				A8F2CF822597515700040ABF /* BlankTableSection.swift in Sources */,
 				A84ABA3E25978C5B00358042 /* SearchMoviesWireframe.swift in Sources */,
 				A898C2232598E4170082403A /* SettingsPresenter.swift in Sources */,
 				A8F2CF8E259751C500040ABF /* Reloader.swift in Sources */,
 				A84ABA4925979D5700358042 /* SearchResultTableViewCell.swift in Sources */,
-				A8D188AE258B5F82008670B6 /* ClassifierResultScale.swift in Sources */,
+				A8D188AE258B5F82008670B6 /* ScaleClassifier.swift in Sources */,
 				A8D50FBC25659484009B2E50 /* HomeViewController.swift in Sources */,
+				A8CB8199259BABF000D6B97A /* BooleanClassifier.swift in Sources */,
 				A84ABA3B25978C5B00358042 /* SearchMoviesPresenter.swift in Sources */,
 				A84ABA3C25978C5B00358042 /* SearchMoviesViewController.swift in Sources */,
 				A898C26C259B80820082403A /* EditPersonalInfoInteractor.swift in Sources */,
+				A8CB819F259BAC4000D6B97A /* Classifier.swift in Sources */,
+				A8CB81CE259C881100D6B97A /* ClassifierDetailsPresenter.swift in Sources */,
 				A84ABA202597812000358042 /* CreateReviewWireframe.swift in Sources */,
 				A8D50FBA25659484009B2E50 /* HomeInterfaces.swift in Sources */,
 				A8D50F9C256593FC009B2E50 /* UIStoryboardExtension.swift in Sources */,
 				A8D50FCC25668F01009B2E50 /* LanguagesInterfaces.swift in Sources */,
+				A8CB818F259B9E7700D6B97A /* ChooseClassifierInteractor.swift in Sources */,
 				A8F2CF6325973E4B00040ABF /* ProfileInterfaces.swift in Sources */,
 				A8F2CF6625973E4B00040ABF /* ProfileInteractor.swift in Sources */,
+				A8CB81BA259C79AE00D6B97A /* ClassifierAccuracy.swift in Sources */,
 				A898C24D2599FBC30082403A /* TitleTableSection.swift in Sources */,
 				A8F2CFA4259763E800040ABF /* ChoosePhotoViewController.swift in Sources */,
+				A8CB81D0259C881100D6B97A /* ClassifierDetailsInteractor.swift in Sources */,
 				A84ABA4525979D3B00358042 /* SearchResultCellItem.swift in Sources */,
 				A8D50F7D25659272009B2E50 /* SceneDelegate.swift in Sources */,
 				A84ABA8A2598877C00358042 /* Review+CoreDataClass.swift in Sources */,
@@ -1066,7 +1218,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86UEKV73HK;
-				INFOPLIST_FILE = SentimentClassifier/Info.plist;
+				INFOPLIST_FILE = SentimentClassifier/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1086,7 +1238,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86UEKV73HK;
-				INFOPLIST_FILE = SentimentClassifier/Info.plist;
+				INFOPLIST_FILE = SentimentClassifier/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

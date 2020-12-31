@@ -67,7 +67,7 @@ private extension ChoosePhotoViewController {
 private extension ChoosePhotoViewController {
 
     func setupUI() {
-        titleLabel.text = Strings.choosePhotoTitle
+        titleLabel.text = Strings.chooseProfilePhoto
     }
 }
 

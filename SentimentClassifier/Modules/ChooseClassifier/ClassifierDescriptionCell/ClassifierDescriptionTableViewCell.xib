@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="KGk-i7-Jjw" customClass="ClassifierDescriptionTableViewCell" customModule="SentimentClassifier" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="293" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vML-Li-lz4">
+                        <rect key="frame" x="0.0" y="0.0" width="293" height="44"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unp-72-hMM">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Unp-72-hMM" secondAttribute="height" id="Itz-Yj-oFh"/>
+                                </constraints>
+                                <color key="tintColor" name="primary"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="circle" catalog="system" renderingMode="template"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XM5-Ve-qJ4">
+                                <rect key="frame" x="52" y="0.0" width="241" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vML-Li-lz4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="28K-1I-1Nl"/>
+                    <constraint firstItem="vML-Li-lz4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="LiO-Dx-ddI"/>
+                    <constraint firstItem="Unp-72-hMM" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="QFD-dj-LS3"/>
+                    <constraint firstAttribute="bottom" secondItem="vML-Li-lz4" secondAttribute="bottom" id="WWb-op-wO3"/>
+                    <constraint firstAttribute="trailing" secondItem="vML-Li-lz4" secondAttribute="trailing" id="jtC-4Z-4B7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="classifierNameLabel" destination="XM5-Ve-qJ4" id="cQB-L7-mRf"/>
+                <outlet property="radioButton" destination="Unp-72-hMM" id="eXq-er-HkM"/>
+            </connections>
+            <point key="canvasLocation" x="-36" y="149"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <namedColor name="primary">
+            <color red="0.22745098039215686" green="0.25098039215686274" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

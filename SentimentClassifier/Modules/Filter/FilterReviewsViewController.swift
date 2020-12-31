@@ -76,6 +76,7 @@ private extension FilterReviewsViewController {
         titleLabel.text = Strings.filterReviewsTitle
         filterSentimentLabel.text = Strings.filterBySentiment
         filterButton.setTitle(Strings.filterAction, for: .normal)
+        filterButton.layer.cornerRadius = 25
     }
 }
 

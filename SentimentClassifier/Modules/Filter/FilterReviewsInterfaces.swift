@@ -13,8 +13,8 @@ import RxSwift
 import RxCocoa
 
 protocol FilterDelegate {
-    var currentFilters: [ClassifierResultScale] { get }
-    func process(sentimentFilters: [ClassifierResultScale])
+    var currentFilters: [String] { get }
+    func process(sentimentFilters: [String])
 }
 
 protocol FilterReviewsWireframeInterface: WireframeInterface {

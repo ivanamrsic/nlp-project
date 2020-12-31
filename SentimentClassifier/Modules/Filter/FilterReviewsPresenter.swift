@@ -56,7 +56,7 @@ private extension FilterReviewsPresenter {
 
     func createItems() -> Driver<[FilterCellItem]> {
 
-        let items: [FilterCellItem] = ClassifierResultScale.resultPossiblities.map { score in
+        let items: [FilterCellItem] = ClassifierManager.shared.allResults.map { score in
             let isSelected = delegate.currentFilters.contains(where: { score.description == $0.description })
             return FilterCellItem(classifierScore: score, isSelected: isSelected)
         }
