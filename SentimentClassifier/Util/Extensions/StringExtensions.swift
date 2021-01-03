@@ -13,4 +13,9 @@ extension Optional where Wrapped == String {
         guard let value = self else { return Constants.emptyValue }
         return value.count > 0 ? value : Constants.emptyValue
     }
+
+    var isEmptyOrNil: Bool {
+        guard let value = self else { return true }
+        return value.count == 0
+    }
 }

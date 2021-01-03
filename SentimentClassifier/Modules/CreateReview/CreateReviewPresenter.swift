@@ -14,7 +14,7 @@ import RxCocoa
 
 final class CreateReviewPresenter {
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private unowned let view: CreateReviewViewInterface
     private let interactor: CreateReviewInteractorInterface
@@ -33,13 +33,17 @@ final class CreateReviewPresenter {
     }
 }
 
-// MARK: - CreateReviewPresenterInterface -
+// MARK: - CreateReviewPresenterInterface
 
 extension CreateReviewPresenter: CreateReviewPresenterInterface {
 
     func configure(with output: CreateReview.ViewOutput) -> CreateReview.ViewInput {
+
+        let reviewData = handle(reviewData: output.data)
+        let saveReview = handle(saveAction: output.saveReviewAction, reviewData: reviewData)
+
         handle(searchMovie: output.searchMovieAction)
-        handle(saveReview: output.saveReviewAction)
+        handle(saveReview: saveReview)
         return CreateReview.ViewInput(
             movieData: movieRelay.asDriver()
         )
@@ -50,6 +54,29 @@ extension CreateReviewPresenter: CreateReviewPresenterInterface {
 
 private extension CreateReviewPresenter {
 
+    func handle(reviewData: Driver<(String?, String?, String?, String?)>) -> Signal<ReviewData> {
+        return reviewData
+            .asSignal(onErrorSignalWith: .empty())
+            .compactMap { ($0, $1, $2, $3) }
+            .map {
+                ReviewData(
+                    movieTitle: $0,
+                    movieYear: $1,
+                    reviewTitle: $2,
+                    reviewText: $3
+                )
+            }
+    }
+
+    func handle(saveAction: Signal<Void>, reviewData: Signal<ReviewData>) -> Signal<ReviewData> {
+        saveAction
+            .withLatestFrom(
+                reviewData,
+                resultSelector: { (_, review) in review }
+            )
+            .do(onNext: { [unowned view] _ in view.startLoading() })
+    }
+
     func handle(searchMovie: Signal<Void>) {
         searchMovie.emit(onNext: { [unowned wireframe, unowned self] in
                 wireframe.searchMovies(delegate: self)
@@ -58,15 +85,18 @@ private extension CreateReviewPresenter {
     }
 
     func handle(saveReview: Signal<ReviewData>) {
+
+        let alert = wireframe.showCreatedReviewAlert(with: Strings.reviewCreated, okMessage: Strings.ok)
+
         saveReview
             .asDriver(onErrorDriveWith: .empty())
             .flatMap { [unowned interactor] in interactor.save(reviewData: $0) }
-            .drive(onNext: { [unowned wireframe, unowned view] didSave in
-
-                view.stopLoading()
+            .map { _ in () }
+            .do(onNext: { [unowned view] in view.stopLoading() })
+            .flatMap { alert.asDriver(onErrorDriveWith: .empty()) }
+            .drive(onNext: { [unowned view, unowned wireframe] in
+                wireframe.dismiss()
                 view.reset()
-
-                if didSave { wireframe.dismiss() }
             })
             .disposed(by: disposeBag)
     }

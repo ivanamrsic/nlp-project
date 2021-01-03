@@ -11,6 +11,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxKeyboard
 import SkyFloatingLabelTextField
 
 final class CreateReviewViewController: NLPViewController {
@@ -26,6 +27,8 @@ final class CreateReviewViewController: NLPViewController {
 
     @IBOutlet private weak var activtyIndicator: UIActivityIndicatorView!
 
+    @IBOutlet private weak var scrollView: UIScrollView!
+
     // MARK: - Public properties
 
     var presenter: CreateReviewPresenterInterface!
@@ -40,7 +43,6 @@ final class CreateReviewViewController: NLPViewController {
         super.viewDidLoad()
         configure()
         setupUI()
-        activtyIndicator.isHidden = true
         hideKeyboardWhenTappedAround()
     }
 }
@@ -49,15 +51,18 @@ final class CreateReviewViewController: NLPViewController {
 
 extension CreateReviewViewController: CreateReviewViewInterface {
 
+    func startLoading() {
+        activtyIndicator?.startAnimating()
+    }
+
     func stopLoading() {
-        activtyIndicator.isHidden = true
         activtyIndicator.stopAnimating()
     }
 
     func reset() {
-        movieTitleTextField.text = ""
-        movieYearTextField.text = ""
-        reviewTitleTextField.text = ""
+        reset(textField: movieTitleTextField)
+        reset(textField: movieYearTextField)
+        reset(textField: reviewTitleTextField)
         reviewTextView.text = ""
     }
 }
@@ -70,20 +75,17 @@ private extension CreateReviewViewController {
 
         let searchMovieAction = movieTitleTextField.rx.controlEvent(.editingDidBegin)
 
-        let submitAction = submitButton.rx.tap.asSignal()
-            .do(onNext: { [unowned activtyIndicator] in
-                activtyIndicator?.startAnimating()
-                activtyIndicator?.isHidden = false
-            })
-            .flatMap { [unowned self] in self.reviewData }
-
         let output = CreateReview.ViewOutput(
             searchMovieAction: searchMovieAction.asSignal(),
-            saveReviewAction: submitAction
+            saveReviewAction: submitButton.rx.tap.asSignal(),
+            data: reviewData
         )
 
         let input = presenter.configure(with: output)
         handle(movieData: input.movieData)
+        handleKeyboard()
+        handleMovieInfoTextFields()
+        handleButtonEnabledState()
     }
 }
 
@@ -93,15 +95,18 @@ private extension CreateReviewViewController {
 
     func setupUI() {
         titleLabel.text = Strings.createReview
-        movieTitleTextField.placeholder = Strings.movieTitle
-        movieTitleTextField.title = Strings.movieTitle
-        movieTitleTextField.titleColor = UIColor.NLP.primary
-        movieYearTextField.placeholder = Strings.movieYear
-        movieYearTextField.title = Strings.movieYear
-        movieYearTextField.titleColor = UIColor.NLP.primary
-        reviewTitleTextField.placeholder = Strings.reviewTitle
-        reviewTitleTextField.title = Strings.reviewTitle
-        reviewTitleTextField.titleColor = UIColor.NLP.primary
+        setup(textField: movieTitleTextField, title: Strings.movieTitle)
+        setup(textField: movieYearTextField, title: Strings.movieYear)
+        setup(textField: reviewTitleTextField, title: Strings.reviewTitle)
+        setupSubmitButton()
+    }
+
+    func setup(textField: SkyFloatingLabelTextField, title: String) {
+        textField.placeholder = Strings.movieTitle
+        textField.title = Strings.movieTitle
+    }
+
+    func setupSubmitButton() {
         submitButton.layer.cornerRadius = 25
         submitButton.setTitle(Strings.create, for: .normal)
     }
@@ -111,26 +116,73 @@ private extension CreateReviewViewController {
 
 private extension CreateReviewViewController {
 
-    var reviewData: Signal<ReviewData> {
+    var reviewData: Driver<(String?, String?, String?, String?)> {
+
+        let text = reviewTextView.rx.text.asDriver().filter { !($0?.isEmpty ?? true) }
+
         return Driver.combineLatest(
-                movieTitleTextField.rx.text.asDriver(),
-                movieYearTextField.rx.text.asDriver(),
-                reviewTitleTextField.rx.text.asDriver(),
-                reviewTextView.rx.text.asDriver()
-            )
-            .asSignal(onErrorSignalWith: .empty())
-            .map { ReviewData(movieTitle: $0, movieYear: $1, reviewTitle: $2, reviewText: $3) }
+            movieTitleTextField.rx.text.asDriver().startWith(""),
+            movieYearTextField.rx.text.asDriver().startWith(""),
+            reviewTitleTextField.rx.text.asDriver().startWith(""),
+            text.startWith("")
+        )
     }
 
     func handle(movieData: Driver<(title: String, year: String)>) {
         movieData
             .map { $0.title }
-            .drive(movieTitleTextField.rx.text)
+            .drive(onNext: { [unowned movieTitleTextField] in
+                movieTitleTextField?.text = $0
+                movieTitleTextField?.sendActions(for: .valueChanged)
+            })
             .disposed(by: disposeBag)
 
         movieData
             .map { $0.year }
-            .drive(movieYearTextField.rx.text)
+            .drive(onNext: { [unowned movieYearTextField] in
+                movieYearTextField?.text = $0
+                movieYearTextField?.sendActions(for: .valueChanged)
+            })
             .disposed(by: disposeBag)
+
+    }
+
+    func handleKeyboard() {
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { [scrollView] keyboardVisibleHeight in
+                let height = keyboardVisibleHeight == 0 ? 0 : 200
+                scrollView?.contentOffset.y = CGFloat(height)
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func handleMovieInfoTextFields() {
+        movieTitleTextField.rx.text
+            .filter { $0?.isEmpty ?? true }
+            .asDriver(onErrorDriveWith: .empty())
+            .map { _ in () }
+            .drive(onNext: { [unowned movieYearTextField] in movieYearTextField?.text = "" })
+            .disposed(by: disposeBag)
+    }
+
+    func handleButtonEnabledState() {
+        reviewData
+            .map { !$0.isEmptyOrNil && !$1.isEmptyOrNil && !$2.isEmptyOrNil && !$3.isEmptyOrNil }
+            .distinctUntilChanged()
+            .drive(onNext: { [unowned submitButton] in
+                submitButton?.alpha = $0 ? 1 : 0.5
+                submitButton?.isEnabled = $0
+            })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Helpers
+
+private extension CreateReviewViewController {
+
+    func reset(textField: UITextField) {
+        textField.text = ""
+        textField.sendActions(for: .valueChanged)
     }
 }

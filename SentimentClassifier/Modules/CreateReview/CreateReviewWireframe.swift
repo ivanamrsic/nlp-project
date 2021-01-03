@@ -35,6 +35,26 @@ final class CreateReviewWireframe: BaseWireframe {
 
 extension CreateReviewWireframe: CreateReviewWireframeInterface {
 
+    func showCreatedReviewAlert(with title: String, okMessage: String) -> Single<Void> {
+
+        return Single.create { [unowned viewController] observer -> Disposable in
+
+            let action =
+                UIAlertAction(
+                    title: okMessage,
+                    style: .default,
+                    handler: { _ in observer(.success(())) }
+                )
+
+            let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+            alert.addAction(action)
+
+            viewController.present(alert, animated: true, completion: nil)
+
+            return Disposables.create { }
+        }
+    }
+
     func dismiss() {
         viewController.dismiss(animated: true, completion: nil)
     }

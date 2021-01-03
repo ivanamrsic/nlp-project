@@ -81,6 +81,10 @@ extension Strings {
         localize(eng: "Create review", cro: "Stvori recenziju")
     }
 
+    static var reviewCreated: String {
+        localize(eng: "Review created", cro: "Recenzija stvorena")
+    }
+
     static var classify: String {
         localize(eng: "Classify", cro: "Klasificiraj")
     }

@@ -20,11 +20,13 @@ struct ReviewData {
 }
 
 protocol CreateReviewWireframeInterface: WireframeInterface {
+    func showCreatedReviewAlert(with title: String, okMessage: String) -> Single<Void>
     func dismiss()
     func searchMovies(delegate: SearchResultDelegate)
 }
 
 protocol CreateReviewViewInterface: ViewInterface {
+    func startLoading()
     func stopLoading()
     func reset()
 }
@@ -41,7 +43,8 @@ enum CreateReview {
 
     struct ViewOutput {
         let searchMovieAction: Signal<Void>
-        let saveReviewAction: Signal<ReviewData>
+        let saveReviewAction: Signal<Void>
+        let data: Driver<(String?, String?, String?, String?)>
     }
 
     struct ViewInput {

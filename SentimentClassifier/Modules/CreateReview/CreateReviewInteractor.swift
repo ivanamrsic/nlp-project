@@ -41,6 +41,8 @@ extension CreateReviewInteractor: CreateReviewInteractorInterface {
     }
 }
 
+// MARK: - Helpers
+
 private extension CreateReviewInteractor {
 
     var currentDate: String {
