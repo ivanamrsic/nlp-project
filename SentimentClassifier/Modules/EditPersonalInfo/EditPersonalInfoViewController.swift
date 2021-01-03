@@ -43,7 +43,6 @@ final class EditPersonalInfoViewController: NLPViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-	
 }
 
 // MARK: - EditPersonalInfoViewInterface
@@ -79,6 +78,7 @@ private extension EditPersonalInfoViewController {
         usernameTextField.title = Strings.usernameTitle
         emailTextField.placeholder = Strings.emailTitle
         emailTextField.title = Strings.emailTitle
+        saveButton.setDefaultCornerRadius()
         saveButton.setTitle(Strings.save, for: .normal)
     }
 }
@@ -90,7 +90,7 @@ private extension EditPersonalInfoViewController {
     func handle(username: Driver<String?>) {
         username
             .filter { [unowned usernameTextField] in $0 != usernameTextField?.text }
-            .filter { $0 != "-" }
+            .filter { $0 != Constants.emptyValue }
             .drive(usernameTextField.rx.text)
             .disposed(by: disposeBag)
     }
@@ -98,7 +98,7 @@ private extension EditPersonalInfoViewController {
     func handle(email: Driver<String?>) {
         email
             .filter { [unowned emailTextField] in $0 != emailTextField?.text }
-            .filter { $0 != "-" }
+            .filter { $0 != Constants.emptyValue }
             .drive(emailTextField.rx.text)
             .disposed(by: disposeBag)
     }

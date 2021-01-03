@@ -8,7 +8,7 @@
 import UIKit
 
 struct Strings {
-    private static func chooseTranslation(eng: String, cro: String) -> String {
+    static func localize(eng: String, cro: String) -> String {
         switch UserStoreManager.language {
         case .english: return eng
         case .croatian: return cro
@@ -21,23 +21,35 @@ struct Strings {
 extension Strings {
 
     static var done: String {
-        chooseTranslation(eng: "Done", cro: "Gotovo")
+        localize(eng: "Done", cro: "Gotovo")
     }
 
     static var save: String {
-        chooseTranslation(eng: "Save", cro: "Spremi")
+        localize(eng: "Save", cro: "Spremi")
     }
 
     static var create: String {
-        chooseTranslation(eng: "Create", cro: "Kreiraj")
+        localize(eng: "Create", cro: "Kreiraj")
     }
 
     static var general: String {
-        chooseTranslation(eng: "General", cro: "Opcenito")
+        localize(eng: "General", cro: "Opcenito")
     }
 
     static var moreDetails: String {
-        chooseTranslation(eng: "More details", cro: "Vise detalja")
+        localize(eng: "More details", cro: "Vise detalja")
+    }
+
+    static var result: String {
+        localize(eng: "Result", cro: "Rezultat")
+    }
+
+    static var ok: String {
+        localize(eng: "Ok", cro: "Ok")
+    }
+
+    static var cancel: String {
+        localize(eng: "Cancel", cro: "Ponisti")
     }
 }
 
@@ -46,27 +58,39 @@ extension Strings {
 extension Strings {
 
     static var chooseClassifier: String {
-        chooseTranslation(eng: "Choose Classifier", cro: "Odaberi klasifikator")
+        localize(eng: "Choose Classifier", cro: "Odaberi klasifikator")
     }
 
     static var editPersonalInfo: String {
-        chooseTranslation(eng: "Edit personal info", cro: "Uredi osobni podatke")
+        localize(eng: "Edit personal info", cro: "Uredi osobni podatke")
     }
 
     static var chooseAppLanguage: String {
-        chooseTranslation(eng: "Choose language in the app", cro: "Odaberi jezik aplikacije")
+        localize(eng: "Choose language in the app", cro: "Odaberi jezik aplikacije")
     }
 
     static var chooseProfilePhoto: String {
-        chooseTranslation(eng: "Choose profile photo", cro: "Odaberi sliku profila")
+        localize(eng: "Choose profile photo", cro: "Odaberi sliku profila")
     }
 
     static var searchForAMovie: String {
-        chooseTranslation(eng: "Search for a movie...", cro: "Pretrazite filmove...")
+        localize(eng: "Search for a movie...", cro: "Pretrazi filmove...")
     }
 
     static var createReview: String {
-        chooseTranslation(eng: "Create review", cro: "Stvori recenziju")
+        localize(eng: "Create review", cro: "Stvori recenziju")
+    }
+
+    static var classify: String {
+        localize(eng: "Classify", cro: "Klasificiraj")
+    }
+
+    static var deleteReviews: String {
+        localize(eng: "Delete Reviews", cro: "Izbrisi recenzije")
+    }
+
+    static var deleteReviewsInfo: String {
+        localize(eng: "Are you sure you want to delete all reviews?", cro: "Zelis li izbrisati sve recenzije?")
     }
 }
 
@@ -75,43 +99,43 @@ extension Strings {
 extension Strings {
 
     static var movieTitle: String {
-        chooseTranslation(eng: "Movie title", cro: "Naslov filma")
+        localize(eng: "Movie title", cro: "Naslov filma")
     }
 
     static var movieYear: String {
-        chooseTranslation(eng: "Movie year", cro: "Godina filma")
+        localize(eng: "Movie year", cro: "Godina filma")
     }
 
     static var reviewTitle: String {
-        chooseTranslation(eng: "Review title", cro: "Naslov recenzije")
+        localize(eng: "Review title", cro: "Naslov recenzije")
     }
 
     static var usernameTitle: String {
-        chooseTranslation(eng: "Username", cro: "Korisnicko ime")
+        localize(eng: "Username", cro: "Korisnicko ime")
     }
 
     static var emailTitle: String {
-        chooseTranslation(eng: "E-mail", cro: "E-posta")
+        localize(eng: "E-mail", cro: "E-posta")
     }
 
     static var classifier: String {
-        chooseTranslation(eng: "Classifier", cro: "Klasifikator")
+        localize(eng: "Classifier", cro: "Klasifikator")
     }
 
     static var personalInfo: String {
-        chooseTranslation(eng: "Personal info", cro: "Osobni podaci")
+        localize(eng: "Personal info", cro: "Osobni podaci")
     }
 
     static var ratingsCountTitle: String {
-        chooseTranslation(eng: "No. of ratings", cro: "Broj recenzija")
+        localize(eng: "No. of ratings", cro: "Broj recenzija")
     }
 
     static var ratingsTitle: String {
-        chooseTranslation(eng: "Ratings", cro: "Recenzije")
+        localize(eng: "Ratings", cro: "Recenzije")
     }
 
     static var scoreTitle: String {
-        chooseTranslation(eng: "Rating", cro: "Ocjena")
+        localize(eng: "Rating", cro: "Ocjena")
     }
 }
 
@@ -122,41 +146,41 @@ extension Strings {
     // MARK: - Data
 
     static var data: String {
-        chooseTranslation(eng: "Data", cro: "Podaci")
+        localize(eng: "Data", cro: "Podaci")
     }
 
     static var dataName: String {
-        chooseTranslation(eng: "Name", cro: "Ime")
+        localize(eng: "Name", cro: "Ime")
     }
 
     static var dataPointsCount: String {
-        chooseTranslation(eng: "No. of data points", cro: "Broj podataka")
+        localize(eng: "No. of data points", cro: "Broj podataka")
     }
 
     static var dataTrainingPercentage: String {
-        chooseTranslation(eng: "Training pct.", cro: "Broj podataka")
+        localize(eng: "Training pct.", cro: "Broj podataka")
     }
 
     static var dataTestingPercentage: String {
-        chooseTranslation(eng: "Testing pct.", cro: "Broj podataka")
+        localize(eng: "Testing pct.", cro: "Broj podataka")
     }
 
     // MARK: - Accuracy
 
     static var accuracy: String {
-        chooseTranslation(eng: "Accuracy", cro: "Tocnost")
+        localize(eng: "Accuracy", cro: "Tocnost")
     }
 
     static var evaluation: String {
-        chooseTranslation(eng: "Evaluation", cro: "Evaluacija")
+        localize(eng: "Evaluation", cro: "Evaluacija")
     }
 
     static var training: String {
-        chooseTranslation(eng: "Training", cro: "Trening")
+        localize(eng: "Training", cro: "Trening")
     }
 
     static var validation: String {
-        chooseTranslation(eng: "Validation", cro: "Validacija")
+        localize(eng: "Validation", cro: "Validacija")
     }
 }
 
@@ -165,39 +189,39 @@ extension Strings {
 extension Strings {
 
     static var undefined: String {
-        chooseTranslation(eng: "Undefinded", cro: "Nedefinirano")
+        localize(eng: "Undefinded", cro: "Nedefinirano")
     }
 
     // MARK: - Boolean
 
     static var negative: String {
-        chooseTranslation(eng: "Negative", cro: "Negativno")
+        localize(eng: "Negative", cro: "Negativno")
     }
 
     static var positive: String {
-        chooseTranslation(eng: "Positive", cro: "Pozitivno")
+        localize(eng: "Positive", cro: "Pozitivno")
     }
 
     // MARK: - Scale
 
     static var extremlySatisfied: String {
-        chooseTranslation(eng: "Extremly satisfied", cro: "Jako zadovoljan")
+        localize(eng: "Extremly satisfied", cro: "Jako zadovoljan")
     }
 
     static var satisfied: String {
-        chooseTranslation(eng: "Satisfied", cro: "Zadovoljan")
+        localize(eng: "Satisfied", cro: "Zadovoljan")
     }
 
     static var neutral: String {
-        chooseTranslation(eng: "Neutral", cro: "Neutralan")
+        localize(eng: "Neutral", cro: "Neutralan")
     }
 
     static var unsatisfied: String {
-        chooseTranslation(eng: "Unsatisfied", cro: "Nezadovoljan")
+        localize(eng: "Unsatisfied", cro: "Nezadovoljan")
     }
 
     static var extremlyUnsatisfied: String {
-        chooseTranslation(eng: "Extremly unsatisfied", cro: "Jako nezadovoljan")
+        localize(eng: "Extremly unsatisfied", cro: "Jako nezadovoljan")
     }
 }
 
@@ -205,24 +229,28 @@ extension Strings {
 
 extension Strings {
 
-    static var cavemanPhoto: String {
-        chooseTranslation(eng: "Caveman", cro: "Pecinski covjek")
-    }
-
     static var trashPhoto: String {
-        chooseTranslation(eng: "Fancy Trash", cro: "Smece")
+        localize(eng: "Fancy Trash", cro: "Smece")
     }
 
-    static var chinchillaPhoto: String {
-        chooseTranslation(eng: "Chinchilla", cro: "Cincila")
+    static var picturePhoto: String {
+        localize(eng: "Picture perfect", cro: "Savrsena slika")
     }
 
-    static var edvardMunchPhoto: String {
-        chooseTranslation(eng: "Edvard Munch", cro: "Edvard Munch")
+    static var puzzlePhoto: String {
+        localize(eng: "Puzzle", cro: "Puzzle")
     }
 
-    static var iceCreamPhoto: String {
-        chooseTranslation(eng: "Happy ice cream", cro: "Veseli sladoled")
+    static var sunPhoto: String {
+        localize(eng: "Winter sun", cro: "Zubato sunce")
+    }
+
+    static var femalePhoto: String {
+        localize(eng: "Lovely Anna", cro: "Ljupka Ana")
+    }
+
+    static var malePhoto: String {
+        localize(eng: "Lovely John", cro: "Ljupki Ivan")
     }
 }
 
@@ -231,14 +259,40 @@ extension Strings {
 extension Strings {
 
     static var filterBySentiment: String {
-        chooseTranslation(eng: "By sentiment", cro: "Po sentimentu")
+        localize(eng: "By sentiment", cro: "Po sentimentu")
     }
 
     static var filterReviewsTitle: String {
-        chooseTranslation(eng: "Filter reviews", cro: "Filtriraj recenzije")
+        localize(eng: "Filter reviews", cro: "Filtriraj recenzije")
     }
 
     static var filterAction: String {
-        chooseTranslation(eng: "Filter", cro: "Filtriraj")
+        localize(eng: "Filter", cro: "Filtriraj")
+    }
+}
+
+// MARK: - Languages Screen
+
+extension Strings {
+
+    static var languagesTitle: String {
+        localize(eng: "Language detection", cro: "Detekcija jezika")
+    }
+
+    static var languagesInfo: String {
+        localize(eng: "Find out language of your text", cro: "Saznajte jezik unesenog teksta")
+    }
+}
+
+// MARK: - Classifier Screen
+
+extension Strings {
+
+    static var classifierScreenTitle: String {
+        localize(eng: "Classify text", cro: "Klasificiraj tekst")
+    }
+
+    static var classifierInfo: String {
+        localize(eng: "Determine text sentiment", cro: "Odredi sentiment teksta")
     }
 }

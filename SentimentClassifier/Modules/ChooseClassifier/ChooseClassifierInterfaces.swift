@@ -37,5 +37,4 @@ enum ChooseClassifier {
     struct ViewInput {
         let items: Driver<[TableCellItem]>
     }
-
 }

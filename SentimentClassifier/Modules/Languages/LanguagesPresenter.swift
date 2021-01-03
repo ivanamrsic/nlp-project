@@ -11,16 +11,17 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import NaturalLanguage
 
 final class LanguagesPresenter {
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private unowned let view: LanguagesViewInterface
     private let interactor: LanguagesInteractorInterface
     private let wireframe: LanguagesWireframeInterface
 
-    // MARK: - Lifecycle -
+    // MARK: - Lifecycle
 
     init(view: LanguagesViewInterface, interactor: LanguagesInteractorInterface, wireframe: LanguagesWireframeInterface) {
         self.view = view
@@ -29,61 +30,43 @@ final class LanguagesPresenter {
     }
 }
 
-// MARK: - Extensions -
+// MARK: - LanguagesPresenterInterface
 
 extension LanguagesPresenter: LanguagesPresenterInterface {
 
     func configure(with output: Languages.ViewOutput) -> Languages.ViewInput {
         
-        let result = handle(inputText: output.inputText)
-        
+        let result = handle(inputText: output.inputText, refresh: output.viewWillAppear)
+
+        let toOutput: (LanguagePossibility?) -> ReadableLanguagePossibility? = { lang in
+            guard let lang = lang else { return nil }
+            return (lang.language.localized, lang.pct)
+        }
+
+        let secondPossibility = result.map { $0.count > 0 ? $0[1] : nil }
+        let thirdPossibility = result.map { $0.count > 1 ? $0[2] : nil }
+
         return Languages.ViewInput(
-            result: result
+            firstPossibleLanguages: result.map { $0.first }.map(toOutput),
+            secondPossibleLanguages: secondPossibility.map(toOutput),
+            thirdPossibleLanguages: thirdPossibility.map(toOutput)
         )
     }
-
 }
+
+// MARK: - Binding Setup
 
 private extension LanguagesPresenter {
     
-    func handle(inputText: Driver<String?>) -> Driver<String> {
-        return inputText.map { [unowned self] in self.processInputText(text: $0) }
+    func handle(
+        inputText: Driver<String?>,
+        refresh: Signal<Void>
+        ) -> Driver<[LanguagePossibility]> {
+        let language = inputText.compactMap { [unowned interactor] in interactor.getLanguage(for: $0) }
+        return Driver.combineLatest(
+            language,
+            refresh.asDriver(onErrorDriveWith: .empty()),
+            resultSelector: { (first, second) in return first }
+        )
     }
-}
-
-private extension LanguagesPresenter {
-    
-    
-    func processInputText(text: String?) -> String {
-        
-        guard let text = text, text.count > 0 else {
-            return ""
-        }
-                
-        let tagger = NSLinguisticTagger(tagSchemes: [.language], options: 0)
-        tagger.string = text
-        
-        let lang = tagger.tag(at: 0, unit: .word, scheme: .language, tokenRange: nil)
-        
-        guard let langRawValue = lang?.rawValue else {
-            return ""
-        }
-        
-        return langRawValue == "und" ? "👀" : flag(country: (langRawValue.uppercased()))
-    }
-    
-    func flag(country:String) -> String {
-        
-        if country == "EN" {
-            return "🇬🇧"
-        }
-        
-        let base = 127397
-        var usv = String.UnicodeScalarView()
-        for i in country.utf16 {
-            usv.append(UnicodeScalar(base + Int(i))!)
-        }
-        return String(usv)
-    }
-    
 }

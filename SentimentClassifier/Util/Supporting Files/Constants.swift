@@ -10,4 +10,6 @@ import Foundation
 struct Constants {
 
     static let apiKey = "b34ec124"
+
+    static let emptyValue = "-"
 }

@@ -14,7 +14,7 @@ import RxSwift
 final class ClassifierDetailsInteractor {
 }
 
-// MARK: - Extensions -
+// MARK: - ClassifierDetailsInteractorInterface
 
 extension ClassifierDetailsInteractor: ClassifierDetailsInteractorInterface {
 }

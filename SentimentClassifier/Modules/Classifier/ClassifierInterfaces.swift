@@ -34,5 +34,4 @@ enum Classifier {
     struct ViewInput {
         let result: Driver<String?>
     }
-
 }

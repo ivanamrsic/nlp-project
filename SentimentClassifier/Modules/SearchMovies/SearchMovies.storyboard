@@ -43,9 +43,12 @@
                                 <rect key="frame" x="24" y="118" width="327" height="525"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="PxP-BI-lGT">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" name="primaryBackground"/>
                         <constraints>
                             <constraint firstItem="TN3-yl-wlP" firstAttribute="top" secondItem="lgf-oc-m2E" secondAttribute="bottom" constant="24" id="BOx-H4-2Kc"/>
                             <constraint firstItem="lgf-oc-m2E" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="Elr-NG-7ik"/>
@@ -53,10 +56,13 @@
                             <constraint firstItem="TN3-yl-wlP" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="24" id="YJL-IV-fR8"/>
                             <constraint firstItem="lgf-oc-m2E" firstAttribute="top" secondItem="3pi-N7-nbV" secondAttribute="top" constant="24" id="a36-mI-KKE"/>
                             <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="lgf-oc-m2E" secondAttribute="trailing" constant="24" id="gLn-qi-Wcm"/>
+                            <constraint firstItem="PxP-BI-lGT" firstAttribute="centerX" secondItem="Z2g-4m-atm" secondAttribute="centerX" id="lAa-Pq-ybq"/>
+                            <constraint firstItem="PxP-BI-lGT" firstAttribute="centerY" secondItem="Z2g-4m-atm" secondAttribute="centerY" id="vBC-D8-7ce"/>
                             <constraint firstItem="3pi-N7-nbV" firstAttribute="bottom" secondItem="TN3-yl-wlP" secondAttribute="bottom" constant="24" id="wzD-JT-7pn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activtyIndicator" destination="PxP-BI-lGT" id="uYz-UY-ZX0"/>
                         <outlet property="inputTextField" destination="lgf-oc-m2E" id="jcq-0h-EBB"/>
                         <outlet property="tableView" destination="TN3-yl-wlP" id="ZgO-sr-0tC"/>
                     </connections>
@@ -74,6 +80,9 @@
     <resources>
         <namedColor name="primary">
             <color red="0.22745098039215686" green="0.25098039215686274" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryBackground">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -62,11 +62,11 @@ private extension CreateReviewPresenter {
             .asDriver(onErrorDriveWith: .empty())
             .flatMap { [unowned interactor] in interactor.save(reviewData: $0) }
             .drive(onNext: { [unowned wireframe, unowned view] didSave in
-                if didSave {
-                    wireframe.dismiss()
-                } else {
-                    view.stopLoading()
-                }
+
+                view.stopLoading()
+                view.reset()
+
+                if didSave { wireframe.dismiss() }
             })
             .disposed(by: disposeBag)
     }

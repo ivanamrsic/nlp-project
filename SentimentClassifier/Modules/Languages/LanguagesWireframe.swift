@@ -14,11 +14,11 @@ import RxCocoa
 
 final class LanguagesWireframe: BaseWireframe {
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private let storyboard = UIStoryboard.languages
 
-    // MARK: - Module setup -
+    // MARK: - Module setup
 
     init() {
         let moduleViewController = storyboard.instantiateViewController(ofType: LanguagesViewController.self)
@@ -31,7 +31,7 @@ final class LanguagesWireframe: BaseWireframe {
 
 }
 
-// MARK: - Extensions -
+// MARK: - LanguagesWireframeInterface
 
 extension LanguagesWireframe: LanguagesWireframeInterface {
 }

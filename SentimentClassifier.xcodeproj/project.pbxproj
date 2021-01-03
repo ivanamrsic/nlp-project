@@ -65,6 +65,7 @@
 		A898C26B259B80820082403A /* EditPersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C265259B80820082403A /* EditPersonalInfoViewController.swift */; };
 		A898C26C259B80820082403A /* EditPersonalInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C266259B80820082403A /* EditPersonalInfoInteractor.swift */; };
 		A898C26D259B80820082403A /* EditPersonalInfoWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898C267259B80820082403A /* EditPersonalInfoWireframe.swift */; };
+		A89CCEBF25A1089E003C845E /* NLLanguageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CCEBE25A1089E003C845E /* NLLanguageExtensions.swift */; };
 		A8C1DC16256694BA0052438B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC15256694BA0052438B /* UIImageExtensions.swift */; };
 		A8C1DC1A2566B95C0052438B /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */; };
 		A8CB818B259B9E7700D6B97A /* ChooseClassifier.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8CB8185259B9E7700D6B97A /* ChooseClassifier.storyboard */; };
@@ -91,6 +92,8 @@
 		A8CB81CF259C881100D6B97A /* ClassifierDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81C9259C881100D6B97A /* ClassifierDetailsViewController.swift */; };
 		A8CB81D0259C881100D6B97A /* ClassifierDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81CA259C881100D6B97A /* ClassifierDetailsInteractor.swift */; };
 		A8CB81D1259C881100D6B97A /* ClassifierDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81CB259C881100D6B97A /* ClassifierDetailsWireframe.swift */; };
+		A8CB81D625A0AA4D00D6B97A /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81D525A0AA4D00D6B97A /* UIButtonExtensions.swift */; };
+		A8CB81D925A0ABCB00D6B97A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB81D825A0ABCB00D6B97A /* StringExtensions.swift */; };
 		A8D1889A258B57A2008670B6 /* SentimentClassifierMac.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */; };
 		A8D188A3258B5954008670B6 /* Classifier.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D1889D258B5954008670B6 /* Classifier.storyboard */; };
 		A8D188A4258B5954008670B6 /* ClassifierInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1889E258B5954008670B6 /* ClassifierInterfaces.swift */; };
@@ -156,8 +159,6 @@
 
 /* Begin PBXFileReference section */
 		205D0E886FDAC4496083519B /* Pods-SentimentClassifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentimentClassifier.release.xcconfig"; path = "Target Support Files/Pods-SentimentClassifier/Pods-SentimentClassifier.release.xcconfig"; sourceTree = "<group>"; };
-		6FB5546806FF6709B60E97BB /* Pods-nlp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nlp.release.xcconfig"; path = "Target Support Files/Pods-nlp/Pods-nlp.release.xcconfig"; sourceTree = "<group>"; };
-		A7D4C26C7E1B7C1AB43B8CA6 /* Pods-nlp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nlp.debug.xcconfig"; path = "Target Support Files/Pods-nlp/Pods-nlp.debug.xcconfig"; sourceTree = "<group>"; };
 		A81FB3F62566BDAA00919B9E /* NLPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPViewController.swift; sourceTree = "<group>"; };
 		A84ABA152597812000358042 /* CreateReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateReview.storyboard; sourceTree = "<group>"; };
 		A84ABA162597812000358042 /* CreateReviewInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewInterfaces.swift; sourceTree = "<group>"; };
@@ -216,6 +217,7 @@
 		A898C265259B80820082403A /* EditPersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInfoViewController.swift; sourceTree = "<group>"; };
 		A898C266259B80820082403A /* EditPersonalInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInfoInteractor.swift; sourceTree = "<group>"; };
 		A898C267259B80820082403A /* EditPersonalInfoWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInfoWireframe.swift; sourceTree = "<group>"; };
+		A89CCEBE25A1089E003C845E /* NLLanguageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLLanguageExtensions.swift; sourceTree = "<group>"; };
 		A8C1DC15256694BA0052438B /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		A8C1DC192566B95C0052438B /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		A8CB8185259B9E7700D6B97A /* ChooseClassifier.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseClassifier.storyboard; sourceTree = "<group>"; };
@@ -242,6 +244,8 @@
 		A8CB81C9259C881100D6B97A /* ClassifierDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierDetailsViewController.swift; sourceTree = "<group>"; };
 		A8CB81CA259C881100D6B97A /* ClassifierDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierDetailsInteractor.swift; sourceTree = "<group>"; };
 		A8CB81CB259C881100D6B97A /* ClassifierDetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierDetailsWireframe.swift; sourceTree = "<group>"; };
+		A8CB81D525A0AA4D00D6B97A /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		A8CB81D825A0ABCB00D6B97A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		A8D18899258B57A2008670B6 /* SentimentClassifierMac.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentClassifierMac.mlmodel; sourceTree = "<group>"; };
 		A8D1889D258B5954008670B6 /* Classifier.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Classifier.storyboard; sourceTree = "<group>"; };
 		A8D1889E258B5954008670B6 /* ClassifierInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierInterfaces.swift; sourceTree = "<group>"; };
@@ -323,8 +327,6 @@
 		0274C147160CF7489F96B4CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A7D4C26C7E1B7C1AB43B8CA6 /* Pods-nlp.debug.xcconfig */,
-				6FB5546806FF6709B60E97BB /* Pods-nlp.release.xcconfig */,
 				EEAA52DE30A97BFB053C1F9E /* Pods-SentimentClassifier.debug.xcconfig */,
 				205D0E886FDAC4496083519B /* Pods-SentimentClassifier.release.xcconfig */,
 			);
@@ -342,6 +344,7 @@
 		A81FB3F52566BD9000919B9E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A8F2CFB125976AAF00040ABF /* ProfilePhoto.swift */,
 				A898C2482599E2570082403A /* NLPNavigationController.swift */,
 				A81FB3F62566BDAA00919B9E /* NLPViewController.swift */,
 				A84ABA2825978BC400358042 /* Constants.swift */,
@@ -522,6 +525,9 @@
 				A898C1F525989C3B0082403A /* UIViewExtensions.swift */,
 				A898C23C2598EE260082403A /* BundleExtensions.swift */,
 				A8CB81B1259BC84700D6B97A /* UIColorExtensions.swift */,
+				A8CB81D525A0AA4D00D6B97A /* UIButtonExtensions.swift */,
+				A8CB81D825A0ABCB00D6B97A /* StringExtensions.swift */,
+				A89CCEBE25A1089E003C845E /* NLLanguageExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -787,7 +793,6 @@
 				A8F2CF9E259763E800040ABF /* ChoosePhotoViewController.swift */,
 				A8F2CF9F259763E800040ABF /* ChoosePhotoInteractor.swift */,
 				A8F2CFA0259763E800040ABF /* ChoosePhotoWireframe.swift */,
-				A8F2CFB125976AAF00040ABF /* ProfilePhoto.swift */,
 			);
 			path = ChoosePhoto;
 			sourceTree = "<group>";
@@ -979,6 +984,7 @@
 				A8CB81AE259BB84400D6B97A /* ClassifierDescriptionTableViewCell.swift in Sources */,
 				A898C2252598E4170082403A /* SettingsInteractor.swift in Sources */,
 				A8F2CFA5259763E800040ABF /* ChoosePhotoInteractor.swift in Sources */,
+				A8CB81D925A0ABCB00D6B97A /* StringExtensions.swift in Sources */,
 				A8F2CFA6259763E800040ABF /* ChoosePhotoWireframe.swift in Sources */,
 				A84ABA4125978E7600358042 /* SearchResponse.swift in Sources */,
 				A8CB81A3259BB3BF00D6B97A /* Language.swift in Sources */,
@@ -1029,12 +1035,14 @@
 				A84ABA1C2597812000358042 /* CreateReviewInterfaces.swift in Sources */,
 				A8CB818E259B9E7700D6B97A /* ChooseClassifierViewController.swift in Sources */,
 				A898C25A259B7DED0082403A /* GeneralCellItem.swift in Sources */,
+				A8CB81D625A0AA4D00D6B97A /* UIButtonExtensions.swift in Sources */,
 				A8F2CF782597510100040ABF /* CellItem.swift in Sources */,
 				A898C2052598B3010082403A /* FilterReviewsWireframe.swift in Sources */,
 				A898C2312598E8A60082403A /* ImageSelectionCellItem.swift in Sources */,
 				A8D50F7B25659272009B2E50 /* AppDelegate.swift in Sources */,
 				A8D50FA1256593FC009B2E50 /* ViewInterface.swift in Sources */,
 				A898C23D2598EE260082403A /* BundleExtensions.swift in Sources */,
+				A89CCEBF25A1089E003C845E /* NLLanguageExtensions.swift in Sources */,
 				A8CB8190259B9E7700D6B97A /* ChooseClassifierWireframe.swift in Sources */,
 				A898C1F625989C3B0082403A /* UIViewExtensions.swift in Sources */,
 				A8F2CFB725976F3600040ABF /* UserStoreManager.swift in Sources */,

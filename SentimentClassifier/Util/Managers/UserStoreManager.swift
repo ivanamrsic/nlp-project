@@ -42,12 +42,12 @@ extension UserStoreManager {
 
     static var username: String? {
         get { return UserDefaults.standard.string(forKey: usernameKey) }
-        set(newValue) { UserDefaults.standard.set(newValue, forKey: usernameKey) }
+        set(newValue) { UserDefaults.standard.set(newValue.orEmptyValue, forKey: usernameKey) }
     }
 
     static var email: String? {
         get { return UserDefaults.standard.string(forKey: emailKey) }
-        set(newValue) { UserDefaults.standard.set(newValue, forKey: emailKey) }
+        set(newValue) { UserDefaults.standard.set(newValue.orEmptyValue, forKey: emailKey) }
     }
 
     static var classifier: ClassifierModelType {

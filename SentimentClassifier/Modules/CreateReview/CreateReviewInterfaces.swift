@@ -26,6 +26,7 @@ protocol CreateReviewWireframeInterface: WireframeInterface {
 
 protocol CreateReviewViewInterface: ViewInterface {
     func stopLoading()
+    func reset()
 }
 
 protocol CreateReviewPresenterInterface: PresenterInterface {

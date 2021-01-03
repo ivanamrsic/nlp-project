@@ -57,4 +57,24 @@ extension ProfileInteractor: ProfileInteractorInterface {
         PersistanceManager.context.delete(review)
         PersistanceManager.saveContext()
     }
+
+    func deleteAllReviews() -> Single<Void> {
+
+        return Single.create { (observer) -> Disposable in
+
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: Review.fetchRequest())
+
+            do {
+                try PersistanceManager.context.execute(deleteRequest)
+                PersistanceManager.context.reset()
+                PersistanceManager.saveContext()
+                observer(.success(()))
+            } catch let error as NSError {
+                observer(.error(error))
+            }
+
+            return Disposables.create { }
+        }
+
+    }
 }

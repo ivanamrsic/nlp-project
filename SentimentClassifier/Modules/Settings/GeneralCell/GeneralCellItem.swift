@@ -9,8 +9,12 @@ import UIKit
 
 struct GeneralCellItem {
 
+    // MARK: - Public properties
+
     let title: String?
     let didSelect: (() -> Void)
+
+    // MARK: - Init
 
     init(title: String, didSelect: @escaping (() -> Void)) {
         self.title = title

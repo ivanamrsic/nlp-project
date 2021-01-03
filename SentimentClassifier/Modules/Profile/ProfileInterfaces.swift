@@ -16,6 +16,12 @@ protocol ProfileWireframeInterface: WireframeInterface {
     func openChoosePhoto()
     func openCreateReview() -> Signal<Void>
     func openFilterReviews(with delegate: FilterDelegate)
+    func deleteAlert(
+        with title: String,
+        message: String,
+        okMessage: String,
+        cancelMessage: String
+    ) -> Single<UIAlertAction.Style>
 }
 
 protocol ProfileViewInterface: ViewInterface {
@@ -31,6 +37,7 @@ protocol ProfileInteractorInterface: InteractorInterface {
     var email: Driver<String?> { get }
     func fetchReviews() -> Single<[Review]>
     func delete(review: Review)
+    func deleteAllReviews() -> Single<Void>
 }
 
 enum Profile {
@@ -39,6 +46,7 @@ enum Profile {
         let choosePhotoAction: Signal<Void>
         let createReviewAction: Signal<Void>
         let filterReviewsAction: Signal<Void>
+        let deleteReviewsAction: Signal<Void>
         let viewWillAppear: Signal<Void>
     }
 

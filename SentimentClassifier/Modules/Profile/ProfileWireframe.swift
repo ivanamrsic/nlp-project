@@ -51,4 +51,33 @@ extension ProfileWireframe: ProfileWireframeInterface {
     func openFilterReviews(with delegate: FilterDelegate) {
         navigationController?.presentWireframe(FilterReviewsWireframe(delegate: delegate))
     }
+
+    func deleteAlert(with title: String, message: String, okMessage: String, cancelMessage: String) -> Single<UIAlertAction.Style> {
+
+        return Single<UIAlertAction.Style>.create { [unowned viewController] observer -> Disposable in
+
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+            let okAction =
+                UIAlertAction(
+                    title: okMessage,
+                    style: .default,
+                    handler: { _ in observer(.success(.default)) }
+                )
+
+            let cancelAction =
+                UIAlertAction(
+                    title: cancelMessage,
+                    style: .destructive,
+                    handler: { _ in observer(.success(.destructive)) }
+                )
+
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+
+            viewController.present(alert, animated: true, completion: nil)
+
+            return Disposables.create { }
+        }
+    }
 }

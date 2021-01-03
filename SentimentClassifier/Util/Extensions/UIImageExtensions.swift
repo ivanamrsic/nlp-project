@@ -33,6 +33,10 @@ extension UIImage {
         static var settings: UIImage {
             return UIImage(named: "TabBarItems/gear")!
         }
+
+        static var createReview: UIImage {
+            return UIImage(named: "TabBarItems/plus")!
+        }
     }
 
     struct Common {

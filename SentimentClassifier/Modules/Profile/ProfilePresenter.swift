@@ -41,8 +41,9 @@ extension ProfilePresenter: ProfilePresenterInterface {
         handle(filterReviews: output.filterReviewsAction)
         handle(choosePhoto: output.choosePhotoAction)
 
+        let delete = handle(deleteAll: output.deleteReviewsAction)
         let refresh = handle(createReview: output.createReviewAction)
-        let items = createItems(with: Signal.merge(refresh, output.viewWillAppear))
+        let items = createItems(with: Signal.merge(refresh, output.viewWillAppear, delete))
 
         return Profile.ViewInput(
             username: interactor.username,
@@ -74,6 +75,24 @@ private extension ProfilePresenter {
                 wireframe.openFilterReviews(with: self)
             })
             .disposed(by: disposeBag)
+    }
+
+    func handle(deleteAll: Signal<Void>) -> Signal<Void> {
+
+        let alert = wireframe.deleteAlert(
+            with: Strings.deleteReviews,
+            message: Strings.deleteReviewsInfo,
+            okMessage: Strings.ok,
+            cancelMessage: Strings.cancel
+        )
+
+        let deleteAction = interactor.deleteAllReviews()
+
+        return deleteAll
+            .flatMap { alert.asDriver(onErrorDriveWith: .empty()) }
+            .filter { $0 == .default }
+            .map { _ in () }
+            .flatMap { deleteAction.asSignal(onErrorSignalWith: .empty()) }
     }
 }
 
@@ -121,6 +140,8 @@ private extension ProfilePresenter {
         }
     }
 }
+
+// MARK: - FilterDelegate
 
 extension ProfilePresenter: FilterDelegate {
 

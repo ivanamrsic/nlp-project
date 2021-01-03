@@ -13,7 +13,7 @@ import RxSwift
 import RxCocoa
 
 protocol EditPersonalInfoWireframeInterface: WireframeInterface {
-    func dismiss()
+    func close()
 }
 
 protocol EditPersonalInfoViewInterface: ViewInterface {
@@ -41,5 +41,4 @@ enum EditPersonalInfo {
         let username: Driver<String?>
         let email: Driver<String?>
     }
-
 }

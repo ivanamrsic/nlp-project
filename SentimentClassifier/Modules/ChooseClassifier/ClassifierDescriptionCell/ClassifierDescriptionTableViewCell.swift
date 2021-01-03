@@ -9,12 +9,18 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ClassifierDescriptionTableViewCell: UITableViewCell {
+final class ClassifierDescriptionTableViewCell: UITableViewCell {
+
+    // MARK: - IBOutlets
 
     @IBOutlet private weak var classifierNameLabel: UILabel!
     @IBOutlet private weak var radioButton: UIButton!
 
+    // MARK: - Private properties
+
     private var disposeBag = DisposeBag()
+
+    // MARK: - Lifecycle
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -27,12 +33,12 @@ class ClassifierDescriptionTableViewCell: UITableViewCell {
 extension ClassifierDescriptionTableViewCell {
 
     func configure(with item: ClassifierDescriptionCellItem) {
-        classifierNameLabel.text = item.title
+        setupUI(with: item.title)
         handleButtonTap(with: item)
     }
 }
 
-// MARK: - Binding setup
+// MARK: - Binding Setup
 
 extension ClassifierDescriptionTableViewCell {
 
@@ -43,13 +49,21 @@ extension ClassifierDescriptionTableViewCell {
             .disposed(by: disposeBag)
 
         item.isSelectedClassifier
-            .drive(onNext: { [unowned radioButton] selected in
-                let imageName = selected ? "record.circle" : "circle"
-                radioButton?.setImage(
-                    UIImage(systemName: imageName),
-                    for: .normal
-                )
-            })
+            .drive(onNext: { [unowned self] in self.setUI(for: $0) })
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - UI Setup
+
+private extension ClassifierDescriptionTableViewCell {
+
+    func setupUI(with title: String) {
+        classifierNameLabel.text = title
+    }
+
+    func setUI(for selected: Bool) {
+        let imageName = selected ? "record.circle" : "circle"
+        radioButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
 }

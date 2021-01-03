@@ -34,3 +34,10 @@ struct SearchResponse: Decodable {
         }
     }
 }
+
+extension SearchResponse {
+
+    static var empty: SearchResponse {
+        return SearchResponse(search: [], totalResults: "0", response: "")
+    }
+}

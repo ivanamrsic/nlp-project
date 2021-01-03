@@ -10,11 +10,32 @@
 
 import Foundation
 import RxSwift
+import NaturalLanguage
 
 final class LanguagesInteractor {
+
+    private let recognizer: NLLanguageRecognizer
+
+    init(recognizer: NLLanguageRecognizer = NLLanguageRecognizer()) {
+        self.recognizer = recognizer
+    }
 }
 
-// MARK: - Extensions -
+// MARK: - LanguagesInteractorInterface
 
 extension LanguagesInteractor: LanguagesInteractorInterface {
+
+    func getLanguage(for text: String?) -> [LanguagePossibility] {
+
+        guard let text = text else { return [] }
+
+        recognizer.reset()
+        recognizer.processString(text)
+
+        let possibilities = recognizer.languageHypotheses(withMaximum: 3)
+
+        return possibilities
+            .map { (key, value) -> LanguagePossibility in (key, value) }
+            .sorted { $0.pct > $1.pct }
+    }
 }

@@ -18,6 +18,21 @@ final class ClassifierDetailsViewController: UIViewController {
 
     @IBOutlet private weak var titleLabel: UILabel!
 
+    // Accuracy
+
+    @IBOutlet private weak var accuracyView: UIView!
+    @IBOutlet private weak var accuracyTitleLabel: UILabel!
+
+    @IBOutlet private weak var evaluationValueLabel: UILabel!
+    @IBOutlet private weak var evaluationTitleLabel: UILabel!
+
+    @IBOutlet private weak var trainingView: UIView!
+    @IBOutlet private weak var trainingValueLabel: UILabel!
+    @IBOutlet private weak var trainingTitleLabel: UILabel!
+
+    @IBOutlet private weak var validationValueLabel: UILabel!
+    @IBOutlet private weak var validationTitleLabel: UILabel!
+
     // Data
 
     @IBOutlet private weak var dataView: UIView!
@@ -37,21 +52,6 @@ final class ClassifierDetailsViewController: UIViewController {
     @IBOutlet private weak var testingPercentageTitleLabel: UILabel!
 
     @IBOutlet private weak var dataLinkButton: UIButton!
-
-    // Accuracy
-
-    @IBOutlet private weak var accuracyView: UIView!
-    @IBOutlet private weak var accuracyTitleLabel: UILabel!
-
-    @IBOutlet private weak var evaluationValueLabel: UILabel!
-    @IBOutlet private weak var evaluationTitleLabel: UILabel!
-
-    @IBOutlet private weak var trainingView: UIView!
-    @IBOutlet private weak var trainingValueLabel: UILabel!
-    @IBOutlet private weak var trainingTitleLabel: UILabel!
-
-    @IBOutlet private weak var validationValueLabel: UILabel!
-    @IBOutlet private weak var validationTitleLabel: UILabel!
     
     // MARK: - Public properties
 
@@ -100,6 +100,7 @@ private extension ClassifierDetailsViewController {
     }
 
     func setupAccuracyUI() {
+
         guard let accuracy = presenter.data.accuracy else { return }
 
         setupShadow(on: accuracyView)

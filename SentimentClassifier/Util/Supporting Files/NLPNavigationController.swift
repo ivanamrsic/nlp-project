@@ -15,6 +15,7 @@ class NLPNavigationController: UINavigationController {
 enum TabBarProperty {
     case languages
     case classifier
+    case createReview
     case profile
     case settings
 
@@ -22,25 +23,31 @@ enum TabBarProperty {
         switch self {
         case .languages:
             return UITabBarItem(
-                title: "Languages",
+                title: nil,
                 image: UIImage.TabBar.language,
-                selectedImage: UIImage.TabBar.languageSelected
+                selectedImage: UIImage.TabBar.language
             )
         case .classifier:
             return UITabBarItem(
-                title: "Classifier",
+                title: nil,
                 image: UIImage.TabBar.classifier,
                 selectedImage: UIImage.TabBar.classifier
             )
+        case .createReview:
+            return UITabBarItem(
+                title: nil,
+                image: UIImage.TabBar.createReview,
+                selectedImage: UIImage.TabBar.createReview
+            )
         case .profile:
             return UITabBarItem(
-                title: "Profile",
+                title: nil,
                 image: UIImage.TabBar.user,
                 selectedImage: UIImage.TabBar.user
             )
         case .settings:
             return UITabBarItem(
-                title: "Settings",
+                title: nil,
                 image: UIImage.TabBar.settings,
                 selectedImage: UIImage.TabBar.settings
             )

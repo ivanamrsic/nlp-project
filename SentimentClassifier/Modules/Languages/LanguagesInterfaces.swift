@@ -11,6 +11,10 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import NaturalLanguage
+
+typealias LanguagePossibility = (language: NLLanguage, pct: Double)
+typealias ReadableLanguagePossibility = (language: String, pct: Double)
 
 protocol LanguagesWireframeInterface: WireframeInterface {
 }
@@ -23,16 +27,19 @@ protocol LanguagesPresenterInterface: PresenterInterface {
 }
 
 protocol LanguagesInteractorInterface: InteractorInterface {
+    func getLanguage(for text: String?) -> [(language: NLLanguage, pct: Double)]
 }
 
 enum Languages {
 
     struct ViewOutput {
         let inputText: Driver<String?>
+        let viewWillAppear: Signal<Void>
     }
 
     struct ViewInput {
-        let result: Driver<String>
+        let firstPossibleLanguages: Driver<ReadableLanguagePossibility?>
+        let secondPossibleLanguages: Driver<ReadableLanguagePossibility?>
+        let thirdPossibleLanguages: Driver<ReadableLanguagePossibility?>
     }
-
 }

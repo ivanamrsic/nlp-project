@@ -54,10 +54,14 @@ private extension SearchMoviesPresenter {
         return inputText.compactMap { $0 }
             .filter { $0.count > 1 }
             .distinctUntilChanged()
-            .debounce(.milliseconds(500))
-            .flatMap { [unowned interactor] in
-                interactor.search(input: $0).asDriver(onErrorDriveWith: .empty())
+            .debounce(.milliseconds(300))
+            .do(onNext: { [unowned view] _ in view.showLoading() })
+            .flatMap { [unowned interactor, unowned view] in
+                interactor.search(input: $0)
+                    .do(onError: { [unowned view] _ in view.hideLoading() })
+                    .asDriver(onErrorDriveWith: .just(SearchResponse.empty))
             }
+            .do(onNext: { [unowned view] _ in view.hideLoading() })
             .map { [unowned self] in self.createCellItems(from: $0.search) }
     }
 }

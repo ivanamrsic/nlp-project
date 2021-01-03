@@ -23,6 +23,8 @@ final class SearchMoviesViewController: NLPViewController {
             tableView.registerNib(cellOfType: SearchResultTableViewCell.self)
         }
     }
+
+    @IBOutlet private weak var activtyIndicator: UIActivityIndicatorView!
     
     // MARK: - Public properties
 
@@ -53,6 +55,14 @@ final class SearchMoviesViewController: NLPViewController {
 // MARK: - SearchMoviesViewInterface
 
 extension SearchMoviesViewController: SearchMoviesViewInterface {
+
+    func showLoading() {
+        activtyIndicator.startAnimating()
+    }
+
+    func hideLoading() {
+        activtyIndicator.stopAnimating()
+    }
 }
 
 // MARK: - Configuration

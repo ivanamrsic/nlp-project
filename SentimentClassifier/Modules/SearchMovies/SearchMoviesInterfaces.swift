@@ -21,6 +21,8 @@ protocol SearchMoviesWireframeInterface: WireframeInterface {
 }
 
 protocol SearchMoviesViewInterface: ViewInterface {
+    func showLoading()
+    func hideLoading()
 }
 
 protocol SearchMoviesPresenterInterface: PresenterInterface {

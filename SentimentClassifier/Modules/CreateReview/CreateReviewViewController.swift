@@ -53,6 +53,13 @@ extension CreateReviewViewController: CreateReviewViewInterface {
         activtyIndicator.isHidden = true
         activtyIndicator.stopAnimating()
     }
+
+    func reset() {
+        movieTitleTextField.text = ""
+        movieYearTextField.text = ""
+        reviewTitleTextField.text = ""
+        reviewTextView.text = ""
+    }
 }
 
 // MARK: - Configuration

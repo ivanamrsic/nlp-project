@@ -35,7 +35,7 @@ final class EditPersonalInfoWireframe: BaseWireframe {
 
 extension EditPersonalInfoWireframe: EditPersonalInfoWireframeInterface {
 
-    func dismiss() {
+    func close() {
         navigationController?.popViewController(animated: true)
     }
 }

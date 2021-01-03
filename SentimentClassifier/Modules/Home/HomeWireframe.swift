@@ -31,12 +31,12 @@ final class HomeWireframe: BaseWireframe {
 
 }
 
-// MARK: - Extensions -
+// MARK: - HomeWireframeInterface
 
 extension HomeWireframe: HomeWireframeInterface {
     
     var childViewControllers: [NLPNavigationController] {
-        return [settings, profile, classifier, langauges]
+        return [profile, classifier, createReview, langauges, settings]
     }
 }
 
@@ -66,5 +66,11 @@ private extension HomeWireframe {
         let languages = NLPNavigationController(rootViewController: LanguagesWireframe().viewController)
         languages.tabBarProperty = .languages
         return languages
+    }
+
+    var createReview: NLPNavigationController {
+        let createReview = NLPNavigationController(rootViewController: CreateReviewWireframe().viewController)
+        createReview.tabBarProperty = .createReview
+        return createReview
     }
 }

@@ -14,7 +14,7 @@ import RxCocoa
 
 final class EditPersonalInfoPresenter {
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private unowned let view: EditPersonalInfoViewInterface
     private let interactor: EditPersonalInfoInteractorInterface
@@ -22,7 +22,7 @@ final class EditPersonalInfoPresenter {
 
     private let disposeBag = DisposeBag()
 
-    // MARK: - Lifecycle -
+    // MARK: - Lifecycle
 
     init(view: EditPersonalInfoViewInterface, interactor: EditPersonalInfoInteractorInterface, wireframe: EditPersonalInfoWireframeInterface) {
         self.view = view
@@ -48,7 +48,6 @@ extension EditPersonalInfoPresenter: EditPersonalInfoPresenterInterface {
             email: interactor.email
         )
     }
-
 }
 
 // MARK: - Binding setup
@@ -67,7 +66,7 @@ private extension EditPersonalInfoPresenter {
             .flatMap { data }
             .drive(onNext: { [unowned interactor, unowned wireframe] (username, email) in
                 interactor.updateData(username: username, email: email)
-                wireframe.dismiss()
+                wireframe.close()
             })
             .disposed(by: disposeBag)
     }

@@ -40,5 +40,4 @@ enum Settings {
     struct ViewInput {
         let sections: Driver<[TableSectionItem]>
     }
-
 }

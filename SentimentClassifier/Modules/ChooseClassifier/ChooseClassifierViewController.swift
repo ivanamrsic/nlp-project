@@ -62,7 +62,6 @@ private extension ChooseClassifierViewController {
         let input = presenter.configure(with: output)
         handle(items: input.items)
     }
-
 }
 
 // MARK: - Binding setup

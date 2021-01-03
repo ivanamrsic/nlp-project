@@ -28,12 +28,7 @@ extension EditPersonalInfoInteractor: EditPersonalInfoInteractorInterface {
     }
 
     func updateData(username: String?, email: String?) {
-        if let username = username, username.count > 0 {
-            UserStoreManager.username = username
-        }
-        if let email = email, email.count > 0 {
-            UserStoreManager.email = email
-        }
+        UserStoreManager.username = username
+        UserStoreManager.email = email
     }
-
 }

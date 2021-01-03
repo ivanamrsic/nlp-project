@@ -14,42 +14,125 @@ import RxCocoa
 
 final class LanguagesViewController: NLPViewController {
 
-    // MARK: - IBOutlets -
-    
-    @IBOutlet weak var inputTextView: UITextView!
-    @IBOutlet private weak var resultLabel: UILabel!
-    
-    // MARK: - Public properties -
+    // MARK: - IBOutlets
+
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var infoLabel: UILabel!
+
+    @IBOutlet private weak var inputTextView: UITextView!
+
+    @IBOutlet private weak var resultsTitleLabel: UILabel!
+    @IBOutlet private weak var resultsStackView: UIStackView!
+
+    @IBOutlet private weak var firstResultLabel: UILabel!
+    @IBOutlet private weak var firstResultPctLabel: UILabel!
+
+    @IBOutlet private weak var secondResultLabel: UILabel!
+    @IBOutlet private weak var secondResultPctLabel: UILabel!
+
+    @IBOutlet private weak var thirdResultLabel: UILabel!
+    @IBOutlet private weak var thirdResultPctLabel: UILabel!
+
+    // MARK: - Public properties
 
     var presenter: LanguagesPresenterInterface!
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private let disposeBag = DisposeBag()
 
-    // MARK: - Lifecycle -
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        hideKeyboardWhenTappedAround()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupUI()
     }
 }
 
-// MARK: - Extensions -
+// MARK: - LanguagesViewInterface
 
 extension LanguagesViewController: LanguagesViewInterface {
 }
+
+// MARK: - Configuration
 
 private extension LanguagesViewController {
 
     func setupView() {
         let output = Languages.ViewOutput(
-            inputText: inputTextView.rx.text.asDriver()
+            inputText: inputTextView.rx.text.asDriver(),
+            viewWillAppear: rx.viewWillAppear.asSignal()
         )
 
         let input = presenter.configure(with: output)
-        
-        input.result.drive(resultLabel.rx.text).disposed(by: disposeBag)
+        handle(firstLanguage: input.firstPossibleLanguages)
+        handle(secondLanguage: input.secondPossibleLanguages)
+        handle(thirdLanguage: input.thirdPossibleLanguages)
+    }
+}
+
+// MARK: - Binding Setup
+
+private extension LanguagesViewController {
+
+    func handle(firstLanguage: Driver<ReadableLanguagePossibility?>) {
+        firstLanguage
+            .map(toViewFormat(value:))
+            .drive(onNext: { [unowned self] (lang, value) in
+                self.firstResultLabel.text = lang ?? Constants.emptyValue
+                self.firstResultPctLabel.text = value
+            })
+            .disposed(by: disposeBag)
     }
 
+    func handle(secondLanguage: Driver<ReadableLanguagePossibility?>) {
+        secondLanguage
+            .map(toViewFormat(value:))
+            .drive(onNext: { [unowned self] (lang, value) in
+                self.secondResultLabel.text = lang
+                self.secondResultPctLabel.text = value
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func handle(thirdLanguage: Driver<ReadableLanguagePossibility?>) {
+        thirdLanguage
+            .map(toViewFormat(value:))
+            .drive(onNext: { [unowned self] (lang, value) in
+                self.thirdResultLabel.text = lang
+                self.thirdResultPctLabel.text = value
+            })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - UI Setup
+
+private extension LanguagesViewController {
+
+    func setupUI() {
+        titleLabel.text = Strings.languagesTitle
+        infoLabel.text = Strings.languagesInfo
+        resultsTitleLabel.text = Strings.result
+    }
+}
+
+// MARK: - Formatting
+
+private extension LanguagesViewController {
+
+    func toViewFormat(value: ReadableLanguagePossibility?) -> (String?, String?) {
+        return (value?.language, LanguagesViewController.formatPct(value: value?.pct))
+    }
+
+    static func formatPct(value: Double?) -> String? {
+        guard let value = value else { return nil }
+        return String(format: "%.3f", value * 100) + " %"
+    }
 }

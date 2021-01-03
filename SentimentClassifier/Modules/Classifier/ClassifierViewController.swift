@@ -15,58 +15,89 @@ import RxCocoa
 final class ClassifierViewController: NLPViewController {
     
     // MARK: - IBOutlets
-    
+
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var inputTextView: UITextView!
-    @IBOutlet private weak var classifyButton: UIButton!
-    @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet private weak var infoLabel: UILabel!
-    
-    // MARK: - Public properties -
+
+    @IBOutlet private weak var inputTextView: UITextView!
+
+    @IBOutlet private weak var classifyButton: UIButton!
+
+    @IBOutlet private weak var resultsTitleLabel: UILabel!
+    @IBOutlet private weak var resultsValueLabel: UILabel!
+
+    // MARK: - Public properties
 
     var presenter: ClassifierPresenterInterface!
 
-    // MARK: - Private properties -
+    // MARK: - Private properties
 
     private let disposeBag = DisposeBag()
 
-    // MARK: - Lifecycle -
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupUI()
+        hideKeyboardWhenTappedAround()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupUI()
+    }
 }
 
-// MARK: - Extensions -
+// MARK: - ClassifierViewInterface
 
 extension ClassifierViewController: ClassifierViewInterface {
 }
 
+// MARK: - Configuration
+
 private extension ClassifierViewController {
 
     func setupView() {
-        
-        let classifyAction = classifyButton.rx.tap.asSignal()
-            .withLatestFrom(inputTextView.rx.text.asSignal(onErrorSignalWith: .empty())) { $1 }
-        
+
         let output = Classifier.ViewOutput(
             classifyAction: classifyAction
         )
 
         let input = presenter.configure(with: output)
-        
-        input.result
-            .drive(resultLabel.rx.text)
-            .disposed(by: disposeBag)
+        handle(result: input.result)
+    }
+}
+
+// MARK: - Binding Setup
+
+private extension ClassifierViewController {
+
+    var classifyAction: Signal<String?> {
+
+        let inputText = inputTextView.rx.text
+            .asSignal(onErrorSignalWith: .empty())
+
+        return classifyButton.rx.tap.asSignal()
+            .withLatestFrom(inputText) { $1 }
     }
 
+    func handle(result: Driver<String?>) {
+        result
+            .drive(resultsValueLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - UI Setup
+
+private extension ClassifierViewController {
+
     func setupUI() {
-        titleLabel.text = "Classify your review"
-        infoLabel.text = "Use this feature to rate sentiment of your review."
-        classifyButton.setTitle("Classify", for: .normal)
-        resultLabel.text = "Result"
+        titleLabel.text = Strings.classifierScreenTitle
+        infoLabel.text = Strings.classifierInfo
+        classifyButton.setDefaultCornerRadius()
+        classifyButton.setTitle(Strings.classify, for: .normal)
+        resultsTitleLabel.text = Strings.result
+        resultsValueLabel.text = Constants.emptyValue
     }
 }
